@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* Banca design tokens — ported from original template */
+:root {
+  --theme-color: #6d27e5;
+  --theme-title-color: #171d24;
+  --theme-text-color: #6a737c;
+  --theme-border-color: #dde1e5;
+  --theme-dropshadow: 0 0.5px 1px 0 rgba(51, 77, 114, 0.1),
+    0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+
+  --brand_color: #0050b2;
+  --secondary_color: var(--theme-title-color);
+  --p_color: #4c5267;
+
+  --gradient_bg_color1: #fffbf2;
+  --gradient_bg_color2: #edfffd;
+  --border_on_white: #e6edf0;
+  --body_bg: #f7f9fa;
+  --bs-white: #fff;
+
+  --black_25: #f9f9f9;
+  --black_50: #ebebeb;
+  --black_100: #d6d9dc;
+  --black_200: #bbc0c4;
+  --black_300: #9fa6ad;
+  --black_400: #848d95;
+  --black_500: #6a737c;
+  --black_600: #535a60;
+  --black_700: #3c4146;
+  --black_800: #242729;
+  --black_850: #101010;
+  --black_900: #0c0d0e;
+
+  /* Shadcn semantic tokens */
+  --background: var(--body_bg);
+  --foreground: var(--theme-title-color);
+  --card: var(--bs-white);
+  --card-foreground: var(--theme-title-color);
+  --popover: var(--bs-white);
+  --popover-foreground: var(--theme-title-color);
+  --primary: var(--brand_color);
+  --primary-foreground: #ffffff;
+  --secondary: var(--black_25);
+  --secondary-foreground: var(--theme-title-color);
+  --muted: var(--black_25);
+  --muted-foreground: var(--black_500);
+  --accent: var(--black_25);
+  --accent-foreground: var(--theme-title-color);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--theme-border-color);
+  --input: var(--theme-border-color);
+  --ring: var(--brand_color);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --brand_color: #3185ec;
+  --secondary_color: #ffffff;
+  --p_color: #c3c3c3;
+  --black_900: #f1f1f1;
+  --black_850: #ededed;
+  --black_50: #494949;
+  --black_25: #383838;
+  --border_on_white: #2c303a;
+  --bs-white: #2c303a;
+  --sec-bg-color: #131417;
+  --background: var(--sec-bg-color);
+  --foreground: #c3c3c3;
+  --card: #2c303a;
+  --card-foreground: #f1f1f1;
+  --popover: #2c303a;
+  --popover-foreground: #f1f1f1;
+  --muted: #383838;
+  --muted-foreground: #b9b9b9;
+  --accent: #383838;
+  --accent-foreground: #f1f1f1;
+  --border: #494949;
+  --input: #494949;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-roboto);
+  --font-heading: var(--font-poppins);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body_bg);
+  color: var(--foreground);
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+}
+
+a,
+button {
+  color: inherit;
+  text-decoration: none;
+}

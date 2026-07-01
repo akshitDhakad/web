@@ -1,0 +1,151 @@
+.about-area .feature-list {
+  margin-top: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.about-area .feature-list li {
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--black_800);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-area .feature-list li svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--brand_color);
+}
+
+.about-area .cash-img {
+  position: relative;
+  display: inline-block;
+}
+
+.about-area .cash-img .msg-1 {
+  position: absolute;
+  right: 25px;
+  bottom: 235px;
+  box-shadow: 0px 16.96px 68.92px 0px rgba(63, 93, 101, 0.25);
+}
+
+.about-area .cash-img .msg-2 {
+  position: absolute;
+  left: -16px;
+  bottom: 155px;
+  box-shadow: 0px 16.24px 65.96px 0px rgba(63, 93, 101, 0.25);
+}
+
+@media (max-width: 991.98px) {
+  .about-area .cash-img {
+    margin-bottom: 40px;
+  }
+
+  .about-area .cash-img .msg-1 {
+    right: 10px;
+    bottom: 180px;
+    max-width: 45%;
+  }
+
+  .about-area .cash-img .msg-2 {
+    left: 0;
+    bottom: 120px;
+    max-width: 45%;
+  }
+}
+
+.about-tab-area {
+  padding-top: 125px;
+  padding-bottom: 40px;
+}
+
+.about-tab-area .nav-tabs {
+  margin: 0 0 15px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--black_50);
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.about-tab-area .nav-tabs .nav-link {
+  border: none;
+  padding: 5px 10px;
+  color: #a2a7ad;
+  margin: 0 20px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.about-tab-area .nav-tabs .nav-link.active,
+.about-tab-area .nav-tabs .nav-link[data-state="active"] {
+  color: var(--black_900);
+  border-color: var(--brand_color);
+  background: transparent;
+}
+
+.about-tab-area .tab-content .section-title h1 {
+  margin-bottom: 16px;
+}
+
+.read-more {
+  font-size: 18px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 500;
+  color: var(--brand_color);
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.read-more::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 0;
+  height: 1px;
+  background-color: var(--brand_color);
+  transition: all 0.3s ease-out;
+  left: 0;
+}
+
+.read-more:hover::after {
+  width: 128px;
+}
+
+.read-more svg {
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+  margin-left: 4px;
+}
+
+.read-more:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 767.98px) {
+  .about-tab-area {
+    padding-top: 80px;
+  }
+
+  .about-tab-area .nav-tabs .nav-link {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}

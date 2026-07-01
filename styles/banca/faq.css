@@ -1,0 +1,126 @@
+.faq-area-3 {
+  background-color: #101010;
+  padding: 120px 0;
+  color: #fff;
+}
+
+.faq-area-3 .faq-img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.faq-area-3 .subtitle {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #a7b4c0;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.faq-area-3 h1 {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.faq-area-3 h1 .underline-shape::after {
+  background-color: #f57950;
+}
+
+.faq-area-3 .single-faq {
+  border-bottom: 1px solid #c3cbd2;
+  padding: 14px 0;
+}
+
+.faq-area-3 .faq-widget .more-contact {
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  margin-top: 32px;
+}
+
+.faq-area-3 .faq-widget .more-contact a {
+  text-decoration: underline;
+  margin-left: 8px;
+  color: #fff;
+}
+
+.faq-area-3 .faq-header h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.faq-area-3 .faq-icon-plus,
+.faq-area-3 .faq-icon-minus {
+  color: #fff;
+  background-color: var(--brand_color);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-area-3 .faq-icon-minus {
+  display: none;
+}
+
+.faq-area-3 [data-state="open"] .faq-icon-plus {
+  display: none;
+}
+
+.faq-area-3 [data-state="open"] .faq-icon-minus {
+  display: flex;
+}
+
+.faq-area-3 [data-state="closed"] .faq-icon-plus {
+  display: flex;
+}
+
+.faq-area-3 [data-state="closed"] .faq-icon-minus {
+  display: none;
+}
+
+.faq-area-3 .faq-body p {
+  color: #eeeeee;
+  margin-top: 12px;
+  font-size: 16px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media (min-width: 992px) {
+  .pl-lg-50 {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .faq-area-3 {
+    padding: 80px 0;
+  }
+
+  .faq-area-3 h1 {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  .faq-area-3 .faq-img {
+    margin-bottom: 40px;
+  }
+}

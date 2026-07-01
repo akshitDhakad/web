@@ -1,0 +1,217 @@
+.banner-area-5 {
+  background-color: #101010;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner-area-5 .bg-shapes .shape {
+  position: absolute;
+  z-index: -1;
+}
+
+.banner-area-5 .bg-shapes .shape:nth-child(1) {
+  left: 0;
+  bottom: 180px;
+}
+
+.banner-area-5 .bg-shapes .shape:nth-child(2) {
+  right: 135px;
+  bottom: 120px;
+}
+
+.banner-area-5 .bg-shapes .shape:nth-child(3) {
+  left: 150px;
+  top: 35%;
+}
+
+.banner-area-5 .bg-shapes .shape:nth-child(4) {
+  right: 10%;
+  top: 50%;
+}
+
+.banner-area-5 .bg-shapes .shape:nth-child(5) {
+  width: 600px;
+  height: 600px;
+  background-color: #5deea0;
+  right: -175px;
+  bottom: -220px;
+  filter: blur(250px);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.banner-area-5 .bg-shapes .shape:nth-child(6) {
+  width: 450px;
+  height: 450px;
+  background-color: #a4f1f2;
+  left: -50px;
+  top: -200px;
+  filter: blur(250px);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.banner-area-5 .banner-content h1 {
+  line-height: 66px;
+  font-size: 60px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.banner-area-5 .banner-content h1 .underline-shape::after {
+  background-color: #f57950;
+}
+
+.banner-area-5 .banner-content p {
+  font-size: 18px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  line-height: 30px;
+}
+
+.banner-area-5 .banner-content .under_link {
+  font-size: 18px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  line-height: 60px;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.banner-area-5 .banner-content .under_link svg {
+  opacity: 0;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+  margin-left: 4px;
+}
+
+.banner-area-5 .banner-content .under_link:hover svg {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.banner-area-5 .banner-content .theme-btn {
+  color: #fff;
+  height: 60px;
+  line-height: 55px;
+}
+
+.banner-area-5 .banner-content .theme-btn::before {
+  background-color: #2771cb;
+}
+
+.banner-area-5 .banner-content .co-operators {
+  margin-top: 80px;
+}
+
+.banner-area-5 .banner-content .co-operators > div {
+  gap: 30px;
+}
+
+.banner-area-5 .basic-loan-calculator {
+  background-color: var(--bs-white);
+  border-radius: 8px;
+  max-width: 450px;
+  padding: 35px;
+  position: relative;
+  margin-left: auto;
+}
+
+.banner-area-5 .basic-loan-calculator .shape {
+  position: absolute;
+  right: -35px;
+  top: -35px;
+}
+
+.banner-area-5 .basic-loan-calculator h4 {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 47px;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+  color: var(--theme-title-color);
+}
+
+.banner-area-5 .basic-loan-calculator .label {
+  font-size: 16px;
+  color: var(--black_900);
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.banner-area-5 .basic-loan-calculator .form-control,
+.banner-area-5 .basic-loan-calculator .loan-select-trigger {
+  background-color: #f2f2f2;
+  height: 56px;
+  color: #9199a1;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+  line-height: 56px;
+  font-size: 16px;
+  padding-left: 22px;
+  border: 1px solid transparent;
+  width: 100%;
+}
+
+.banner-area-5 .basic-loan-calculator .form-control:focus,
+.banner-area-5 .basic-loan-calculator .loan-select-trigger:focus {
+  border-color: var(--brand_color);
+  outline: none;
+}
+
+.banner-area-5 .basic-loan-calculator .form-control::placeholder {
+  color: #757589;
+  font-size: 16px;
+}
+
+.banner-area-5 .basic-loan-calculator .input-field {
+  position: relative;
+}
+
+.banner-area-5 .basic-loan-calculator .input-field span {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  right: 20px;
+  font-size: 16px;
+  color: #060608;
+  transform: translateY(-50%);
+}
+
+.banner-area-5 .basic-loan-calculator .input-field .form-control {
+  padding-right: 30px;
+}
+
+.banner-area-5 .basic-loan-calculator .theme-btn {
+  background-color: #060608;
+}
+
+@media (max-width: 991.98px) {
+  .banner-area-5 .banner-content h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .banner-area-5 .basic-loan-calculator {
+    margin-left: 0;
+    margin-top: 40px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .banner-area-5 .banner-content h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}

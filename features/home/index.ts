@@ -1,0 +1,9 @@
+export { Hero } from "./components/hero";
+export { Features } from "./components/features";
+export { About } from "./components/about";
+export { AboutTabs } from "./components/about-tabs";
+export { FAQ } from "./components/faq";
+export { Services } from "./components/services";
+export { Testimonials } from "./components/testimonials";
+export { Blog } from "./components/blog";
+export { CTA } from "./components/cta";
