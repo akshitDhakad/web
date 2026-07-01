@@ -15,9 +15,8 @@ export interface NavItem {
 export const MAIN_NAV_ITEMS: NavItem[] = [
   {
     label: "Home",
-    active: true,
     children: [
-      { label: "Smart Finance", href: "/", active: true },
+      { label: "Smart Finance", href: "/" },
       { label: "Loan Company", href: "/loan-company" },
       { label: "Mobile App", href: "/mobile-app" },
       { label: "Simple Banca", href: "/simple" },

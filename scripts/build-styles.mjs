@@ -16,6 +16,7 @@ const files = [
   "services.css",
   "testimonials.css",
   "blog.css",
+  "blog-pages.css",
   "cta.css",
   "footer.css",
 ];
