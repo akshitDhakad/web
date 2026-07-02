@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CounterStat } from "@/components/animations/counter-stat";
 import { FadeIn } from "@/components/animations/fade-in";
 import { SectionTitle } from "@/components/common/section-title";
+import { containerClassName } from "@/components/layout/container";
 import {
   SERVICE_COMPARISON_ROWS,
   SERVICE_STATS,
@@ -24,7 +25,7 @@ function ComparisonCell({ value }: { value: ComparisonValue }) {
 export function Services() {
   return (
     <section className="services-area bg-white pt-120 pb-120" aria-label="Service comparisons">
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <SectionTitle
           className="mb-45"
           eyebrow="_SERVICE COMPARISONS"

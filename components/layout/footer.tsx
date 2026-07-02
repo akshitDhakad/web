@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { containerClassName } from "@/components/layout/container";
 import { FOOTER_LINK_GROUPS, FOOTER_SOCIAL_LINKS } from "@/features/home/constants/footer";
 
 function SocialIcon({ icon }: { icon: string }) {
@@ -24,7 +25,7 @@ export function Footer() {
   return (
     <footer className="footer footer-3">
       <div className="footer-top pt-200 pb-120 pb-lg-115">
-        <div className="container mx-auto max-w-[1320px] px-4">
+        <div className={containerClassName}>
           <div className="grid grid-cols-1 gap-8 pt-60 sm:grid-cols-2 lg:grid-cols-12">
             <div className="text-center sm:text-start lg:col-span-4">
               <FadeIn direction="right">
@@ -76,9 +77,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="copyright pt-25 pb-25">
-        <div className="container mx-auto max-w-[1320px] px-4">
-          <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
+      <div className="copyright">
+        <div className={containerClassName}>
+          <div className="copyright-row flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
             <div className="text-center lg:text-start">
               <Link href="/">
                 <Image

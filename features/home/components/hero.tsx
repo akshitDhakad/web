@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { containerClassName } from "@/components/layout/container";
 import {
   loanCalculatorSchema,
   type LoanCalculatorFormData,
@@ -160,7 +161,7 @@ export function Hero() {
         <div className="shape" />
       </div>
 
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <div className="flex flex-col items-end gap-8 pt-170 pb-120 lg:flex-row">
           <div className="w-full lg:w-1/2">
             <FadeIn direction="right" delay={0.1}>

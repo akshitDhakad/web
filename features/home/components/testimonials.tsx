@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { containerClassName } from "@/components/layout/container";
 import { SectionTitle } from "@/components/common/section-title";
 import { TESTIMONIALS } from "@/features/home/constants/testimonials";
 import { cn } from "@/lib/utils";
@@ -78,7 +79,7 @@ export function Testimonials() {
 
   return (
     <section className="client-area-2 pt-60 pb-60" aria-label="Testimonials">
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <SectionTitle
           className="mb-3"
           eyebrow="_Testimonials"

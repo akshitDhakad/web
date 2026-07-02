@@ -32,7 +32,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
       { label: "Get loan", href: "/loan" },
       {
         label: "Loan Application",
-        href: "#",
+        href: "/loan/details",
         children: [
           { label: "Step 01", href: "/loan/details" },
           { label: "Step 02", href: "/loan/personal-details" },

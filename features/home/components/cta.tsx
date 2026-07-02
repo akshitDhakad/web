@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { containerClassName } from "@/components/layout/container";
 import {
   newsletterSchema,
   type NewsletterFormData,
@@ -31,7 +32,7 @@ export function CTA() {
 
   return (
     <section className="cta-area-3 bg-white" aria-label="Newsletter signup">
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <div className="relative">
           <div className="cta-4 cta-bg-primary">
             <div className="flex flex-col items-center gap-8 lg:flex-row">

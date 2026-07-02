@@ -58,3 +58,40 @@
 .theme-btn.w-100 {
   width: 100%;
 }
+
+.theme-btn.theme-btn-lg {
+  height: 60px;
+  line-height: 59px;
+  padding: 0 40px;
+}
+
+.theme-btn.theme-btn-primary_alt {
+  color: var(--brand_color);
+  background-color: rgba(0, 80, 178, 0.05);
+  transition: all 0.3s ease-out;
+  overflow: inherit;
+}
+
+.theme-btn.theme-btn-primary_alt::before {
+  display: none;
+}
+
+.theme-btn.theme-btn-primary_alt:hover {
+  background-color: #0050b2;
+  color: #fff;
+}
+
+.theme-btn.theme-btn-outlined {
+  background-color: transparent;
+  color: var(--brand_color);
+  border: 1px solid var(--brand_color);
+}
+
+.theme-btn.theme-btn-outlined::before {
+  display: none;
+}
+
+.theme-btn.theme-btn-outlined:hover {
+  background-color: var(--brand_color);
+  color: #fff;
+}

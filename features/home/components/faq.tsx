@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { containerClassName } from "@/components/layout/container";
 import {
   Accordion,
   AccordionContent,
@@ -15,7 +16,7 @@ import { FAQ_ITEMS } from "@/features/home/constants/faq-items";
 export function FAQ() {
   return (
     <section className="faq-area-3" aria-label="Frequently asked questions">
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-0">
           <FadeIn direction="right">
             <Image

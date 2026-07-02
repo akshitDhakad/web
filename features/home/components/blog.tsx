@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { FadeIn } from "@/components/animations/fade-in";
 import { SectionTitle } from "@/components/common/section-title";
+import { containerClassName } from "@/components/layout/container";
 import { BLOG_POSTS } from "@/features/home/constants/blog-posts";
 
 export function Blog() {
@@ -11,7 +12,7 @@ export function Blog() {
       className="news-area-2 relative z-[1] bg-white pt-120 pb-200"
       aria-label="Latest articles"
     >
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <SectionTitle
           className="mb-3"
           eyebrow="_Blog"

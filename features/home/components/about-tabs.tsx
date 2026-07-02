@@ -5,13 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { containerClassName } from "@/components/layout/container";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ABOUT_TABS } from "@/features/home/constants/about-tabs";
 
 export function AboutTabs() {
   return (
     <section className="about-tab-area bg-white" aria-label="Solutions by audience">
-      <div className="container mx-auto max-w-[1320px] px-4">
+      <div className={containerClassName}>
         <Tabs defaultValue="freelancer" className="w-full">
           <TabsList>
             {ABOUT_TABS.map((tab) => (

@@ -167,7 +167,10 @@ function getNavbarConfig(pathname: string) {
   }
 
   const isSubpageWithTopBar =
-    pathname.startsWith("/blog") || pathname === "/cards" || pathname === "/contact";
+    pathname.startsWith("/blog") ||
+    pathname.startsWith("/loan") ||
+    pathname === "/cards" ||
+    pathname === "/contact";
 
   if (isSubpageWithTopBar) {
     return {

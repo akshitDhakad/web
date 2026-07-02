@@ -1,3 +1,18 @@
+.steps-area .steps-grid {
+  gap: 24px;
+}
+
+@media (min-width: 1280px) {
+  .steps-area .steps-grid {
+    gap: 30px;
+  }
+}
+
+.feature-card-widget-8 img {
+  max-width: 100%;
+  height: auto;
+}
+
 .feature-card-widget-8 {
   text-align: center;
   background-color: #f4f5f6;
@@ -15,11 +30,14 @@
 .feature-card-widget-8 .card-img {
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100px;
 }
 
-.feature-card-widget-8 img {
-  max-width: 100%;
-  height: auto;
+.feature-card-widget-8 .card-img .step-card-icon {
+  width: 100px;
+  height: 100px;
+  max-width: none;
 }
 
 .feature-card-widget-8 h4 {
