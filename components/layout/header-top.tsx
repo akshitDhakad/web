@@ -4,16 +4,22 @@ import Image from "next/image";
 import { containerClassName } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
 
-export function HeaderTop() {
+interface HeaderTopProps {
+  variant?: "light" | "dark";
+}
+
+export function HeaderTop({ variant = "light" }: HeaderTopProps) {
+  const isDark = variant === "dark";
+
   return (
-    <div className="header-top bg_white py-2">
+    <div className={cn("header-top py-2", isDark ? "header-top-dark" : "bg_white")}>
       <div className={containerClassName}>
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="header-info-left">
             <div className="language-list">
               <select
                 id="select-lang"
-                className="border-0 bg-transparent text-sm text-[var(--p_color)]"
+                className="border-0 bg-transparent text-sm"
                 defaultValue="English"
                 aria-label="Select language"
               >
@@ -33,7 +39,7 @@ export function HeaderTop() {
               <li>
                 <Image
                   className="img-fluid"
-                  src="/img/phone-outline.png"
+                  src={isDark ? "/img/phone-outline-white.png" : "/img/phone-outline.png"}
                   alt=""
                   width={14}
                   height={14}

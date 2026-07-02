@@ -12,17 +12,17 @@ export function BlogSidebar() {
   return (
     <aside className="blog-sidebar-widget ps-lg-2">
       <div className="widget-subscribe">
-        <h4 className="widget-title mb-15">Subscribe to our blog</h4>
+        <h4 className="widget-title">Subscribe to our blog</h4>
         <p>Get the latest posts in your email</p>
-        <form action="#" className="mt-15">
+        <form action="#">
           <input className="form-control" type="email" placeholder="Enter your email" />
-          <button className="theme-btn w-100 mt-30" type="submit">
+          <button className="theme-btn w-100" type="submit">
             Subscribe
           </button>
         </form>
       </div>
 
-      <div className="widget-social mt-40">
+      <div className="widget-social">
         <div className="grid grid-cols-1 gap-3 text-center sm:grid-cols-3">
           {BLOG_SOCIAL_STATS.map((stat) => (
             <a key={stat.platform} href={stat.href}>
@@ -34,8 +34,8 @@ export function BlogSidebar() {
         </div>
       </div>
 
-      <div className="widget-catagory mt-55">
-        <h4 className="widget-title mb-20">Categories</h4>
+      <div className="widget-catagory">
+        <h4 className="widget-title">Categories</h4>
         <ul>
           {BLOG_CATEGORIES.map((category) => (
             <li key={category.name}>
@@ -48,7 +48,7 @@ export function BlogSidebar() {
         </ul>
       </div>
 
-      <div className="widget-news mt-50">
+      <div className="widget-news">
         <h4 className="widget-title">Reacent News</h4>
         <ul className="recent-post">
           {BLOG_RECENT_NEWS.map((item) => (
@@ -74,9 +74,9 @@ export function BlogSidebar() {
         </ul>
       </div>
 
-      <div className="widget-tags mt-50">
-        <h4 className="widget-title mb-0">Tags</h4>
-        <div className="tags mt-30">
+      <div className="widget-tags">
+        <h4 className="widget-title">Tags</h4>
+        <div className="tags">
           {BLOG_SIDEBAR_TAGS.map((tag) => (
             <a key={tag} href="#">
               {tag}

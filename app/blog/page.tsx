@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { BlogCard } from "@/features/blog/components/blog-card";
+import { BlogCardAnimated } from "@/features/blog/components/blog-card-animated";
 import { BlogListingHero } from "@/features/blog/components/blog-listing-hero";
 import { BlogPagination } from "@/features/blog/components/blog-pagination";
 import { BlogSidebar } from "@/features/blog/components/blog-sidebar";
@@ -22,12 +22,12 @@ export default function BlogListingPage() {
 
       <section className="bg_disable pt-120 pb-120">
         <div className="container">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <div className="blog-post-widget">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  {BLOG_LIST_POSTS.map((post) => (
-                    <BlogCard key={post.id} post={post} />
+                  {BLOG_LIST_POSTS.map((post, index) => (
+                    <BlogCardAnimated key={post.id} post={post} index={index} />
                   ))}
                 </div>
                 <div className="mt-55">

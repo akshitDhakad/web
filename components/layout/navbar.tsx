@@ -122,9 +122,75 @@ function DarkModeToggle() {
   );
 }
 
+function getNavbarConfig(pathname: string) {
+  if (pathname === "/about") {
+    return {
+      showTopBar: true,
+      topBarVariant: "dark" as const,
+      menuClass: "header-menu header-menu-2",
+      logoVariant: "single" as const,
+      buyButtonClass: "theme-btn theme-btn-rounded-2",
+    };
+  }
+
+  if (pathname === "/career") {
+    return {
+      showTopBar: true,
+      topBarVariant: "light" as const,
+      menuClass: "header-menu header-menu-3",
+      logoVariant: "dual" as const,
+      buyButtonClass: "theme-btn theme-btn-rounded-2 theme-btn-outlined_alt",
+    };
+  }
+
+  const isJobSubpage =
+    pathname === "/jobs" || pathname.startsWith("/job-application");
+
+  if (isJobSubpage) {
+    return {
+      showTopBar: true,
+      topBarVariant: "dark" as const,
+      menuClass: "header-menu header-menu-2 bg_white",
+      logoVariant: "single" as const,
+      buyButtonClass: "theme-btn theme-btn-rounded-2",
+    };
+  }
+
+  if (pathname === "/error") {
+    return {
+      showTopBar: false,
+      topBarVariant: "light" as const,
+      menuClass: "header-menu header-menu-2",
+      logoVariant: "single" as const,
+      buyButtonClass: "theme-btn theme-btn-rounded-2",
+    };
+  }
+
+  const isSubpageWithTopBar =
+    pathname.startsWith("/blog") || pathname === "/cards" || pathname === "/contact";
+
+  if (isSubpageWithTopBar) {
+    return {
+      showTopBar: true,
+      topBarVariant: "light" as const,
+      menuClass: "header-menu header-menu-3",
+      logoVariant: "dual" as const,
+      buyButtonClass: "theme-btn theme-btn-rounded-2 theme-btn-outlined_alt",
+    };
+  }
+
+  return {
+    showTopBar: false,
+    topBarVariant: "light" as const,
+    menuClass: "header-menu header-menu-4",
+    logoVariant: "dual" as const,
+    buyButtonClass: "theme-btn theme-btn-rounded-2 theme-btn-alt",
+  };
+}
+
 export function Navbar() {
   const pathname = usePathname();
-  const isBlogRoute = pathname.startsWith("/blog");
+  const navConfig = getNavbarConfig(pathname);
   const {
     isMobileMenuOpen,
     isNavbarFixed,
@@ -153,33 +219,48 @@ export function Navbar() {
 
   return (
     <header className="header">
-      {isBlogRoute && <HeaderTop />}
+      {navConfig.showTopBar && <HeaderTop variant={navConfig.topBarVariant} />}
       <div
-        className={cn(
-          isBlogRoute ? "header-menu header-menu-3" : "header-menu header-menu-4",
-          isNavbarFixed && "navbar_fixed",
-        )}
+        className={cn(navConfig.menuClass, isNavbarFixed && "navbar_fixed")}
         id="sticky"
       >
         <nav className="navbar navbar-expand-lg">
           <div className={cn(containerClassName, "flex flex-wrap items-center justify-between")}>
-            <Link className="sticky_logo relative z-[100]" href="/">
-              <Image
-                className="main h-auto w-auto"
-                src="/img/logo/Logo.png"
-                alt="Banca logo"
-                width={120}
-                height={40}
-                priority
-              />
-              <Image
-                className="sticky h-auto w-auto"
-                src="/img/logo/Logo-2.png"
-                alt="Banca logo"
-                width={120}
-                height={40}
-                priority
-              />
+            <Link
+              className={cn(
+                "relative z-[100]",
+                navConfig.logoVariant === "dual" ? "sticky_logo" : "navbar-brand",
+              )}
+              href="/"
+            >
+              {navConfig.logoVariant === "dual" ? (
+                <>
+                  <Image
+                    className="main h-auto w-auto"
+                    src="/img/logo/Logo.png"
+                    alt="Banca logo"
+                    width={120}
+                    height={40}
+                    priority
+                  />
+                  <Image
+                    className="sticky h-auto w-auto"
+                    src="/img/logo/Logo-2.png"
+                    alt="Banca logo"
+                    width={120}
+                    height={40}
+                    priority
+                  />
+                </>
+              ) : (
+                <Image
+                  src="/img/logo/Logo-2.png"
+                  alt="Banca logo"
+                  width={120}
+                  height={40}
+                  priority
+                />
+              )}
             </Link>
 
             <button
@@ -264,12 +345,7 @@ export function Navbar() {
               </ul>
 
               <a
-                className={cn(
-                  "theme-btn theme-btn-rounded-2",
-                  isBlogRoute
-                    ? "theme-btn-outlined_alt"
-                    : "theme-btn-alt",
-                )}
+                className={navConfig.buyButtonClass}
                 href={BUY_BANCA_URL}
                 target="_blank"
                 rel="noopener noreferrer"

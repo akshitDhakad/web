@@ -52,7 +52,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
       <section className="bg_disable pt-120 pb-120">
         <div className="container">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
             <div className="relative lg:col-span-1">
               <BlogShareWidget />
             </div>

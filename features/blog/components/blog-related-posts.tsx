@@ -1,6 +1,6 @@
 import { getPostBySlug } from "@/features/blog/lib/posts";
 
-import { BlogCard } from "./blog-card";
+import { BlogCardAnimated } from "./blog-card-animated";
 
 interface BlogRelatedPostsProps {
   slugs: string[];
@@ -19,8 +19,8 @@ export function BlogRelatedPosts({ slugs }: BlogRelatedPostsProps) {
     <div className="related-post-widget pb-90">
       <h4 className="blog-widget-title mb-45">Related Post</h4>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {posts.map((post) => (
-          <BlogCard key={post.id} post={post} headingLevel="h5" />
+        {posts.map((post, index) => (
+          <BlogCardAnimated key={post.id} post={post} index={index} headingLevel="h5" />
         ))}
       </div>
     </div>
