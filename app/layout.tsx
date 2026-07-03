@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
 
-import { Footer } from "@/components/layout/footer";
+import { ConditionalFooter } from "@/components/layout/conditional-footer";
 import { Navbar } from "@/components/layout/navbar";
 import { AppProviders } from "@/providers/app-providers";
 import { SITE_CONFIG } from "@/constants/navigation";
 
 import "@/styles/globals.css";
 import "@/styles/banca.css";
+import "@/styles/home-variants.css";
+import "@/styles/navbar-overrides.css";
+import "@/styles/site-footer.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -62,7 +65,7 @@ export default function RootLayout({
         <AppProviders>
           <Navbar />
           <main>{children}</main>
-          <Footer />
+          <ConditionalFooter />
         </AppProviders>
       </body>
     </html>

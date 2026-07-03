@@ -1,0 +1,810 @@
+/* Simple Banca page — layout & spacing (matches frontend/index-simple.html) */
+
+.simple-banca-page {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+.simple-banca-page .container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .simple-banca-page .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.simple-banca-page .collapse {
+  display: none;
+}
+
+.simple-banca-page .collapse.show {
+  display: block;
+}
+
+/* ── Hero ── */
+.simple-banca-page .banner-area-3 {
+  padding-top: 90px;
+  overflow: hidden;
+  position: relative;
+}
+
+.simple-banca-page .banner-area-3 .bg-slides {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.simple-banca-page .banner-area-3 .bg-slides .slide img {
+  display: block;
+  max-width: none;
+  width: auto;
+  height: auto;
+}
+
+.simple-banca-page .banner-area-3 .container {
+  position: relative;
+  z-index: 1;
+}
+
+.simple-banca-page .banner-area-3 .sb-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .banner-area-3 .sb-hero-grid {
+    grid-template-columns: 58.333% 41.666%;
+  }
+}
+
+.simple-banca-page .banner-area-3 .sb-hero-content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .banner-area-3 .sb-hero-content {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
+.simple-banca-page .banner-area-3 .banner-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.simple-banca-page .banner-area-3 .banner-content .theme-btn {
+  margin-top: 50px;
+}
+
+.simple-banca-page .banner-area-3 .sb-hero-media {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .banner-area-3 .sb-hero-media {
+    display: block;
+    position: relative;
+    min-height: 420px;
+  }
+}
+
+.simple-banca-page .banner-area-3 .person-img {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: 1;
+  width: 671px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Feature + calculator ── */
+.simple-banca-page .feature-calculator {
+  padding-top: 120px;
+  padding-bottom: 140px;
+}
+
+.simple-banca-page .feature-calculator .feature-slider {
+  margin: 0 -25px;
+  padding: 0 10px;
+}
+
+.simple-banca-page .feature-calculator .sb-embla-viewport {
+  overflow: hidden;
+}
+
+.simple-banca-page .feature-calculator .sb-embla-track {
+  display: flex;
+  touch-action: pan-y;
+  margin: 20px 0 55px;
+}
+
+.simple-banca-page .feature-calculator .sb-embla-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .feature-calculator .sb-embla-slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .feature-calculator .sb-embla-slide {
+    flex: 0 0 33.333%;
+  }
+}
+
+.simple-banca-page .feature-calculator .feature-card-widget-3 {
+  height: 100%;
+}
+
+.simple-banca-page .feature-calculator .feature-card-widget-3 .shapes img {
+  max-width: 100%;
+  height: auto;
+}
+
+.simple-banca-page .feature-calculator .feature-card-widget-3 > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.simple-banca-page .feature-calculator .calculator {
+  margin-top: 60px;
+}
+
+.simple-banca-page .feature-calculator .calculator .steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.simple-banca-page .feature-calculator .calculator .single-step {
+  margin-top: 8px;
+}
+
+@media (min-width: 576px) {
+  .simple-banca-page .feature-calculator .calculator .single-step {
+    margin-top: 0;
+  }
+}
+
+.simple-banca-page .feature-calculator .sb-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid #dcdee0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .feature-calculator .sb-calc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .simple-banca-page .feature-calculator .sb-calc-col-first {
+    border-right: 1px solid #dcdee0;
+  }
+}
+
+.simple-banca-page .feature-calculator .calculator-slider {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .feature-calculator .sb-calc-col-first .calculator-slider {
+    padding-left: 1rem;
+    padding-right: 3rem;
+  }
+
+  .simple-banca-page .feature-calculator .sb-calc-col-second .calculator-slider {
+    padding-left: 3rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .feature-calculator .sb-calc-col-second .calculator-slider {
+    padding-left: 3rem;
+  }
+}
+
+.simple-banca-page .feature-calculator .sb-range-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.simple-banca-page .feature-calculator .range-slider {
+  flex: 1;
+  min-width: 0;
+}
+
+.simple-banca-page .feature-calculator input[type="range"] {
+  width: 100%;
+  accent-color: var(--brand_color);
+}
+
+.simple-banca-page .feature-calculator .expected-payment {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+
+.simple-banca-page .feature-calculator .expected-payment .sec-head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.simple-banca-page .feature-calculator .expected-payment .text {
+  margin-top: 20px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 576px) {
+  .simple-banca-page .feature-calculator .expected-payment .text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.simple-banca-page .feature-calculator .expected-payment .sb-next-btn {
+  margin-top: 45px;
+  text-align: center;
+}
+
+/* ── Help ad ── */
+.simple-banca-page .help-ad-area {
+  padding-top: 125px;
+  padding-bottom: 115px;
+  overflow: hidden;
+}
+
+.simple-banca-page .help-ad-area .sb-help-intro {
+  padding-top: 40px;
+  max-width: 83.333%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simple-banca-page .help-ad-area .sb-help-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .help-ad-area .sb-help-bottom {
+    grid-template-columns: 41.666% 58.333%;
+    gap: 0;
+  }
+
+  .simple-banca-page .help-ad-area .sb-help-text {
+    padding-top: 60px;
+  }
+}
+
+.simple-banca-page .help-ad-area .main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.simple-banca-page .help-ad-area .offers .shape img {
+  max-width: 100%;
+  height: auto;
+}
+
+.simple-banca-page .help-ad-area .sb-help-text p + p {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.simple-banca-page .text-start {
+  text-align: start;
+}
+
+@media (min-width: 576px) {
+  .simple-banca-page .text-sm-start {
+    text-align: start;
+  }
+}
+
+/* ── Corporate logos ── */
+.simple-banca-page .banca-corporate {
+  padding-top: 125px;
+  padding-bottom: 110px;
+}
+
+.simple-banca-page .banca-corporate .sb-corporate-intro {
+  max-width: 66.666%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simple-banca-page .banca-corporate .sb-brand-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .banca-corporate .sb-brand-row {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    text-align: start;
+  }
+}
+
+.simple-banca-page .banca-corporate .sb-brand-row.sb-brand-row-second {
+  margin-top: 20px;
+}
+
+.simple-banca-page .banca-corporate .sb-brand-hide-mobile {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .banca-corporate .sb-brand-hide-mobile {
+    display: block;
+  }
+}
+
+.simple-banca-page .banca-corporate .single-brand img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Articles ── */
+.simple-banca-page .articles-area {
+  padding-top: 125px;
+  padding-bottom: 140px;
+}
+
+.simple-banca-page .articles-area .sb-articles-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  gap: 12px;
+}
+
+.simple-banca-page .articles-area .sb-articles-header h2 {
+  margin-bottom: 0;
+}
+
+.simple-banca-page .articles-area .sb-articles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .articles-area .sb-articles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .articles-area .sb-articles-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.simple-banca-page .articles-area .blog-widget-1 img {
+  width: 100%;
+  height: auto;
+}
+
+.simple-banca-page .articles-area .blog-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* ── Testimonials ── */
+.simple-banca-page .testimonial-area {
+  padding-top: 135px;
+  padding-bottom: 140px;
+}
+
+.simple-banca-page .testimonial-area .section-title.sb-mobile-only {
+  margin-bottom: 1rem;
+}
+
+.simple-banca-page .testimonial-area .sb-testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .testimonial-area .sb-testimonial-grid {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .testimonial-area .sb-testimonial-grid {
+    grid-template-columns: 33.333% 66.666%;
+    gap: 0;
+  }
+}
+
+.simple-banca-page .testimonial-area .sb-testimonial-primary {
+  padding-right: 0;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .testimonial-area .sb-testimonial-primary {
+    padding-right: 35px;
+  }
+}
+
+.simple-banca-page .testimonial-area .sb-testimonial-secondary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.simple-banca-page .testimonial-area .section-title.sb-desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .testimonial-area .section-title.sb-mobile-only {
+    display: none;
+  }
+
+  .simple-banca-page .testimonial-area .section-title.sb-desktop-only {
+    display: block;
+    text-align: start;
+  }
+}
+
+/* Primary featured card (fade swap synced with carousel) */
+.simple-banca-page .testimonial-slider-3 {
+  position: relative;
+}
+
+.simple-banca-page .testimonial-slider-3 .sb-testimonial-primary-panel {
+  overflow: visible;
+  padding-bottom: 77px;
+}
+
+.simple-banca-page .testimonial-slider-3 .sb-testimonial-primary-fade {
+  animation: sb-testimonial-fade 0.45s ease;
+}
+
+@keyframes sb-testimonial-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.simple-banca-page .testimonial-widget-3 {
+  position: relative;
+}
+
+.simple-banca-page .testimonial-widget-3 .client-img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.simple-banca-page .testimonial-widget-3 .client-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.simple-banca-page .testimonial-widget-3 .client-info {
+  margin: 20px 0 0 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+/* Secondary carousel */
+.simple-banca-page .testimonial-slider-2 {
+  position: relative;
+  padding-bottom: 77px;
+}
+
+.simple-banca-page .testimonial-slider-2 .sb-embla-viewport {
+  overflow: hidden;
+}
+
+.simple-banca-page .testimonial-slider-2 .sb-embla-track {
+  display: flex;
+  touch-action: pan-y;
+}
+
+.simple-banca-page .testimonial-slider-2 .sb-embla-slide {
+  flex: 0 0 50%;
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .testimonial-slider-2 .sb-embla-slide {
+    flex: 0 0 33.333%;
+  }
+}
+
+.simple-banca-page .testimonial-widget-2 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 25px;
+}
+
+.simple-banca-page .testimonial-widget-2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.simple-banca-page .testimonial-widget-2 .client-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 0 22px 20px;
+  text-align: left;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(23, 29, 36, 0.02),
+    rgba(23, 29, 36, 0.5),
+    rgba(23, 29, 36, 0.85)
+  );
+}
+
+.simple-banca-page .testimonial-widget-2 .client-info p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.simple-banca-page .testimonial-widget-2 .client-info span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff;
+  display: block;
+  line-height: 14.5px;
+}
+
+.simple-banca-page .testimonial-slider-2 .slick-arrow {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: -10px;
+  left: 0;
+  height: 35px;
+  width: 35px;
+  border-radius: 3px;
+  transition: all 0.3s ease-out;
+  box-shadow: var(--theme-dropshadow);
+  font-size: 18px;
+  color: #a0a4a8;
+  z-index: 1;
+  background-color: var(--bs-white);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-banca-page .testimonial-slider-2 .slick-arrow:hover {
+  box-shadow: 0 5px 15px 0 rgba(51, 77, 114, 0.1);
+  color: var(--secondary_color);
+}
+
+.simple-banca-page .testimonial-slider-2 .slick-arrow.slick-next {
+  left: 55px;
+}
+
+/* ── Advisor + FAQ ── */
+.simple-banca-page .advisor-area {
+  padding-top: 130px;
+  padding-bottom: 140px;
+  overflow: hidden;
+}
+
+.simple-banca-page .advisor-area .sb-advisor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .advisor-area .sb-advisor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .simple-banca-page .advisor-area .sb-advisor-media {
+    padding-right: 75px;
+  }
+}
+
+.simple-banca-page .advisor-area .advisor-img {
+  margin-top: 45px;
+  position: relative;
+}
+
+.simple-banca-page .advisor-area .advisor-img .main-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.simple-banca-page .advisor-area .advisor-img .shape img {
+  max-width: 100%;
+  height: auto;
+}
+
+.simple-banca-page .advisor-area .sb-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .advisor-area .sb-contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.simple-banca-page .advisor-area .theme-btn-primary_alt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ── Help CTA ── */
+.simple-banca-page .help-cta {
+  padding-top: 75px;
+  padding-bottom: 90px;
+}
+
+.simple-banca-page .help-cta .sb-cta-inner {
+  max-width: 66.666%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.simple-banca-page .help-cta .sb-cta-actions {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ── Footer ── */
+.simple-banca-page .footer.footer-2 {
+  padding-top: 110px;
+  padding-bottom: 100px;
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .footer.footer-2 {
+    padding-top: 130px;
+    padding-bottom: 125px;
+  }
+}
+
+.simple-banca-page .footer .sb-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 576px) {
+  .simple-banca-page .footer .sb-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .simple-banca-page .footer .sb-footer-grid {
+    grid-template-columns: 25% 25% 25% 16.666%;
+    gap: 0;
+  }
+
+  .simple-banca-page .footer .sb-footer-col-2 {
+    margin-left: 8.333%;
+  }
+}
+
+.simple-banca-page .footer .footer-widget {
+  margin-bottom: 30px;
+}
+
+.simple-banca-page .footer .footer-text {
+  margin-bottom: 20px;
+}
+
+.simple-banca-page .footer .truspilot {
+  margin-top: 40px;
+}
+
+.simple-banca-page .footer .copyright {
+  padding-top: 45px;
+}
+
+.simple-banca-page .footer .sb-copyright-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1200px) {
+  .simple-banca-page .footer .sb-copyright-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .simple-banca-page .footer .sb-copyright-inner {
+    grid-column: 5 / span 8;
+  }
+}
+
+.simple-banca-page .footer .sb-copyright-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .simple-banca-page .footer .sb-copyright-bar {
+    grid-template-columns: 2fr 6fr 4fr;
+    text-align: inherit;
+  }
+}

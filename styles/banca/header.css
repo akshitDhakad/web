@@ -109,6 +109,47 @@ header.header {
   background-color: var(--secondary_color);
 }
 
+/* Unified home navbar — consistent link & CTA colors (overrides home-variants.css) */
+.header-menu.header-menu-4 .theme-btn.theme-btn-alt {
+  background-color: #fff;
+  color: var(--brand_color);
+}
+
+.header-menu.header-menu-4 .theme-btn.theme-btn-alt:hover {
+  color: #fff;
+}
+
+.header-menu.navbar_fixed.header-menu-4 .theme-btn.theme-btn-alt {
+  background-color: var(--brand_color);
+  color: #fff;
+}
+
+.header-menu.navbar_fixed.header-menu-4 .theme-btn.theme-btn-alt:hover {
+  background-color: var(--secondary_color);
+  color: #fff;
+}
+
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu > .nav-item > .nav-link {
+  color: var(--secondary_color);
+}
+
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu > .nav-item > .nav-link.active {
+  color: var(--brand_color);
+}
+
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu > .nav-item > .nav-link.active::before {
+  background-color: var(--brand_color);
+}
+
+@media (min-width: 992px) {
+  .header-menu .navbar-collapse.right-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
+
 /* Dropdown */
 .header-menu .menu > .nav-item.submenu {
   position: relative;

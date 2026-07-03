@@ -1,0 +1,108 @@
+/* Loaded after home-variants.css — keeps one home-style navbar on every page */
+
+/* Default: transparent (from .header-menu). Solid theme on inner pages, still transparent at top. */
+.header-menu.header-menu-4.navbar-solid:not(.navbar_fixed) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Scrolled: solid background — white in light mode, --bs-white (#2c303a) in dark mode */
+.header-menu.header-menu-4.navbar_fixed {
+  background: var(--bs-white) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+body.body_dark .header-menu.header-menu-4.navbar_fixed {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.header-menu.header-menu-4.navbar-solid .navbar .sticky_logo .main,
+.header-menu.header-menu-4.navbar_fixed .navbar .sticky_logo .main {
+  display: none;
+}
+
+.header-menu.header-menu-4.navbar-solid .navbar .sticky_logo .sticky,
+.header-menu.header-menu-4.navbar_fixed .navbar .sticky_logo .sticky {
+  display: block;
+}
+
+.header-menu.navbar-solid.header-menu-4 .navbar .menu>.nav-item>.nav-link,
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu>.nav-item>.nav-link {
+  color: var(--secondary_color);
+}
+
+.header-menu.navbar-solid.header-menu-4 .navbar .menu>.nav-item>.nav-link.active,
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu>.nav-item>.nav-link.active {
+  color: var(--brand_color) !important;
+}
+
+.header-menu.navbar-solid.header-menu-4 .navbar .menu>.nav-item>.nav-link.active::before,
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu>.nav-item>.nav-link.active::before {
+  background-color: var(--brand_color) !important;
+}
+
+.header-menu.header-menu-4 .theme-btn.theme-btn-alt {
+  background-color: #fff;
+  color: var(--brand_color);
+}
+
+.header-menu.navbar-solid.header-menu-4 .theme-btn.theme-btn-alt,
+.header-menu.navbar_fixed.header-menu-4 .theme-btn.theme-btn-alt {
+  background-color: var(--brand_color);
+  color: #fff;
+}
+
+.header-menu.navbar-solid.header-menu-4 .theme-btn.theme-btn-alt:hover,
+.header-menu.navbar_fixed.header-menu-4 .theme-btn.theme-btn-alt:hover {
+  background-color: var(--secondary_color);
+  color: #fff;
+}
+
+.header-menu.navbar-solid.header-menu-4 .navbar .navbar-toggler .hamburger span,
+.header-menu.navbar-solid.header-menu-4 .navbar .navbar-toggler .hamburger-cross span,
+.header-menu.navbar_fixed.header-menu-4 .navbar .navbar-toggler .hamburger span,
+.header-menu.navbar_fixed.header-menu-4 .navbar .navbar-toggler .hamburger-cross span {
+  background-color: var(--secondary_color);
+}
+
+.header-menu.header-menu-4 .theme-btn.theme-btn-alt:hover {
+  color: #fff;
+}
+
+.js-darkmode-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.js-darkmode-btn .ball {
+  pointer-events: none;
+}
+
+.js-darkmode-btn .tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.js-darkmode-btn input.dark_mode_switcher {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .header-menu .navbar-collapse.right-nav {
+    display: flex !important;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    transform: none;
+    background: transparent;
+  }
+}

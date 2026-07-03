@@ -1,0 +1,728 @@
+/* Mobile App page — layout & spacing (matches frontend/index-app.html) */
+
+.mobile-app-page {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+.mobile-app-page .container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .mobile-app-page .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ── Banner ── */
+.mobile-app-page .banner-area {
+  overflow-x: clip;
+  position: relative;
+  min-height: 720px;
+  padding-bottom: 140px;
+}
+
+.mobile-app-page .banner-area .logos {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mobile-app-page .banner-area .logos img {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  max-width: 72px;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.mobile-app-page .banner-area .bubbles {
+  z-index: 0;
+}
+
+.mobile-app-page .banner-area .container {
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-app-page .banner-area .banner-content {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.mobile-app-page .banner-area .banner-content h1 {
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  width: 100%;
+  max-width: 326px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area img,
+.mobile-app-page .banner-area .ma-hero-person {
+  display: block;
+  width: 326px;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-app-page .banner-area .banner-content .symbol-pulse {
+  position: absolute;
+  top: 71%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mobile-app-page .banner-area .ma-banner-inner {
+  max-width: 83.333%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-app-page .banner-area .ma-stats-row {
+  position: relative;
+  min-height: 90px;
+  margin-top: 50px;
+}
+
+.mobile-app-page .banner-area .floated-widget {
+  position: absolute;
+  top: -70px;
+  left: 15px;
+  right: 15px;
+  z-index: 4;
+  padding: 40px 50px;
+}
+
+.mobile-app-page .banner-area .ma-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .banner-area .ma-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.mobile-app-page .banner-area .statistics-widget-1 {
+  text-align: start;
+  padding-top: 10px;
+}
+
+.mobile-app-page .banner-area .statistics-widget-1 img {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  object-fit: contain;
+}
+
+@media (max-width: 1199.98px) {
+  .mobile-app-page .banner-area .banner-content .img-area img,
+  .mobile-app-page .banner-area .ma-hero-person {
+    width: 285px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area {
+    max-width: 285px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mobile-app-page .banner-area {
+    min-height: 620px;
+    padding-bottom: 100px;
+  }
+
+  .mobile-app-page .banner-area .banner-content {
+    padding-top: 100px;
+  }
+
+  .mobile-app-page .banner-area .ma-banner-inner {
+    max-width: 100%;
+  }
+
+  .mobile-app-page .banner-area .floated-widget {
+    left: 5px;
+    right: 5px;
+    padding: 24px 20px;
+  }
+
+  .mobile-app-page .banner-area .logos img {
+    width: 56px;
+    height: 56px;
+    max-width: 56px;
+    max-height: 56px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mobile-app-page .banner-area .banner-content .img-area img,
+  .mobile-app-page .banner-area .ma-hero-person {
+    width: 250px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area {
+    max-width: 250px;
+  }
+
+  .mobile-app-page .banner-area .logos img {
+    width: 48px;
+    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+  }
+
+  .mobile-app-page .banner-area .logos img:nth-child(1) {
+    left: 0;
+  }
+
+  .mobile-app-page .banner-area .logos img:nth-child(2) {
+    left: 10%;
+  }
+
+  .mobile-app-page .banner-area .logos img:nth-child(3) {
+    left: 20%;
+  }
+
+  .mobile-app-page .banner-area .logos img:nth-child(4) {
+    right: 20%;
+  }
+
+  .mobile-app-page .banner-area .logos img:nth-child(5) {
+    right: 10%;
+  }
+
+  .mobile-app-page .banner-area .logos img:nth-child(6) {
+    right: 0;
+  }
+}
+
+/* ── Features ── */
+.mobile-app-page .feature-area {
+  padding-top: 200px;
+  padding-bottom: 130px;
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-app-page .feature-area .ma-feature-intro {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 160px;
+  padding-bottom: 65px;
+}
+
+.mobile-app-page .feature-area .ma-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .mobile-app-page .feature-area .ma-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .mobile-app-page .feature-area .ma-feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.mobile-app-page .feature-area .feature-card-widget {
+  height: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .mobile-app-page .feature-area {
+    padding-top: 300px;
+  }
+
+  .mobile-app-page .feature-area .ma-feature-intro {
+    max-width: 100%;
+    padding-top: 90px;
+  }
+}
+
+/* ── Track progress ── */
+.mobile-app-page .track-f-progress {
+  padding-top: 125px;
+  padding-bottom: 160px;
+  overflow: hidden;
+}
+
+.mobile-app-page .track-f-progress .ma-track-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .track-f-progress .ma-track-grid {
+    grid-template-columns: 50% 41.666%;
+    gap: 0;
+    align-items: center;
+  }
+
+  .mobile-app-page .track-f-progress .ma-track-text {
+    margin-left: 8.333%;
+  }
+}
+
+.mobile-app-page .track-f-progress .img-content {
+  position: relative;
+  text-align: right;
+  z-index: 1;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-app-page .track-f-progress .img-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-app-page .track-f-progress .text-content .theme-btn-2 {
+  margin-top: 55px;
+}
+
+/* ── Card payment ── */
+.mobile-app-page .card-payment {
+  padding-top: 100px;
+  padding-bottom: 130px;
+}
+
+.mobile-app-page .card-payment .ma-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.mobile-app-page .card-payment .ma-card-media {
+  order: 1;
+}
+
+.mobile-app-page .card-payment .ma-card-text {
+  order: 2;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .card-payment .ma-card-grid {
+    grid-template-columns: 41.666% 50%;
+    gap: 0;
+    align-items: center;
+  }
+
+  .mobile-app-page .card-payment .ma-card-media {
+    margin-left: 8.333%;
+    order: 2;
+  }
+
+  .mobile-app-page .card-payment .ma-card-text {
+    order: 1;
+  }
+}
+
+.mobile-app-page .card-payment .img-content {
+  position: relative;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-app-page .card-payment .img-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-app-page .card-payment .text-content .theme-btn-2 {
+  margin-top: 55px;
+}
+
+/* ── Internet banking ── */
+.mobile-app-page .internet-banking {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.mobile-app-page .internet-banking .ma-bank-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .internet-banking .ma-bank-grid {
+    grid-template-columns: 50% 33.333%;
+    gap: 0;
+    align-items: center;
+  }
+
+  .mobile-app-page .internet-banking .ma-bank-text {
+    margin-left: 8.333%;
+  }
+}
+
+.mobile-app-page .internet-banking .ma-bank-media {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .internet-banking .ma-bank-media {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.mobile-app-page .internet-banking .img-content {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.mobile-app-page .internet-banking .img-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-app-page .internet-banking .ma-bank-text {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-app-page .internet-banking .text-content .theme-btn-2 {
+  margin-top: 55px;
+}
+
+/* ── Security ── */
+.mobile-app-page .security-area {
+  padding-top: 115px;
+  padding-bottom: 130px;
+}
+
+.mobile-app-page .security-area .ma-security-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding-top: 40px;
+}
+
+@media (min-width: 1200px) {
+  .mobile-app-page .security-area .ma-security-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.mobile-app-page .security-area .ma-security-side {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .security-area .ma-security-side {
+    gap: 30px;
+  }
+}
+
+.mobile-app-page .security-area .ma-security-row {
+  display: grid;
+  grid-template-columns: 33.333% 66.666%;
+  gap: 0;
+  align-items: center;
+}
+
+.mobile-app-page .security-area .ma-security-row-reverse {
+  display: grid;
+  grid-template-columns: 58.333% 41.666%;
+  gap: 0;
+  align-items: stretch;
+}
+
+.mobile-app-page .security-area .security-content-2 {
+  padding-left: 8px;
+}
+
+.mobile-app-page .security-area .security-content-2 p.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mobile-app-page .security-area .tips-title.mt-35 {
+  margin-top: 35px;
+}
+
+.mobile-app-page .security-area .single-security-widget img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ── Client testimonials ── */
+.mobile-app-page .client-area {
+  padding-top: 110px;
+}
+
+.mobile-app-page .client-area .section-title h2 {
+  margin-bottom: 0;
+}
+
+.mobile-app-page .client-area .client-slider {
+  padding-top: 45px;
+  padding-bottom: 140px;
+}
+
+.mobile-app-page .client-area .ma-embla-viewport {
+  overflow: hidden;
+  margin: 0 -25px;
+  padding: 0 10px;
+}
+
+.mobile-app-page .client-area .ma-embla-track {
+  display: flex;
+  touch-action: pan-y;
+}
+
+.mobile-app-page .client-area .ma-embla-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .mobile-app-page .client-area .ma-embla-slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .client-area .ma-embla-slide {
+    flex: 0 0 33.333%;
+  }
+}
+
+.mobile-app-page .client-area .single-client img {
+  width: auto !important;
+  height: auto;
+  max-width: 80px;
+}
+
+.mobile-app-page .client-area .ma-cta-row {
+  padding-top: 110px;
+}
+
+.mobile-app-page .client-area .cta .ma-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .mobile-app-page .client-area .cta .ma-cta-grid {
+    grid-template-columns: 41.666% 58.333%;
+    gap: 0;
+  }
+
+  .mobile-app-page .client-area .cta-content {
+    text-align: start;
+  }
+
+  .mobile-app-page .client-area .ma-cta-actions {
+    justify-content: flex-end;
+  }
+}
+
+.mobile-app-page .client-area .ma-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.mobile-app-page .client-area .ma-cta-actions .app-btn {
+  margin-top: 0;
+}
+
+@media (min-width: 576px) {
+  .mobile-app-page .client-area .ma-cta-actions .app-btn {
+    margin-top: 0;
+  }
+}
+
+/* ── News ── */
+.mobile-app-page .news-area {
+  padding-top: 200px;
+  padding-bottom: 110px;
+}
+
+.mobile-app-page .news-area .section-title {
+  padding-top: 30px;
+}
+
+.mobile-app-page .news-area .news-slider {
+  padding-top: 30px;
+}
+
+.mobile-app-page .news-area .ma-embla-viewport {
+  overflow: hidden;
+  margin: 0 -25px;
+  padding: 0 10px;
+}
+
+.mobile-app-page .news-area .ma-embla-track {
+  display: flex;
+  touch-action: pan-y;
+}
+
+.mobile-app-page .news-area .ma-embla-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .mobile-app-page .news-area .ma-embla-slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .news-area .ma-embla-slide {
+    flex: 0 0 33.333%;
+  }
+}
+
+.mobile-app-page .news-area .blog-widget-1 {
+  margin: 25px 0 50px;
+  height: calc(100% - 75px);
+}
+
+.mobile-app-page .news-area .blog-widget-1 img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.mobile-app-page .news-area .blog-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ── Footer ── */
+.mobile-app-page .footer.footer-1 .footer-top {
+  padding-top: 115px;
+  padding-bottom: 90px;
+}
+
+.mobile-app-page .footer .ma-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .footer .ma-footer-grid {
+    grid-template-columns: 33.333% 25% 25% 16.666%;
+    gap: 24px;
+  }
+
+  .mobile-app-page .footer .ma-footer-col-1 {
+    padding-right: 90px;
+  }
+}
+
+.mobile-app-page .footer .footer-widget {
+  margin-bottom: 30px;
+}
+
+.mobile-app-page .footer .flog {
+  margin-bottom: 35px;
+}
+
+.mobile-app-page .footer .footer-text {
+  margin-bottom: 20px;
+}
+
+.mobile-app-page .footer .social-icon {
+  margin-top: 5px;
+}
+
+.mobile-app-page .footer .copyright {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.mobile-app-page .footer .ma-copyright-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .mobile-app-page .footer .ma-copyright-grid {
+    grid-template-columns: 25% 41.666% 33.333%;
+    text-align: inherit;
+  }
+
+  .mobile-app-page .footer .ma-copyright-end {
+    text-align: end;
+  }
+}
+
+.mobile-app-page .img-content {
+  position: relative;
+}
+
+.mobile-app-page .text-content {
+  position: relative;
+  z-index: 1;
+}

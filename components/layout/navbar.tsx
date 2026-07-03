@@ -9,7 +9,13 @@ import { useCallback, useEffect, useState } from "react";
 
 import { containerClassName } from "@/components/layout/container";
 import { HeaderTop } from "@/components/layout/header-top";
-import { BUY_BANCA_URL, MAIN_NAV_ITEMS, type NavChild } from "@/constants/navigation";
+import {
+  BUY_BANCA_URL,
+  getHeaderTopVariant,
+  MAIN_NAV_ITEMS,
+  showsHeaderTop,
+  type NavChild,
+} from "@/constants/navigation";
 import { cn } from "@/lib/utils";
 import { useUIStore } from "@/stores/ui-store";
 
@@ -85,115 +91,45 @@ function NavDropdownItem({
 }
 
 function DarkModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const inputId = "banca-dark-mode-switcher";
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <div className="js-darkmode-btn" aria-hidden style={{ width: 52 }} />;
+    return <div className="px-2 js-darkmode-btn" aria-hidden style={{ width: 52 }} />;
   }
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <div
-      className={cn("js-darkmode-btn", isDark && "dark-active")}
+      className={cn("px-2 js-darkmode-btn", isDark && "dark-active")}
       title="Toggle dark mode"
     >
-      <button
-        type="button"
-        className="tab-btn tab-btns border-0 bg-transparent p-1"
-        onClick={() => setTheme("dark")}
-        aria-label="Switch to dark mode"
-      >
-        <Moon aria-hidden />
-      </button>
-      <button
-        type="button"
-        className="tab-btn border-0 bg-transparent p-1"
-        onClick={() => setTheme("light")}
-        aria-label="Switch to light mode"
-      >
-        <Sun aria-hidden />
-      </button>
-      <span className="ball" aria-hidden />
+      <label htmlFor={inputId} className="tab-btn tab-btns" aria-label="Switch to dark mode">
+        <Moon aria-hidden style={{ color: "gold", width: 14, height: 14 }} />
+      </label>
+      <label htmlFor={inputId} className="tab-btn" aria-label="Switch to light mode">
+        <Sun aria-hidden style={{ color: "gold", width: 14, height: 14 }} />
+      </label>
+      <label className="ball" htmlFor={inputId} aria-hidden />
+      <input
+        type="checkbox"
+        id={inputId}
+        className="dark_mode_switcher"
+        checked={isDark}
+        onChange={(event) => setTheme(event.target.checked ? "dark" : "light")}
+      />
     </div>
   );
 }
 
-function getNavbarConfig(pathname: string) {
-  if (pathname === "/about") {
-    return {
-      showTopBar: true,
-      topBarVariant: "dark" as const,
-      menuClass: "header-menu header-menu-2",
-      logoVariant: "single" as const,
-      buyButtonClass: "theme-btn theme-btn-rounded-2",
-    };
-  }
-
-  if (pathname === "/career") {
-    return {
-      showTopBar: true,
-      topBarVariant: "light" as const,
-      menuClass: "header-menu header-menu-3",
-      logoVariant: "dual" as const,
-      buyButtonClass: "theme-btn theme-btn-rounded-2 theme-btn-outlined_alt",
-    };
-  }
-
-  const isJobSubpage =
-    pathname === "/jobs" || pathname.startsWith("/job-application");
-
-  if (isJobSubpage) {
-    return {
-      showTopBar: true,
-      topBarVariant: "dark" as const,
-      menuClass: "header-menu header-menu-2 bg_white",
-      logoVariant: "single" as const,
-      buyButtonClass: "theme-btn theme-btn-rounded-2",
-    };
-  }
-
-  if (pathname === "/error") {
-    return {
-      showTopBar: false,
-      topBarVariant: "light" as const,
-      menuClass: "header-menu header-menu-2",
-      logoVariant: "single" as const,
-      buyButtonClass: "theme-btn theme-btn-rounded-2",
-    };
-  }
-
-  const isSubpageWithTopBar =
-    pathname.startsWith("/blog") ||
-    pathname.startsWith("/loan") ||
-    pathname === "/cards" ||
-    pathname === "/contact";
-
-  if (isSubpageWithTopBar) {
-    return {
-      showTopBar: true,
-      topBarVariant: "light" as const,
-      menuClass: "header-menu header-menu-3",
-      logoVariant: "dual" as const,
-      buyButtonClass: "theme-btn theme-btn-rounded-2 theme-btn-outlined_alt",
-    };
-  }
-
-  return {
-    showTopBar: false,
-    topBarVariant: "light" as const,
-    menuClass: "header-menu header-menu-4",
-    logoVariant: "dual" as const,
-    buyButtonClass: "theme-btn theme-btn-rounded-2 theme-btn-alt",
-  };
-}
-
 export function Navbar() {
   const pathname = usePathname();
-  const navConfig = getNavbarConfig(pathname);
+  const isHomePage = pathname === "/";
+  const hasHeaderTop = showsHeaderTop(pathname);
   const {
     isMobileMenuOpen,
     isNavbarFixed,
@@ -203,6 +139,9 @@ export function Navbar() {
     toggleMobileDropdown,
   } = useUIStore();
 
+  const showSolidNav = !isHomePage || isNavbarFixed;
+  const useFixedPosition = isNavbarFixed;
+
   const handleScroll = useCallback(() => {
     setNavbarFixed(window.scrollY > 80);
   }, [setNavbarFixed]);
@@ -211,7 +150,7 @@ export function Navbar() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  }, [handleScroll, pathname]);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
@@ -222,48 +161,34 @@ export function Navbar() {
 
   return (
     <header className="header">
-      {navConfig.showTopBar && <HeaderTop variant={navConfig.topBarVariant} />}
+      {hasHeaderTop && <HeaderTop variant={getHeaderTopVariant(pathname)} />}
       <div
-        className={cn(navConfig.menuClass, isNavbarFixed && "navbar_fixed")}
+        className={cn(
+          "header-menu header-menu-4",
+          showSolidNav && "navbar-solid",
+          useFixedPosition && "navbar_fixed",
+        )}
         id="sticky"
       >
         <nav className="navbar navbar-expand-lg">
           <div className={cn(containerClassName, "flex flex-wrap items-center justify-between")}>
-            <Link
-              className={cn(
-                "relative z-[100]",
-                navConfig.logoVariant === "dual" ? "sticky_logo" : "navbar-brand",
-              )}
-              href="/"
-            >
-              {navConfig.logoVariant === "dual" ? (
-                <>
-                  <Image
-                    className="main h-auto w-auto"
-                    src="/img/logo/Logo.png"
-                    alt="Banca logo"
-                    width={120}
-                    height={40}
-                    priority
-                  />
-                  <Image
-                    className="sticky h-auto w-auto"
-                    src="/img/logo/Logo-2.png"
-                    alt="Banca logo"
-                    width={120}
-                    height={40}
-                    priority
-                  />
-                </>
-              ) : (
-                <Image
-                  src="/img/logo/Logo-2.png"
-                  alt="Banca logo"
-                  width={120}
-                  height={40}
-                  priority
-                />
-              )}
+            <Link className="relative z-[100] sticky_logo" href="/">
+              <Image
+                className="main h-auto w-auto"
+                src="/img/logo/Logo.png"
+                alt="Banca logo"
+                width={120}
+                height={40}
+                priority
+              />
+              <Image
+                className="sticky h-auto w-auto"
+                src="/img/logo/Logo-2.png"
+                alt="Banca logo"
+                width={120}
+                height={40}
+                priority
+              />
             </Link>
 
             <button
@@ -348,7 +273,7 @@ export function Navbar() {
               </ul>
 
               <a
-                className={navConfig.buyButtonClass}
+                className="theme-btn theme-btn-rounded-2 theme-btn-alt"
                 href={BUY_BANCA_URL}
                 target="_blank"
                 rel="noopener noreferrer"

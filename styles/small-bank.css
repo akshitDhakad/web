@@ -1,0 +1,549 @@
+/* Small Bank page — layout & responsive fixes (matches frontend/index-small-bank.html) */
+
+.small-bank-page {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+.small-bank-page .container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .small-bank-page .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ── Text alignment overrides (section-title defaults to center) ── */
+.small-bank-page .section-title.bank-section-title.text-left,
+.small-bank-page .bank-section-title.text-left {
+  text-align: left;
+}
+
+.small-bank-page .section-title.bank-section-title.text-left h1,
+.small-bank-page .section-title.bank-section-title.text-left p,
+.small-bank-page .section-title.bank-section-title.text-left .short-title-2,
+.small-bank-page .section-title.bank-section-title.text-left .read-more {
+  text-align: left;
+}
+
+.small-bank-page .bank-card-area .section-title.bank-section-title.text-left h1,
+.small-bank-page .bank-card-area .section-title.bank-section-title.text-left .short-title-2 {
+  text-align: left;
+}
+
+.small-bank-page .bank-card-area .section-title.bank-section-title.text-left .short-title-2 {
+  color: #b7b7b7;
+}
+
+.small-bank-page .process-area .saas-feature-card,
+.small-bank-page .integrate-area .feature-card-widget-8 {
+  text-align: left;
+}
+
+.small-bank-page .bank-app-showcase-area .feature-list li {
+  text-align: left;
+}
+
+/* ── App showcase (bank-app-showcase-area) ── */
+.small-bank-page .bank-app-showcase-area {
+  padding: 80px 0;
+}
+
+.small-bank-page .bank-app-showcase-area .sb-app-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2.5rem 0;
+}
+
+.small-bank-page .bank-app-showcase-area .sb-app-showcase-media {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.small-bank-page .bank-app-showcase-area .sb-app-showcase-media img {
+  display: block;
+  width: 480px;
+  max-width: 100%;
+  height: auto;
+}
+
+.small-bank-page .bank-app-showcase-area .app-content {
+  width: 100%;
+}
+
+.small-bank-page .bank-app-showcase-area .section-title.bank-section-title {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.small-bank-page .bank-app-showcase-area .section-title.bank-section-title h1 {
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--secondary_color);
+}
+
+.small-bank-page .bank-app-showcase-area .section-title.bank-section-title p {
+  text-align: left;
+  color: #737476;
+  margin-bottom: 0;
+}
+
+.small-bank-page .bank-app-showcase-area .section-title.bank-section-title .short-title-2 {
+  text-align: left;
+  display: block;
+  color: #a7b4c0;
+  margin-bottom: 12px;
+}
+
+.small-bank-page .bank-app-showcase-area .feature-list {
+  margin-top: 20px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(175, 189, 200, 0.33);
+}
+
+.small-bank-page .bank-app-showcase-area .feature-list li {
+  display: block;
+  font-size: 18px;
+  color: #737476;
+  line-height: 28px;
+  margin-bottom: 12px;
+}
+
+.small-bank-page .bank-app-showcase-area .feature-list li i {
+  color: var(--brand_color);
+  margin-right: 10px;
+}
+
+@media (min-width: 992px) {
+  .small-bank-page .bank-app-showcase-area {
+    padding: 100px 0;
+  }
+
+  .small-bank-page .bank-app-showcase-area .sb-app-showcase-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+
+  .small-bank-page .bank-app-showcase-area .sb-app-showcase-media {
+    grid-column: 1 / span 5;
+    justify-content: flex-start;
+  }
+
+  .small-bank-page .bank-app-showcase-area .sb-app-showcase-content {
+    grid-column: 7 / span 6;
+  }
+}
+
+@media (min-width: 1200px) {
+  .small-bank-page .bank-app-showcase-area .sb-app-showcase-grid {
+    column-gap: 3rem;
+  }
+}
+
+.small-bank-page .integrate-area .feature-card-widget-8 h4 {
+  color: var(--secondary_color);
+}
+
+.small-bank-page .integrate-area .feature-card-widget-8 p {
+  color: #737476;
+}
+
+.small-bank-page .process-area .saas-feature-card h4 {
+  color: var(--secondary_color);
+}
+
+.small-bank-page .process-area .saas-feature-card p {
+  color: #737476;
+}
+
+.small-bank-page .process-area .saas-feature-card .number {
+  text-align: left;
+}
+
+/* ── Hero stacked cards (matches frontend/index-small-bank.html) ── */
+@keyframes sb-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.small-bank-page .sb-hero-cards-col {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 100%;
+}
+
+.small-bank-page .bank-card-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  z-index: 1;
+  perspective: 800px;
+}
+
+.small-bank-page .bank-card-img .bank-card {
+  position: absolute;
+  left: 0;
+  width: 846px;
+  max-width: 100%;
+}
+
+.small-bank-page .bank-card-img .bank-card:nth-child(1) {
+  bottom: 108px;
+  z-index: 1;
+  width: 820px;
+  max-width: 97%;
+}
+
+.small-bank-page .bank-card-img .bank-card:nth-child(2) {
+  bottom: 0;
+}
+
+.small-bank-page .bank-card-img .bank-card:nth-child(3) {
+  position: relative;
+  z-index: -1;
+  bottom: -100px;
+}
+
+.small-bank-page .bank-card-img .bank-card.sb-fade-in-up {
+  animation: sb-fade-in-up 1s both;
+}
+
+.small-bank-page .bank-card-img .bank-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  will-change: transform;
+}
+
+.small-bank-page .bank-card-img .shap {
+  position: absolute;
+  height: auto;
+  will-change: transform;
+}
+
+.small-bank-page .bank-card-img .shap.one {
+  top: -26px;
+  left: 54%;
+  width: auto;
+  max-width: 200px;
+}
+
+.small-bank-page .bank-card-img .shap.two {
+  left: 100px;
+  bottom: 100px;
+  width: auto;
+}
+
+.small-bank-page .bank-card-img .shap.three {
+  right: 0;
+  top: 28px;
+  width: auto;
+}
+
+.small-bank-page .bank-card-img .shap.four {
+  right: -230px;
+  bottom: 280px;
+  width: auto;
+}
+
+@media (min-width: 992px) {
+  .small-bank-page .bank-card-img {
+    min-height: 620px;
+  }
+}
+
+@media (max-width: 1500px) and (min-width: 1367px) {
+  .small-bank-page .bank-card-img {
+    margin-left: -100px;
+  }
+
+  .small-bank-page .bank-card-img .shap.four {
+    right: -100px;
+  }
+}
+
+/* ── Bank card tabs (Tailwind list items — no Bootstrap nav-item) ── */
+.small-bank-page .bank-card-tab > li {
+  margin-bottom: 20px;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item {
+  text-align: left;
+  border-radius: 8px;
+  background: #191919;
+  padding: 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 4px;
+  background: var(--brand_color);
+  transition: width 0.4s linear;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5e5e5e;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item p {
+  color: #474747;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  opacity: 0.8;
+  margin: 0;
+  text-align: left;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item.active {
+  box-shadow: 0 5px 70px 0 rgba(1, 33, 58, 0.03);
+  background: #282828;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item.active::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item.active h5 {
+  color: #fff;
+}
+
+.small-bank-page .bank-card-tab .bank-card-item.active p {
+  color: #fff;
+  opacity: 0.8;
+}
+
+.small-bank-page .bank-card-tab > li:nth-child(2) .bank-card-item::before {
+  background: #d8b585;
+}
+
+.small-bank-page .bank-card-tab > li:nth-child(3) .bank-card-item::before {
+  background: #7758cb;
+}
+
+/* ── Card preview images ── */
+.small-bank-page .bank-card-content .card-img img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.small-bank-page .bank-app-showcase-area img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ── CTA block ── */
+.small-bank-page .cta-five .cta-content {
+  text-align: left;
+}
+
+.small-bank-page .cta-five .cta-content h2,
+.small-bank-page .cta-five .cta-content p {
+  color: #fff;
+}
+
+.small-bank-page .sb-cta-media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+.small-bank-page .sb-cta-media img {
+  display: block;
+  width: 335px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .small-bank-page .sb-cta-media {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 992px) {
+  .small-bank-page .bank-card-img {
+    margin-left: 0;
+  }
+
+  .small-bank-page .bank-card-img .bank-card:nth-child(3) {
+    bottom: -200px;
+  }
+
+  .small-bank-page .bank-card-img .bank-card:nth-child(2) {
+    bottom: 55px;
+  }
+
+  .small-bank-page .bank-card-img .bank-card:nth-child(1) {
+    bottom: 130px;
+  }
+
+  .small-bank-page .bank-card-img .shap.one {
+    top: 90px;
+    left: 35%;
+  }
+
+  .small-bank-page .bank-card-img .shap.four {
+    right: -100px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .small-bank-page .bank-banner-area {
+    padding-top: 120px;
+  }
+
+  .small-bank-page .bank-card-img {
+    margin-top: 25px;
+    margin-left: 0;
+    min-height: 420px;
+  }
+
+  .small-bank-page .bank-card-img .bank-card:nth-child(3) {
+    bottom: -100px;
+  }
+
+  .small-bank-page .bank-card-img .bank-card:nth-child(1) {
+    bottom: 100px;
+  }
+
+  .small-bank-page .bank-card-img .bank-card:nth-child(2) {
+    bottom: 0;
+  }
+
+  .small-bank-page .bank-card-img .shap.four {
+    right: 0;
+  }
+
+  .small-bank-page .bank-card-img .shap.three {
+    right: 80px;
+  }
+
+  .small-bank-page .process-area .section-title {
+    margin-bottom: 50px;
+  }
+
+  .small-bank-page .process-area,
+  .small-bank-page .bank-card-area,
+  .small-bank-page .calculator-area-three {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .small-bank-page .app-content {
+    margin-bottom: 30px;
+  }
+
+  .small-bank-page .bank-card-area .card-img {
+    text-align: left;
+  }
+
+  .small-bank-page .integrate-area {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .small-bank-page .map_area {
+    padding-bottom: 80px;
+  }
+
+  .small-bank-page .calculator-area-three .calculator-widget-2 .calculator-result-widget {
+    border: 0;
+  }
+
+  .small-bank-page .cta-five {
+    transform: translateY(150px);
+  }
+
+  .small-bank-page .cta-action-area-three .sb-cta-media {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .small-bank-page .fact-item {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .small-bank-page .bank-banner-content h1 {
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: -1px;
+  }
+
+  .small-bank-page .bank-banner-content .form-control {
+    width: 100%;
+  }
+
+  .small-bank-page .bank-section-title h1 br {
+    display: none;
+  }
+
+  .small-bank-page .calculator-widget-2 .loan-start-date {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .small-bank-page .calculator-widget-2 .calculator-result-widget {
+    margin-top: 30px;
+  }
+
+  .small-bank-page .bank-footer-area .sb-footer-legal {
+    flex-direction: column;
+  }
+
+  .small-bank-page .bank-footer-area .sb-footer-social,
+  .small-bank-page .bank-footer-area .copyright-text {
+    text-align: center !important;
+  }
+
+  .small-bank-page .bank-footer-area .footer_top {
+    padding-top: 200px;
+  }
+
+  .small-bank-page .bank-card-img .shap.four {
+    display: none;
+  }
+}

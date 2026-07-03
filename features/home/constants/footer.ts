@@ -1,9 +1,37 @@
-export interface FooterLinkGroup {
-  title: string;
-  links: { label: string; href: string }[];
-}
+export const SITE_FOOTER_COMPANY_LINKS = [
+  "About Us",
+  "Recognition",
+  "Executive Team",
+  "Careers",
+] as const;
 
-export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
+export const SITE_FOOTER_PRODUCT_LINKS = [
+  "Business Loans | Main",
+  "Loan Calculator",
+  "Refer a Friend",
+  "Partner Program",
+] as const;
+
+export const SITE_FOOTER_HELP_LINKS = [
+  "Customer Care",
+  "Contact Us",
+  "Security Center",
+  "Blog",
+] as const;
+
+export const SITE_FOOTER_SOCIAL = ["facebook", "twitter", "pinterest", "linkedin"] as const;
+
+export type SiteFooterSocial = (typeof SITE_FOOTER_SOCIAL)[number];
+
+export const SITE_FOOTER_SOCIAL_ICON_CLASS: Record<SiteFooterSocial, string> = {
+  facebook: "fab fa-facebook-f",
+  twitter: "fab fa-twitter",
+  pinterest: "fab fa-pinterest-p",
+  linkedin: "fab fa-linkedin-in",
+};
+
+/** @deprecated Use SITE_FOOTER_* constants */
+export const FOOTER_LINK_GROUPS = [
   {
     title: "Banca at a Glance",
     links: [
@@ -31,8 +59,9 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
       { label: "Our websites", href: "#" },
     ],
   },
-];
+] as const;
 
+/** @deprecated Use SITE_FOOTER_SOCIAL */
 export const FOOTER_SOCIAL_LINKS = [
   { label: "Facebook", href: "#", icon: "facebook" as const },
   { label: "Twitter", href: "#", icon: "twitter" as const },

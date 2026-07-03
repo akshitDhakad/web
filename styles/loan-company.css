@@ -1,0 +1,731 @@
+/* Loan Company page — spacing & layout (matches frontend/index-company.html) */
+
+.loan-company-page {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+.loan-company-page .container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .loan-company-page .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Shared section title */
+.loan-company-page .section-title {
+  text-align: center;
+}
+
+.loan-company-page .section-title .short-title-2 {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.loan-company-page .section-title h1 {
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+/* ── Hero ── */
+.loan-company-page .banner-area-6 {
+  overflow-x: clip;
+}
+
+.loan-company-page .banner-area-6 .lc-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .banner-area-6 .lc-hero-grid {
+    grid-template-columns: 58.333% 41.666%;
+  }
+}
+
+.loan-company-page .banner-area-6 .banner-img {
+  position: relative;
+  text-align: end;
+  z-index: 1;
+  transform: translateX(30%);
+  min-height: unset;
+  padding-right: 0;
+}
+
+.loan-company-page .banner-area-6 .banner-img img {
+  height: auto;
+  max-width: none;
+  width: auto;
+}
+
+.loan-company-page .banner-area-6 .subscribe-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+@media (min-width: 576px) {
+  .loan-company-page .banner-area-6 .subscribe-field {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .loan-company-page .banner-area-6 .subscribe-field .form-control {
+    margin-right: 4px;
+  }
+
+  .loan-company-page .banner-area-6 .subscribe-field .theme-btn {
+    margin-left: 8px;
+  }
+}
+
+.loan-company-page .banner-area-6 .banner-content .feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.loan-company-page .banner-area-6 .banner-content .feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+@media (max-width: 1366px) {
+  .loan-company-page .banner-area-6 .banner-img {
+    transform: translateX(0%);
+  }
+}
+
+@media (min-width: 1400px) {
+  .loan-company-page .banner-area-6 .banner-img {
+    transform: translateX(8%);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .loan-company-page .banner-area-6 {
+    padding-top: 140px;
+    padding-bottom: 80px;
+  }
+
+  .loan-company-page .banner-area-6 .banner-img {
+    transform: translateX(0);
+    min-height: 280px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .loan-company-page .banner-area-6 .banner-img .img-2 {
+    left: 0;
+  }
+
+  .loan-company-page .banner-area-6 .banner-img .img-3 {
+    left: 0;
+    bottom: -20px;
+  }
+}
+
+/* ── Banner facts ── */
+.loan-company-page .banner-fact .single-fact {
+  overflow: hidden;
+}
+
+.loan-company-page .banner-fact .lc-banner-fact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .loan-company-page .banner-fact .lc-banner-fact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .loan-company-page .banner-fact .lc-banner-fact-grid .lc-fact-last {
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .banner-fact .lc-banner-fact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .loan-company-page .banner-fact .lc-banner-fact-grid .lc-fact-last {
+    grid-column: auto;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ── Features ── */
+.loan-company-page .feature-area-3 {
+  padding-top: 115px;
+  padding-bottom: 105px;
+}
+
+.loan-company-page .feature-area-3 .lc-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 50px;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .loan-company-page .feature-area-3 .lc-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .feature-area-3 .lc-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .loan-company-page .feature-area-3 .lc-feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.loan-company-page .feature-area-3 .lc-feature-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.loan-company-page .feature-area-3 .lc-feature-col > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+.loan-company-page .feature-area-3 .feature-card-widget-9 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  padding: 40px 33px;
+  box-sizing: border-box;
+}
+
+.loan-company-page .feature-area-3 .feature-card-widget-9 img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.loan-company-page .feature-area-3 .feature-card-widget-9 h5 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.loan-company-page .feature-area-3 .feature-card-widget-9 p {
+  margin-bottom: 8px;
+}
+
+.loan-company-page .feature-area-3 .feature-card-widget-9.widget-link {
+  justify-content: center;
+}
+
+/* ── About area 2 ── */
+.loan-company-page .about-area-2 {
+  padding-top: 70px;
+  overflow: hidden;
+}
+
+.loan-company-page .about-area-2 .lc-process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .about-area-2 .lc-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.loan-company-page .about-area-2 .feature-list {
+  margin-top: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.loan-company-page .about-area-2 .lc-customer-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .about-area-2 .lc-customer-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.loan-company-page .about-area-2 .lc-customer-media {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.loan-company-page .about-area-2 .lc-customer-content {
+  min-width: 0;
+}
+
+.loan-company-page .about-area-2 .card-holder {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.loan-company-page .about-area-2 .card-holder .img-1 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.loan-company-page .about-area-2 .card-holder .img-2 {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  max-width: min(296px, 55%);
+  width: auto;
+  height: auto;
+  box-shadow: 0 4px 34px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .about-area-2 .card-holder .img-2 {
+    left: -24px;
+    bottom: 90px;
+    max-width: 296px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .loan-company-page .about-area-2 .card-holder {
+    transform: translateX(-20px);
+  }
+
+  .loan-company-page .about-area-2 .card-holder .img-2 {
+    left: -40px;
+  }
+}
+
+/* ── Calculator ── */
+.loan-company-page .calculator-widget-2 {
+  margin-top: 50px;
+}
+
+.loan-company-page .calculator-widget-2 .lc-calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .calculator-widget-2 .lc-calculator-grid {
+    grid-template-columns: 58.333% 41.666%;
+    gap: 0;
+  }
+
+  .loan-company-page .calculator-widget-2 .lc-calculator-result {
+    padding-left: 35px;
+  }
+}
+
+.loan-company-page .calculator-widget-2 .range-label.mt-40 {
+  margin-top: 40px;
+}
+
+.loan-company-page .calculator-result-widget .pie-wrapper {
+  margin-top: 25px;
+}
+
+.loan-company-page .calculator-result-widget .theme-btn {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.loan-company-page .loan-start-date {
+  display: flex;
+  gap: 24px;
+  margin-top: 76px;
+}
+
+.loan-company-page .tab-pane {
+  display: none;
+}
+
+.loan-company-page .tab-pane.active {
+  display: block;
+}
+
+/* ── Loan types slider ── */
+.loan-company-page .loan-slider-area .container {
+  position: relative;
+}
+
+.loan-company-page .loan-slider {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.loan-company-page .loan-slider-area {
+  overflow-x: clip;
+  padding-top: 120px;
+  padding-bottom: 130px;
+}
+
+.loan-company-page .loan-slider {
+  position: relative;
+  padding-top: 80px;
+}
+
+.loan-company-page .loan-slider .lc-embla-viewport {
+  overflow: hidden;
+  padding-top: 65px;
+  padding-bottom: 60px;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.loan-company-page .loan-slider .lc-embla-track {
+  display: flex;
+  touch-action: pan-y;
+}
+
+.loan-company-page .loan-slider .lc-embla-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .loan-company-page .loan-slider .lc-embla-slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .loan-slider .lc-embla-slide {
+    flex: 0 0 33.333%;
+  }
+}
+
+.loan-company-page .loan-slider .single-slide {
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0 30px 50px;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.loan-company-page .loan-slider .single-slide:hover {
+  background-color: #fff;
+  box-shadow: 0 16px 60px rgba(63, 93, 101, 0.2);
+}
+
+.loan-company-page .loan-slider .single-slide .icon {
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-43px);
+  height: 104px;
+  width: 104px;
+  border-radius: 50%;
+  background-color: #fff;
+  line-height: 104px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(63, 93, 101, 0.2);
+}
+
+.loan-company-page .loan-slider .single-slide .icon img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.loan-company-page .loan-slider .single-slide h4 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.loan-company-page .loan-slider .single-slide p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+
+.loan-company-page .loan-slider .slick-arrow {
+  position: absolute;
+  z-index: 2;
+  font-size: 22px;
+  height: 70px;
+  width: 70px;
+  border: 1px solid #e7e7e8;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  color: #6a737c;
+  line-height: 67px;
+  top: 55%;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.loan-company-page .loan-slider .slick-arrow:hover {
+  border-color: var(--brand_color);
+  background-color: var(--brand_color);
+  color: #fff;
+}
+
+.loan-company-page .loan-slider .slick-arrow i {
+  vertical-align: middle;
+}
+
+.loan-company-page .loan-slider .slick-prev {
+  left: -60px;
+}
+
+.loan-company-page .loan-slider .slick-next {
+  right: -60px;
+}
+
+@media (max-width: 991.98px) {
+  .loan-company-page .loan-slider .slick-prev {
+    left: 0;
+  }
+
+  .loan-company-page .loan-slider .slick-next {
+    right: 0;
+  }
+
+  .loan-company-page .loan-slider .slick-arrow {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 18px;
+  }
+}
+
+/* ── About area 3 ── */
+.loan-company-page .about-area-3 {
+  padding-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .about-area-3 {
+    padding-bottom: 120px;
+  }
+}
+
+.loan-company-page .about-area-3 .lc-about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  padding-top: 60px;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .about-area-3 .lc-about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.loan-company-page .about-area-3 .lc-stat-gap {
+  margin-top: 40px;
+}
+
+/* ── Coverage ── */
+.loan-company-page .coverage-area .lc-coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .loan-company-page .coverage-area .lc-coverage-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .coverage-area .lc-coverage-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .loan-company-page .coverage-area .lc-coverage-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+/* ── Get in touch ── */
+.loan-company-page .get-touch-area-2 .lc-consult-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .loan-company-page .get-touch-area-2 .lc-consult-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.loan-company-page .get-touch-area-2 .touch-form .form-control {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.loan-company-page .get-touch-area-2 .touch-form .theme-btn {
+  margin-top: 10px;
+}
+
+/* ── Footer ── */
+.loan-company-page .footer.footer-2 {
+  padding-top: 110px;
+  padding-bottom: 100px;
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .footer.footer-2 {
+    padding-top: 130px;
+    padding-bottom: 125px;
+  }
+}
+
+.loan-company-page .footer .lc-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 576px) {
+  .loan-company-page .footer .lc-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .loan-company-page .footer .lc-footer-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .loan-company-page .footer .lc-footer-col-1 {
+    grid-column: span 3;
+  }
+
+  .loan-company-page .footer .lc-footer-col-2 {
+    grid-column: 5 / span 3;
+  }
+
+  .loan-company-page .footer .lc-footer-col-3 {
+    grid-column: span 3;
+  }
+
+  .loan-company-page .footer .lc-footer-col-4 {
+    grid-column: span 2;
+  }
+}
+
+.loan-company-page .footer .footer-widget {
+  margin-bottom: 30px;
+}
+
+.loan-company-page .footer .footer-widget h4 {
+  margin-bottom: 20px;
+}
+
+.loan-company-page .footer .footer-text {
+  margin-bottom: 20px;
+}
+
+.loan-company-page .footer .truspilot {
+  margin-top: 40px;
+}
+
+.loan-company-page .footer .copyright {
+  padding-top: 45px;
+}
+
+.loan-company-page .footer .lc-copyright-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1200px) {
+  .loan-company-page .footer .lc-copyright-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .loan-company-page .footer .lc-copyright-inner {
+    grid-column: 5 / span 8;
+  }
+}
+
+.loan-company-page .footer .lc-copyright-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .loan-company-page .footer .lc-copyright-bar {
+    grid-template-columns: 2fr 6fr 4fr;
+    gap: 0;
+  }
+}

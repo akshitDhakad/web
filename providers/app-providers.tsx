@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
 import { useState } from "react";
 
+import { ThemeBodySync } from "@/providers/theme-body-sync";
+
 interface AppProvidersProps {
   children: React.ReactNode;
 }
@@ -23,7 +25,14 @@ export function AppProviders({ children }: AppProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem={false}
+        storageKey="body_dark"
+        disableTransitionOnChange
+      >
+        <ThemeBodySync />
         {children}
       </ThemeProvider>
     </QueryClientProvider>

@@ -22,6 +22,8 @@ const files = [
   "loan.css",
   "cta.css",
   "footer.css",
+  "home-fixes.css",
+  "finance-saas.css",
 ];
 
 const banner = "/* Auto-generated from styles/banca/*.css — do not edit directly */\n";

@@ -72,6 +72,40 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
 export const BUY_BANCA_URL =
   "https://themeforest.net/item/banca-banking-business-loan-bootstrap5html-website-template/32788885?s_rank=9";
 
+const HEADER_TOP_DARK_PREFIXES = [
+  "/about",
+  "/loan-steps",
+  "/jobs",
+  "/job-application",
+] as const;
+
+const HEADER_TOP_LIGHT_PREFIXES = [
+  "/career",
+  "/blog",
+  "/loan",
+  "/cards",
+  "/contact",
+] as const;
+
+function matchesPathPrefix(pathname: string, prefix: string): boolean {
+  return pathname === prefix || pathname.startsWith(`${prefix}/`);
+}
+
+/** Pages that show the utility bar (language, hours, phone, email) above the main navbar. */
+export function showsHeaderTop(pathname: string): boolean {
+  if (HEADER_TOP_DARK_PREFIXES.some((prefix) => matchesPathPrefix(pathname, prefix))) {
+    return true;
+  }
+
+  return HEADER_TOP_LIGHT_PREFIXES.some((prefix) => matchesPathPrefix(pathname, prefix));
+}
+
+export function getHeaderTopVariant(pathname: string): "light" | "dark" {
+  return HEADER_TOP_DARK_PREFIXES.some((prefix) => matchesPathPrefix(pathname, prefix))
+    ? "dark"
+    : "light";
+}
+
 export const SITE_CONFIG = {
   name: "Banca",
   title: "Banca - Banking & Business Loan",

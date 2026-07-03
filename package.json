@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:styles": "node scripts/build-styles.mjs",
+    "build:styles": "node scripts/build-styles.mjs && node scripts/build-home-variants-styles.mjs && node scripts/sync-home-images.mjs",
     "predev": "pnpm build:styles",
     "prebuild": "pnpm build:styles",
     "dev": "next dev",
