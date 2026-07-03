@@ -44,7 +44,7 @@ export function GetLoanPageContent() {
             </div>
           </div>
 
-          <div className="relative loan-pt-70 max-lg:hidden">
+          <div className="relative loan-pt-100 transform translate-y-[50px] max-lg:hidden">
             <div className="floated-widget">
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
                 {LOAN_BANNER_STEPS.map((step, index) => (

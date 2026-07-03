@@ -37,7 +37,7 @@ export function JobApplicationContent({ job }: JobApplicationContentProps) {
       <section className="job-application-area job-pt-110 job-pb-120 bg_white">
         <div className="container">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-            <div className="order-2 lg:order-1 lg:col-span-8">
+            <div className="order-1 lg:order-2 lg:col-span-8">
               <FadeIn>
                 <div className="job-description-widget">
                   {job.description.map((section) => (
@@ -94,13 +94,13 @@ export function JobApplicationContent({ job }: JobApplicationContentProps) {
               </FadeIn>
             </div>
 
-            <div className="order-1 lg:order-2 lg:col-span-4 job-pl-lg-55">
+            <div className="order-2 lg:order-1 lg:col-span-4 job-pl-lg-55">
               <div className="right-sidebar-widget sticky_sidebar_widget">
                 <div className="single-sidebar-widget page-mt-25 widget-border">
                   <div className="widget-title">
                     <h5>Job Summary</h5>
                   </div>
-                  <div className="widget-content px-6 py-6">
+                  <div className="widget-content px-6 py-6 !p-4">
                     <ul>
                       <li>
                         <span className="name">Published on:</span>

@@ -12,18 +12,21 @@ export const PROCESS_CARDS = [
     title: "Making genuine loans",
     description:
       "There are many variations in passage lorem Ipsum available of them will.",
+    delay: 0.1,
   },
   {
     icon: "/img/saas-app/hand.svg",
     title: "Almost limitless amount",
     description:
       "There are many variations in passage lorem Ipsum available of them will.",
+    delay: 0.3,
   },
   {
     icon: "/img/saas-app/house.svg",
     title: "Safe & secure banking",
     description:
       "There are many variations in passage lorem Ipsum available of them will.",
+    delay: 0.6,
   },
 ] as const;
 

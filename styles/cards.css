@@ -1,0 +1,583 @@
+/* Cards page — layout, spacing & decorative styles */
+
+.cards-page {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ── Container ── */
+.cards-page .cards-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .cards-page .cards-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-page .cards-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* ── Grids (gap + columns) ── */
+.cards-page .cards-grid {
+  display: grid;
+  width: 100%;
+  gap: 32px;
+}
+
+.cards-page .cards-grid--2 {
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.cards-page .cards-grid--3 {
+  grid-template-columns: 1fr;
+}
+
+.cards-page .cards-grid--4 {
+  grid-template-columns: 1fr;
+}
+
+.cards-page .cards-grid--12 {
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.cards-page .cards-grid--logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .cards-page .cards-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+  }
+
+  .cards-page .cards-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .cards-page .cards-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .cards-page .cards-grid--logos {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-page .cards-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-page .cards-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .cards-page .cards-grid--12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .cards-page .cards-col-3 {
+    grid-column: span 3;
+  }
+
+  .cards-page .cards-col-5 {
+    grid-column: span 5;
+  }
+
+  .cards-page .cards-col-8 {
+    grid-column: span 8;
+    border-left: 1px solid var(--black_50);
+    padding-left: 60px;
+  }
+}
+
+.cards-page .cards-order-1 {
+  order: 1;
+}
+
+.cards-page .cards-order-2 {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .cards-page .cards-lg-order-1 {
+    order: 1;
+  }
+
+  .cards-page .cards-lg-order-2 {
+    order: 2;
+  }
+
+  .cards-page .cards-lg-pl-50 {
+    padding-left: 50px;
+  }
+}
+
+/* ── Section padding (matches frontend/card.html) ── */
+.cards-page .cards-sec-hero {
+  padding-top: 145px;
+}
+
+.cards-page .cards-sec-hero .cards-hero-inner {
+  padding-top: 75px;
+  padding-bottom: 60px;
+}
+
+.cards-page .cards-sec-marketplace {
+  padding-top: 80px;
+  padding-bottom: 85px;
+}
+
+.cards-page .cards-sec-features {
+  padding-top: 105px;
+  padding-bottom: 115px;
+}
+
+.cards-page .cards-sec-safe {
+  padding-top: 125px;
+  padding-bottom: 115px;
+}
+
+.cards-page .cards-sec-customize {
+  padding-top: 105px;
+  padding-bottom: 115px;
+}
+
+.cards-page .cards-sec-why {
+  padding-top: 125px;
+  padding-bottom: 135px;
+}
+
+.cards-page .cards-sec-choose {
+  padding-top: 125px;
+  padding-bottom: 140px;
+}
+
+.cards-page .cards-sec-cta {
+  padding-top: 90px;
+  padding-bottom: 75px;
+}
+
+@media (min-width: 992px) {
+  .cards-page .cards-sec-features {
+    padding-top: 125px;
+    padding-bottom: 140px;
+  }
+
+  .cards-page .cards-sec-safe {
+    padding-top: 155px;
+    padding-bottom: 140px;
+  }
+
+  .cards-page .cards-sec-customize {
+    padding-top: 125px;
+    padding-bottom: 140px;
+  }
+}
+
+/* ── Margins between blocks ── */
+.cards-page .cards-title-block {
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.cards-page .cards-title-block--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.cards-page .cards-title-block--wide {
+  max-width: 700px;
+}
+
+.cards-page .cards-title-block--left {
+  text-align: left;
+  max-width: 100%;
+}
+
+.cards-page .cards-mt-30 {
+  margin-top: 30px;
+}
+
+.cards-page .cards-mt-55 {
+  margin-top: 55px;
+}
+
+.cards-page .cards-mt-60 {
+  margin-top: 60px;
+}
+
+.cards-page .cards-mt-80 {
+  margin-top: 80px;
+}
+
+.cards-page .cards-mt-65-md {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .cards-page .cards-mt-65-md {
+    margin-top: 65px;
+  }
+}
+
+.cards-page .cards-mb-35 {
+  margin-bottom: 35px;
+}
+
+.cards-page .cards-widget-gap > * + * {
+  margin-top: 30px;
+}
+
+.cards-page .cards-widget-gap > *:first-child {
+  margin-top: 48px;
+}
+
+@media (min-width: 576px) {
+  .cards-page .cards-widget-gap > *:first-child {
+    margin-top: 0;
+  }
+}
+
+.cards-page .cards-why-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .cards-page .cards-why-item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cards-page .cards-col-8 {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 16px;
+  }
+}
+
+.cards-page .cards-border-left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: var(--brand_color);
+}
+
+.cards-page .cards-learn-more::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--brand_color);
+  transition: width 0.3s ease;
+}
+
+.cards-page .cards-learn-more:hover::after {
+  width: 80px;
+}
+
+.cards-page .cards-title-h2 {
+  margin-bottom: 20px;
+}
+
+/* ── Hero image ── */
+.cards-page .banner-area-4 .hero-img {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 380px;
+  min-height: 300px;
+  z-index: 1;
+  vertical-align: top;
+}
+
+.cards-page .banner-area-4 .hero-img .person-img {
+  width: 100%;
+  max-width: 88%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards-page .banner-area-4 .hero-img .shape {
+  position: absolute;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(1) {
+  top: 45%;
+  left: -35%;
+  z-index: -1;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(2) {
+  top: 48%;
+  right: 15px;
+  z-index: 1;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(3) {
+  top: 23%;
+  right: -25px;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(4) {
+  top: 6%;
+  left: 12%;
+  z-index: -1;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(5) {
+  top: 30%;
+  left: -6px;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(6) {
+  top: 23%;
+  left: -25px;
+  z-index: -1;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(7) {
+  top: 50%;
+  right: -7px;
+  z-index: -1;
+}
+
+.cards-page .banner-area-4 .hero-img .shape:nth-child(8) {
+  top: 18%;
+  left: 30px;
+  z-index: 1;
+}
+
+.cards-page .banner-area-4 .hero-img .shape img {
+  max-width: none;
+  width: auto;
+  height: auto;
+  display: block;
+  transform: scale(0.82);
+  transform-origin: center center;
+}
+
+/* Safe deposit — layered card image */
+.cards-page .safe-deposit-area .card-img .logo img {
+  position: absolute;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  max-width: 90px;
+  max-height: 56px;
+  animation: cards-pulse 2s linear infinite;
+}
+
+.cards-page .safe-deposit-area .card-img .logo img:nth-child(1) {
+  left: -15%;
+  top: 25%;
+}
+
+.cards-page .safe-deposit-area .card-img .logo img:nth-child(2) {
+  right: 10%;
+  top: 5%;
+  animation-delay: 1s;
+}
+
+.cards-page .safe-deposit-area .card-img .bg-img {
+  position: absolute;
+  bottom: -136px;
+  left: -17%;
+  z-index: -1;
+  width: auto;
+  max-width: none;
+  height: auto;
+}
+
+@keyframes cards-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Customize card — stacked card shapes */
+.cards-page .customize-card-area .card-img .shape-1,
+.cards-page .customize-card-area .card-img .shape-2,
+.cards-page .customize-card-area .card-img .shape-3 {
+  position: absolute;
+}
+
+.cards-page .customize-card-area .card-img .shape-1 {
+  top: 125px;
+  left: 0;
+  z-index: 3;
+}
+
+.cards-page .customize-card-area .card-img .shape-2 {
+  top: 120px;
+  left: 57px;
+  z-index: 2;
+}
+
+.cards-page .customize-card-area .card-img .shape-3 {
+  top: 0;
+  left: 100px;
+  z-index: 1;
+}
+
+.cards-page .customize-card-area .card-img .shape-1 img,
+.cards-page .customize-card-area .card-img .shape-2 img,
+.cards-page .customize-card-area .card-img .shape-3 img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Why choose — connector line */
+.cards-page .why-choose-area .line-shape {
+  position: absolute;
+  left: 50%;
+  top: 26%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0;
+}
+
+.cards-page .why-choose-area .line-shape img {
+  margin: 0 auto;
+  display: block;
+}
+
+/* CTA decorative shapes */
+.cards-page .cta-3 .img-shapes .shape {
+  position: absolute;
+}
+
+@keyframes cards-wings-one {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.cards-page .cta-3 .img-shapes .shape .fly-msg {
+  transform: rotate(-30deg);
+}
+
+.cards-page .cta-3 .img-shapes .shape .fly-msg img:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: cards-wings-one 0.2s ease-in infinite alternate-reverse;
+  animation-delay: 0.2s;
+}
+
+.cards-page .cta-3 .img-shapes .shape .fly-msg img:nth-child(3) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: cards-wings-one 0.2s ease-in infinite alternate-reverse;
+}
+
+.cards-page .cta-3 .img-shapes .shape:nth-child(1) {
+  left: 3%;
+  transform-origin: left bottom;
+  top: 70%;
+}
+
+.cards-page .cta-3 .img-shapes .shape:nth-child(2) {
+  left: 48%;
+  top: 10%;
+}
+
+.cards-page .cta-3 .img-shapes .shape:nth-child(3) {
+  right: 21%;
+  bottom: 0%;
+  transform-origin: right bottom;
+}
+
+.cards-page .cta-3 .img-shapes .shape:nth-child(4) {
+  right: 10%;
+  top: 20%;
+}
+
+@media (max-width: 991.98px) {
+  .cards-page .banner-area-4 .hero-img .shape:nth-child(1) img {
+    width: 150px;
+    height: auto;
+    transform: scale(1);
+  }
+
+  .cards-page .banner-area-4 .hero-img .shape:nth-child(8) img {
+    width: 180px;
+    height: auto;
+    transform: scale(1);
+  }
+
+  .cards-page .customize-card-area .card-img .shape-1 {
+    top: 90px;
+    left: 0;
+  }
+
+  .cards-page .customize-card-area .card-img .shape-2 {
+    top: 85px;
+    left: 40px;
+  }
+
+  .cards-page .customize-card-area .card-img .shape-3 {
+    top: 0;
+    left: 70px;
+  }
+
+  .cards-page .safe-deposit-area .card-img .bg-img {
+    bottom: -80px;
+    left: -10%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cards-page .safe-deposit-area .payment-system.mt-0 {
+    margin-top: 0 !important;
+  }
+}

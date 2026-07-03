@@ -204,9 +204,11 @@
 }
 
 .breadcrumb-widget.breadcrumb-widget-3 .breadcrumb-content ul li:not(:last-child)::after {
-  content: "/";
+  content: "5";
   position: absolute;
-  right: -4px;
+  right: -20px;
+  top: 0;
+  font-family: "ElegantIcons";
   color: #c8ccd0;
 }
 

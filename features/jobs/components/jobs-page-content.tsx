@@ -84,7 +84,7 @@ export function JobsPageContent() {
                   </FadeIn>
                 ))}
 
-                <div className="page-mt-70 text-center">
+                <div className="page-mt-70 mt-10 text-center">
                   <button type="button" className="theme-btn theme-btn-outlined">
                     More jobs
                   </button>

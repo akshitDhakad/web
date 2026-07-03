@@ -1,0 +1,972 @@
+/* Finance SaaS page — layout & responsive fixes (matches frontend/index-finance.html) */
+
+.finance-saas-page {
+  background: #fff;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Bootstrap-like container (template uses bootstrap.min.css) */
+.finance-saas-page .container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .finance-saas-page .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .finance-saas-page .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .finance-saas-page .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .finance-saas-page .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .finance-saas-page .container {
+    max-width: 1200px;
+  }
+}
+
+/* Spacing utilities scoped to this page */
+.finance-saas-page .mb-0 {
+  margin-bottom: 0;
+}
+
+.finance-saas-page .mb-10 {
+  margin-bottom: 10px;
+}
+
+.finance-saas-page .mb-50 {
+  margin-bottom: 50px;
+}
+
+.finance-saas-page .mb-60 {
+  margin-bottom: 60px;
+}
+
+.finance-saas-page .mt-25 {
+  margin-top: 25px;
+}
+
+.finance-saas-page .mt-30 {
+  margin-top: 30px;
+}
+
+.finance-saas-page .mt-50 {
+  margin-top: 50px;
+}
+
+.finance-saas-page .pt-90 {
+  padding-top: 90px;
+}
+
+.finance-saas-page .pb-85 {
+  padding-bottom: 85px;
+}
+
+/* Grid — match Bootstrap 5 gutters (mobile-first) */
+.finance-saas-page .row,
+.finance-saas-page .saas-features-item.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.finance-saas-page .row > [class*="col-"],
+.finance-saas-page .row > .col,
+.finance-saas-page .saas-features-item.row > [class*="col-"] {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.finance-saas-page .row > .col {
+  flex: 1 0 0;
+  width: auto;
+  min-width: 0;
+}
+
+@media (min-width: 576px) {
+  .finance-saas-page .row > .col-sm-4 {
+    width: 33.333333%;
+  }
+
+  .finance-saas-page .row > .col-sm-6 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .finance-saas-page .row > .col-md-2 {
+    width: 16.666667%;
+  }
+
+  .finance-saas-page .row > .col-md-4 {
+    width: 33.333333%;
+  }
+
+  .finance-saas-page .row > .col-md-6 {
+    width: 50%;
+  }
+
+  .finance-saas-page .row > .col-md-8 {
+    width: 66.666667%;
+  }
+}
+
+@media (min-width: 992px) {
+  .finance-saas-page .row > .col-lg-2 {
+    width: 16.666667%;
+  }
+
+  .finance-saas-page .row > .col-lg-3 {
+    width: 25%;
+  }
+
+  .finance-saas-page .row > .col-lg-4 {
+    width: 33.333333%;
+  }
+
+  .finance-saas-page .row > .col-lg-5 {
+    width: 41.666667%;
+  }
+
+  .finance-saas-page .row > .col-lg-6 {
+    width: 50%;
+  }
+
+  .finance-saas-page .row > .col-lg-7 {
+    width: 58.333333%;
+  }
+
+  .finance-saas-page .row > .col-lg-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .finance-saas-page .row > .col-xl-4 {
+    width: 33.333333%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .finance-saas-page .saas-features-item.flex-row-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+/* Row gap utilities (Bootstrap gy-*) */
+.finance-saas-page .gy-4 > [class*="col"],
+.finance-saas-page .gy-4 > .col {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .finance-saas-page .gy-md-0 > [class*="col"],
+  .finance-saas-page .gy-md-0 > .col {
+    margin-bottom: 0;
+  }
+}
+
+/* Flex utilities */
+.finance-saas-page .d-flex {
+  display: flex;
+}
+
+.finance-saas-page .flex-column {
+  flex-direction: column;
+}
+
+.finance-saas-page .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.finance-saas-page .flex-wrap {
+  flex-wrap: wrap;
+}
+
+.finance-saas-page .align-items-center {
+  align-items: center;
+}
+
+.finance-saas-page .justify-content-center {
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .finance-saas-page .flex-sm-row {
+    flex-direction: row;
+  }
+
+  .finance-saas-page .ms-sm-3 {
+    margin-left: 1rem;
+  }
+
+  .finance-saas-page .mt-sm-0 {
+    margin-top: 0;
+  }
+}
+
+.finance-saas-page .list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.finance-saas-page .text-center {
+  text-align: center;
+}
+
+.finance-saas-page .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.finance-saas-page .h-100 {
+  height: 100%;
+}
+
+.finance-saas-page .h-full {
+  height: 100%;
+}
+
+.finance-saas-page .w-full {
+  width: 100%;
+}
+
+/* Section images */
+.finance-saas-page .banner-saas-area .shape_img,
+.finance-saas-page .app-showcase-area .shape_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.finance-saas-page .banner-saas-area .dahbord_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.finance-saas-page .saas-features-img img,
+.finance-saas-page .app-showcase-item > img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img > img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img .app_shap_img img {
+  max-width: none;
+  width: auto;
+  height: auto;
+}
+
+/* Hero dashboard — match template sizing */
+.finance-saas-page .banner-saas-area .dahbord_img {
+  margin: 80px -146px 0;
+}
+
+@media (max-width: 1440px) {
+  .finance-saas-page .banner-saas-area .dahbord_img {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Process cards — match reference (3 easy to follow process) */
+.finance-saas-page .saas-features-card-area {
+  padding: 0 0 80px;
+}
+
+.finance-saas-page .saas-features-card-area .saas-section-title h2 {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 70px;
+  margin-bottom: 16px;
+}
+
+.finance-saas-page .saas-features-card-area .saas-section-title p {
+  color: #878ba9;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.finance-saas-page .saas-features-card-area .row {
+  row-gap: 24px;
+}
+
+.finance-saas-page .saas-features-card-area .row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-saas-page .saas-features-card-area .row > [class*="col-"] > * {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card {
+  text-align: left;
+  background: #f7f9ff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  box-shadow: none;
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card:hover {
+  box-shadow: 0 16px 60px rgba(63, 74, 101, 0.2);
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card .card-img {
+  display: block;
+  margin-bottom: 24px;
+  min-height: auto;
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card .card-img img {
+  width: auto;
+  height: auto;
+  max-width: 64px;
+  display: block;
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card h4 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #171d24;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card p {
+  flex: 1;
+  color: #878ba9;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.finance-saas-page .saas-features-card-area .saas-feature-card .text-btn {
+  margin-top: 40px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1b2a52;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Features area — Tailwind grid in component; visual styles here */
+.finance-saas-page .saas-features-area {
+  padding: 80px 0;
+}
+
+@media (min-width: 1024px) {
+  .finance-saas-page .saas-features-area {
+    padding: 140px 0;
+  }
+}
+
+.finance-saas-page .saas-features-img {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.finance-saas-page .saas-features-img--one {
+  background: linear-gradient(180deg, #e7f2ff 0%, #f8fffd 100%);
+  padding: 38px 38px 0 0;
+}
+
+.finance-saas-page .saas-features-img--two {
+  background: linear-gradient(145deg, #f5e9ff 0%, #f8fffd 100%);
+  padding: 38px 0 0 38px;
+}
+
+.finance-saas-page .saas-features-img--one img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+}
+
+.finance-saas-page .saas-features-img--two img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-right: auto;
+}
+
+.finance-saas-page .saas-features-content .saas-section-title {
+  text-align: left;
+}
+
+.finance-saas-page .saas-features-content .saas-section-title h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.finance-saas-page .saas-features-content .saas-section-title h2 span {
+  background: linear-gradient(90deg, #6d81f8 45.35%, #f682b0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.finance-saas-page .saas-features-item--reverse .saas-features-content .saas-section-title h2 span {
+  background: linear-gradient(90deg, #f98885 45.35%, #f0cc96 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.finance-saas-page .saas-features-content .saas-section-title p {
+  color: #878ba9;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: left;
+}
+
+.finance-saas-page .features-icon-box .round_icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #32ebf6 0%, #6c67ff 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-saas-page .features-icon-box.two .round_icon {
+  background: linear-gradient(145deg, #ef9cfd 0%, #6687fe 100%);
+}
+
+.finance-saas-page .features-icon-box h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  color: #171d24;
+}
+
+.finance-saas-page .features-icon-box p {
+  color: #878ba9;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.finance-saas-page .features-icon-box.feedback h4 {
+  font-size: clamp(36px, 6vw, 52px);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.finance-saas-page .features-icon-box.feedback-divided {
+  border-left: 1px solid rgba(135, 139, 169, 0.5);
+  padding-left: 24px;
+}
+
+.finance-saas-page .features-icon-box.feedback:not(.feedback-divided) {
+  padding-right: 16px;
+}
+
+@media (min-width: 640px) {
+  .finance-saas-page .features-icon-box.feedback-divided {
+    padding-left: 50px;
+  }
+}
+
+/* App showcase */
+.finance-saas-page .app-showcase-area {
+  background: #f5f8ff;
+  padding: 140px 0 110px;
+}
+
+.finance-saas-page .app-showcase-area .saas-section-title h2 {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 70px;
+  margin-bottom: 16px;
+}
+
+.finance-saas-page .app-showcase-area .saas-section-title h2 span {
+  background: linear-gradient(90deg, #4b57f6 45.35%, #2599e9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.finance-saas-page .app-showcase-area .saas-section-title p {
+  color: #878ba9;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.finance-saas-page .app-showcase-area .row {
+  row-gap: 30px;
+}
+
+.finance-saas-page .app-showcase-area .row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-saas-page .app-showcase-item {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background: #dbecff;
+  padding: 45px 32px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.finance-saas-page .app-showcase-item .round {
+  width: 670px;
+  height: 670px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(199, 250, 254, 0) 0%, #fff 100%);
+  opacity: 0.35;
+  left: -40%;
+  top: -56%;
+}
+
+.finance-saas-page .app-showcase-item.box-two {
+  background: linear-gradient(180deg, #fadfff 0%, #c3d1ff 100%);
+}
+
+.finance-saas-page .app-showcase-item h4 {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  margin-bottom: 16px;
+  color: #171d24;
+}
+
+.finance-saas-page .app-showcase-item p {
+  color: #596c8d;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-bottom: 38px;
+}
+
+.finance-saas-page .app-showcase-item > img {
+  margin-top: auto;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  box-shadow: 0 7.58px 18.95px rgba(178, 187, 228, 0.5);
+}
+
+.finance-saas-page .app-showcase-item.box-three {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 45px 70px;
+  background: linear-gradient(314deg, #2c3a62 0%, #374f8f 100%);
+  margin-bottom: 0;
+}
+
+.finance-saas-page .app-showcase-item.box-three .app-text {
+  flex: 1;
+  min-width: 0;
+  padding-right: 70px;
+}
+
+.finance-saas-page .app-showcase-item.box-three h3 {
+  font-size: 40px;
+  color: #fff;
+  line-height: 50px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin-bottom: 18px;
+}
+
+.finance-saas-page .app-showcase-item.box-three p {
+  color: #fff;
+  opacity: 0.89;
+  margin-bottom: 24px;
+}
+
+.finance-saas-page .app-showcase-item.box-three .theme-btn-alt {
+  background: #fff;
+  color: #1b2a52;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img > img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  box-shadow: none;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img .app_shap_img {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img .app_shap_img.one {
+  left: -80px;
+  bottom: 40px;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img .app_shap_img.two {
+  right: -50px;
+  top: 40px;
+}
+
+.finance-saas-page .app-showcase-item.box-three .img .app_shap_img img {
+  max-width: none;
+  width: auto;
+  height: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+/* FAQ accordion */
+.finance-saas-page .collapse:not(.show) {
+  display: none;
+}
+
+/* Pricing — equal height cards */
+.finance-saas-page .pricing_inner .row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-saas-page .pricing_inner .row > [class*="col-"] > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.finance-saas-page .pricing_inner .price_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.finance-saas-page .pricing_inner .price_item .service_list {
+  flex: 1;
+}
+
+.finance-saas-page .pricing_inner .price_item .price_btn {
+  margin-top: auto;
+}
+
+.finance-saas-page .pricing_tab_btn .toggle.clicked:after {
+  left: 29px;
+}
+
+.finance-saas-page .pricing_inner.active .price_items.month {
+  display: none;
+}
+
+.finance-saas-page .pricing_inner.active .price_items.year {
+  display: block;
+}
+
+.finance-saas-page .pricing_inner .price_items.year {
+  display: none;
+}
+
+.finance-saas-page .pricing_tab_btn .toggle {
+  cursor: pointer;
+}
+
+.finance-saas-page .pricing_tab_btn.active span:first-child {
+  color: #1b2a52;
+}
+
+.finance-saas-page .pricing_tab_btn .toggle.clicked ~ span {
+  color: #1b2a52;
+}
+
+/* Subscribe CTA */
+.finance-saas-page .saas-subscribe-area {
+  position: relative;
+  overflow: hidden;
+  transform: none !important;
+  background: #2c3b64;
+  border-radius: 0;
+  padding: 120px 0;
+}
+
+.finance-saas-page .saas-subscribe-area.cta-4 {
+  transform: none !important;
+  background: #2c3b64;
+  border-radius: 0;
+}
+
+.finance-saas-page .saas-subscribe-area .saas_dash_img {
+  position: absolute;
+  right: -130px;
+  bottom: -245px;
+  max-width: none;
+  width: auto;
+  height: auto;
+}
+
+.finance-saas-page .saas-subscribe-area .form-control {
+  flex: 1;
+  min-width: 0;
+}
+
+.finance-saas-page .saas-subscribe-area .d-flex {
+  gap: 12px;
+}
+
+.finance-saas-page .saas-subscribe-area .input-append.theme-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 1440px) {
+  .finance-saas-page .saas-subscribe-area .saas_dash_img {
+    right: -380px;
+  }
+}
+
+/* Banner CTA row */
+.finance-saas-page .saas-banner-content .subscribe-field {
+  gap: 0;
+}
+
+.finance-saas-page .saas-banner-content .theme-btn {
+  white-space: nowrap;
+}
+
+/* Client logos */
+.finance-saas-page .saas-clients-logo .clients-logo-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.finance-saas-page .saas-clients-logo .row {
+  justify-content: center;
+}
+
+.finance-saas-page .saas-clients-logo .col {
+  text-align: center;
+}
+
+.finance-saas-page .saas-clients-logo .clients-logo {
+  margin: 0 auto;
+}
+
+/* Footer */
+.finance-saas-page .saas-footer-bottom .payment-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.finance-saas-page .saas-footer-bottom .d-flex {
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive — matches frontend/css/responsive.css finance sections */
+@media (max-width: 991.98px) {
+  .finance-saas-page .banner-saas-area {
+    padding-top: 150px;
+  }
+
+  .finance-saas-page .saas-banner-content h5 {
+    margin-bottom: 15px;
+  }
+
+  .finance-saas-page .saas-banner-content h1 {
+    font-size: 56px;
+    line-height: 70px;
+  }
+
+  .finance-saas-page .saas-banner-content p {
+    font-size: 21px;
+    line-height: 32px;
+  }
+
+  .finance-saas-page .saas-feature-card {
+    margin-bottom: 30px;
+  }
+
+  .finance-saas-page .saas-features-area,
+  .finance-saas-page .saas-pricing-area {
+    padding: 80px 0;
+  }
+
+  .finance-saas-page .saas-features-img--one {
+    padding: 32px 32px 0 0;
+  }
+
+  .finance-saas-page .saas-features-img--two {
+    padding: 32px 0 0 32px;
+  }
+
+  .finance-saas-page .saas-features-item--reverse {
+    margin-top: 80px;
+  }
+
+  .finance-saas-page .app-showcase-area {
+    padding: 80px 0 60px;
+  }
+
+  .finance-saas-page .saas-features-content .saas-section-title h2,
+  .finance-saas-page .app-showcase-area .saas-section-title h2,
+  .finance-saas-page .saas-features-card-area .saas-section-title h2 {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .finance-saas-page .saas-pricing-area .saas-section-title {
+    margin-bottom: 40px;
+  }
+
+  .finance-saas-page .saas-faq-area {
+    padding-bottom: 60px;
+  }
+
+  .finance-saas-page .saas-subscribe-area {
+    padding: 50px 0;
+  }
+
+  .finance-saas-page .saas-subscribe-area .saas_dash_img {
+    width: 400px;
+  }
+
+  .finance-saas-page .app-showcase-item.box-three {
+    flex-direction: column;
+    padding: 32px 24px;
+  }
+
+  .finance-saas-page .app-showcase-item.box-three .app-text {
+    padding-right: 0;
+    margin-bottom: 32px;
+  }
+
+  .finance-saas-page .app-showcase-item.box-three .img .app_shap_img.one {
+    left: 0;
+  }
+
+  .finance-saas-page .app-showcase-item.box-three .img .app_shap_img.two {
+    right: 0;
+  }
+
+  .finance-saas-page .f-widget {
+    margin-bottom: 30px;
+  }
+
+  .finance-saas-page .saas-footer-bottom .f-social a {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .finance-saas-page .saas-clients-logo .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .finance-saas-page .saas-clients-logo .row {
+    row-gap: 24px;
+  }
+
+  .finance-saas-page .saas-subscribe-area .saas_dash_img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto 0;
+    display: block;
+  }
+
+  .finance-saas-page .saas-footer-bottom .payment-list {
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+
+  .finance-saas-page .saas-footer-bottom .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

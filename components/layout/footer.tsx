@@ -3,150 +3,90 @@ import Link from "next/link";
 
 import { FadeIn } from "@/components/animations/fade-in";
 import {
-  SITE_FOOTER_COMPANY_LINKS,
-  SITE_FOOTER_HELP_LINKS,
-  SITE_FOOTER_PRODUCT_LINKS,
+  FOOTER_LINK_GROUPS,
   SITE_FOOTER_SOCIAL,
   SITE_FOOTER_SOCIAL_ICON_CLASS,
 } from "@/features/home/constants/footer";
 import { footerLink } from "@/lib/footer-links";
-import { cn } from "@/lib/utils";
 
 export function Footer() {
   return (
-    <footer
-      className="footer footer-2 site-footer"
-      style={{ backgroundImage: "url(/img/footer/footer-bg-2.png)" }}
-    >
-      <div className="footer-top">
+    <footer className="footer footer-3 site-footer">
+      <div className="footer-top pt-105 pb-105 lg:pt-130 lg:pb-115">
         <div className="container">
-          <div className="sf-footer-grid">
-            <div className="sf-footer-col-mission text-center text-sm-start">
-              <FadeIn direction="right">
-                <div className="footer-widget">
-                  <h4>We&apos;re on a mission.</h4>
-                  <div className="footer-text">
-                    <p>
-                      At Banca, we&apos;re using cutting-edge technology to transform the industry
-                      and deliver financial services that actually work for you.
-                    </p>
-                  </div>
-                  <div className="truspilot">
-                    <Image
-                      src="/img/footer/Trustpilot.png"
-                      alt="Trustpilot"
-                      width={120}
-                      height={40}
-                    />
-                  </div>
+          <div className="footer-top-grid">
+            <FadeIn direction="left">
+              <div className="footer-widget mb-30">
+                <div className="footer-text mb-20">
+                  <p>
+                    Banca is a leading bank in the worldzone and a prominent international banking
+                    institution
+                  </p>
                 </div>
-              </FadeIn>
-            </div>
+                <span className="overline">COTATION</span>
+                <div className="footer-bold">
+                  <span className="counter">
+                    $<span>35.105</span>
+                  </span>
+                  <span className="counter">
+                    -<span>0.46</span>%
+                  </span>
+                </div>
+                <p className="time">2021-01-05 14:00 (INTERNATIONAL TIME)</p>
+              </div>
+            </FadeIn>
 
-            <div className="sf-footer-col-company text-center text-sm-start">
-              <FadeIn delay={0.1}>
-                <div className="footer-widget">
-                  <div className="f-widget-title">
-                    <h5>Company</h5>
+            <div className="footer-links-group">
+              {FOOTER_LINK_GROUPS.map((group, index) => (
+                <FadeIn key={group.title} delay={0.1 + index * 0.2}>
+                  <div className="footer-widget mb-30 text-center text-sm-start">
+                    <div className="f-widget-title">
+                      <h5>{group.title}</h5>
+                    </div>
+                    <div className="footer-link">
+                      <ul>
+                        {group.links.map((link) => (
+                          <li key={link.label}>
+                            <Link href={footerLink(link.label)}>{link.label}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div className="footer-link">
-                    <ul>
-                      {SITE_FOOTER_COMPANY_LINKS.map((label) => (
-                        <li key={label}>
-                          <Link href={footerLink(label)}>{label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-
-            <div className="sf-footer-col-product text-center text-sm-start">
-              <FadeIn delay={0.3}>
-                <div className="footer-widget">
-                  <div className="f-widget-title">
-                    <h5>product</h5>
-                  </div>
-                  <div className="footer-link">
-                    <ul>
-                      {SITE_FOOTER_PRODUCT_LINKS.map((label) => (
-                        <li key={label}>
-                          <Link href={footerLink(label)}>{label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-
-            <div className="sf-footer-col-help text-center text-sm-start">
-              <FadeIn delay={0.5}>
-                <div className="footer-widget">
-                  <div className="f-widget-title">
-                    <h5>Help</h5>
-                  </div>
-                  <div className="footer-link">
-                    <ul>
-                      {SITE_FOOTER_HELP_LINKS.map((label) => (
-                        <li key={label}>
-                          <Link href={footerLink(label)}>{label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="copyright">
+      <div className="copyright pt-25 pb-25">
         <div className="container">
-          <div className="sf-copyright-grid">
-            <div className="sf-copyright-inner">
-              <div className="sf-copyright-bar">
-                <div className="text-center text-md-start">
-                  <Link href="/">
-                    <Image src="/img/logo/Logo.png" alt="Banca logo" width={100} height={35} />
-                  </Link>
-                </div>
-                <div>
-                  <div className="line" />
-                </div>
-                <div>
-                  <div className="social-button text-center">
-                    {SITE_FOOTER_SOCIAL.map((network, index) => (
-                      <a
-                        key={network}
-                        href="#"
-                        className={cn(
-                          index === 0 && "ms-0",
-                          index === SITE_FOOTER_SOCIAL.length - 1 && "me-0",
-                        )}
-                        aria-label={network}
-                      >
-                        <i className={SITE_FOOTER_SOCIAL_ICON_CLASS[network]} aria-hidden />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="copyright-text text-center text-md-start">
-                <p>
-                  Copyright&copy; Banca 2023.
-                  <br className="d-sm-none" />{" "}
-                  <Link className="ms-3" href={footerLink("Privecy")}>
-                    Privecy
-                  </Link>{" "}
-                  |{" "}
-                  <Link className="ms-0" href={footerLink("Term of Use")}>
-                    Term of Use
-                  </Link>
-                </p>
-              </div>
+          <div className="sf-footer-copyright-row">
+            <div className="text-center text-lg-start">
+              <Link href="/" className="m-0 inline-block p-0">
+                <Image src="/img/logo/Logo.png" alt="Banca logo" width={120} height={40} />
+              </Link>
+            </div>
+            <div className="copyright-text text-center my-3 my-sm-0">
+              <p>
+                Copyright&copy; Banca 2023.
+                <br className="d-sm-none" />{" "}
+                <Link className="ms-2" href={footerLink("Privecy")}>
+                  Privecy
+                </Link>{" "}
+                |{" "}
+                <Link className="ms-0" href={footerLink("Term of Use")}>
+                  Term of Use
+                </Link>
+              </p>
+            </div>
+            <div className="social-button text-center text-end">
+              {SITE_FOOTER_SOCIAL.map((network) => (
+                <a key={network} href="#" aria-label={network}>
+                  <i className={SITE_FOOTER_SOCIAL_ICON_CLASS[network]} aria-hidden />
+                </a>
+              ))}
             </div>
           </div>
         </div>

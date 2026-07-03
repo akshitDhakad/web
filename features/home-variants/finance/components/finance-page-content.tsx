@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { FadeIn } from "@/components/animations/fade-in";
+import { FinanceParallaxImage } from "@/features/home-variants/finance/components/finance-parallax-image";
 import {
   CLIENT_LOGOS,
   FAQ_COLUMN_ONE,
@@ -315,10 +316,10 @@ export function FinancePageContent() {
             </p>
           </div>
           <div className="row">
-            {PROCESS_CARDS.map((card, index) => (
+            {PROCESS_CARDS.map((card) => (
               <div key={card.title} className="col-lg-4">
-                <FadeIn delay={0.1 + index * 0.2} className="h-full w-full">
-                  <div className="feature-card-widget-8 saas-feature-card">
+                <FadeIn delay={card.delay} className="h-full w-full">
+                  <div className="saas-feature-card">
                     <div className="card-img">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={card.icon} alt="feature svg" />
@@ -338,96 +339,100 @@ export function FinancePageContent() {
 
       <section className="saas-features-area bg-white" aria-label="Features">
         <div className={FINANCE_CONTAINER}>
-          <div className="saas-features-item row align-items-center">
-            <div className="col-lg-6">
-              <div className="saas-features-img">
-                <FadeIn direction="right" delay={0.3}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/img/saas-app/features_img_one.png" alt="Finance features" />
+          {/* Row 1 — image left, content right */}
+          <div className="saas-features-item grid grid-cols-1 items-center gap-y-10 gap-x-0 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
+            <FadeIn direction="right" delay={0.3} className="w-full">
+              <div className="saas-features-img saas-features-img--one">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/img/saas-app/features_img_one.png"
+                  alt="Finance features"
+                  width={506}
+                  height={429}
+                />
+              </div>
+            </FadeIn>
+            <div className="saas-features-content w-full lg:pl-2.5">
+              <div className="saas-section-title mb-8 lg:mb-[50px]">
+                <FadeIn>
+                  <h2>
+                    Simplify your finance <span>banking</span> and loan
+                  </h2>
+                </FadeIn>
+                <FadeIn delay={0.2}>
+                  <p>
+                    Design Season is a collaboration between Leicester&apos;s creative hub LCB
+                    based in the city&apos;s cultural quarter and designers and design businesses
+                    all over the city &amp; county
+                  </p>
                 </FadeIn>
               </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="saas-features-content">
-                <div className="saas-section-title mb-50">
-                  <FadeIn>
-                    <h2>
-                      Simplify your finance <span>banking</span> and loan
-                    </h2>
-                  </FadeIn>
-                  <FadeIn delay={0.2}>
-                    <p>
-                      Design Season is a collaboration between Leicester&apos;s creative hub LCB
-                      based in the city&apos;s cultural quarter and designers and design businesses
-                      all over the city &amp; county
-                    </p>
-                  </FadeIn>
-                </div>
-                <div className="d-flex">
-                  <div className="features-icon-box">
-                    <div className="round_icon">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/img/saas-app/hand.png" alt="" />
-                    </div>
-                    <div className="text">
-                      <h4>Single term fees</h4>
-                      <p>Easily copy and paste Pricing components</p>
-                    </div>
+              <div className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
+                <div className="features-icon-box flex items-start gap-4">
+                  <div className="round_icon shrink-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/img/saas-app/hand.png" alt="" />
                   </div>
-                  <div className="features-icon-box two">
-                    <div className="round_icon">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/img/saas-app/travel_explore.png" alt="" />
-                    </div>
-                    <div className="text">
-                      <h4>150+ Locations</h4>
-                      <p>Easily copy and paste Pricing components</p>
-                    </div>
+                  <div className="text min-w-0">
+                    <h4>Single term fees</h4>
+                    <p>Easily copy and paste Pricing components</p>
+                  </div>
+                </div>
+                <div className="features-icon-box two flex items-start gap-4">
+                  <div className="round_icon shrink-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/img/saas-app/travel_explore.png" alt="" />
+                  </div>
+                  <div className="text min-w-0">
+                    <h4>150+ Locations</h4>
+                    <p>Easily copy and paste Pricing components</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="saas-features-item row align-items-center flex-row-reverse">
-            <div className="col-lg-6">
-              <div className="saas-features-img">
-                <FadeIn direction="left" delay={0.2}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/img/saas-app/features_img_two.png" alt="Customer feedback" />
-                </FadeIn>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="saas-features-content">
-                <FadeIn delay={0.3}>
-                  <div className="saas-section-title mb-50">
-                    <h2>
-                      We have reputable <span>customer</span> feedbacks
-                    </h2>
-                    <p>
-                      Design Season is a collaboration between Leicester&apos;s creative hub LCB
-                      based in the city&apos;s cultural quarter and designers and design businesses
-                      all over the city &amp; county
-                    </p>
+          {/* Row 2 — content left, image right */}
+          <div className="saas-features-item saas-features-item--reverse mt-20 grid grid-cols-1 items-center gap-y-10 gap-x-0 lg:mt-[140px] lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
+            <div className="saas-features-content w-full lg:order-1">
+              <FadeIn delay={0.3}>
+                <div className="saas-section-title mb-8 lg:mb-[50px]">
+                  <h2>
+                    We have reputable <span>customer</span> feedbacks
+                  </h2>
+                  <p>
+                    Design Season is a collaboration between Leicester&apos;s creative hub LCB
+                    based in the city&apos;s cultural quarter and designers and design businesses
+                    all over the city &amp; county
+                  </p>
+                </div>
+              </FadeIn>
+              <div className="grid grid-cols-2 gap-x-0">
+                <div className="features-icon-box feedback flex items-start">
+                  <div className="text">
+                    <h4>500+</h4>
+                    <p>Active customers use our application</p>
                   </div>
-                </FadeIn>
-                <div className="d-flex">
-                  <div className="features-icon-box feedback d-flex">
-                    <div className="text">
-                      <h4>500+</h4>
-                      <p>Active customers use our application</p>
-                    </div>
-                  </div>
-                  <div className="features-icon-box feedback d-flex">
-                    <div className="text">
-                      <h4>$105k</h4>
-                      <p>Loans given out in the last few months</p>
-                    </div>
+                </div>
+                <div className="features-icon-box feedback feedback-divided flex items-start">
+                  <div className="text">
+                    <h4>$105k</h4>
+                    <p>Loans given out in the last few months</p>
                   </div>
                 </div>
               </div>
             </div>
+            <FadeIn direction="left" delay={0.2} className="w-full lg:order-2">
+              <div className="saas-features-img saas-features-img--two">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/img/saas-app/features_img_two.png"
+                  alt="Customer feedback"
+                  width={504}
+                  height={419}
+                />
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -458,7 +463,12 @@ export function FinancePageContent() {
                   pack illustrations for many.
                 </p>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/img/saas-app/app_showcase1.png" alt="App showcase" />
+                <img
+                  src="/img/saas-app/app_showcase1.png"
+                  alt="App showcase"
+                  width={516}
+                  height={294}
+                />
               </div>
             </div>
             <div className="col-lg-6">
@@ -470,7 +480,12 @@ export function FinancePageContent() {
                   pack illustrations for many.
                 </p>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/img/saas-app/app_showcase2.png" alt="Secure banking" />
+                <img
+                  src="/img/saas-app/app_showcase2.png"
+                  alt="Secure banking"
+                  width={516}
+                  height={294}
+                />
               </div>
             </div>
             <div className="col-lg-12">
@@ -487,14 +502,27 @@ export function FinancePageContent() {
                 </div>
                 <div className="img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/img/saas-app/dash_app.png" alt="Loan dashboard" />
+                  <img
+                    src="/img/saas-app/dash_app.png"
+                    alt="Loan dashboard"
+                    width={469}
+                    height={389}
+                  />
                   <div className="app_shap_img one">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/img/saas-app/dash_app_small.png" alt="" aria-hidden />
+                    <FinanceParallaxImage
+                      src="/img/saas-app/dash_app_small.png"
+                      alt=""
+                      parallax={{ x: 0, y: -80 }}
+                      ariaHidden
+                    />
                   </div>
                   <div className="app_shap_img two">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/img/saas-app/dash_app_small2.png" alt="" aria-hidden />
+                    <FinanceParallaxImage
+                      src="/img/saas-app/dash_app_small2.png"
+                      alt=""
+                      parallax={{ x: 0, y: 50 }}
+                      ariaHidden
+                    />
                   </div>
                 </div>
               </div>
@@ -574,9 +602,9 @@ export function FinancePageContent() {
               <p>There are many variations of passages of Lorem Ipsum available.</p>
               <div className="d-flex flex-column flex-sm-row mt-30">
                 <input type="email" className="form-control" placeholder="Enter Email address" />
-                <button type="button" className="input-append theme-btn theme-btn-lg ms-sm-3">
+                <Link href="/contact" className="input-append theme-btn theme-btn-lg ms-sm-3">
                   Subscribe
-                </button>
+                </Link>
               </div>
               <ul className="list-unstyled feature-list">
                 <li>
@@ -589,14 +617,12 @@ export function FinancePageContent() {
             </div>
           </FadeIn>
         </div>
-        <FadeIn delay={0.2}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="saas_dash_img"
-            src="/img/saas-app/subscribe-dashboard.png"
-            alt="Subscribe dashboard"
-          />
-        </FadeIn>
+        <FinanceParallaxImage
+          className="saas_dash_img"
+          src="/img/saas-app/subscribe-dashboard.png"
+          alt="Subscribe dashboard"
+          parallax={{ x: -40, y: 50 }}
+        />
       </section>
 
       <FinanceSaasFooter />

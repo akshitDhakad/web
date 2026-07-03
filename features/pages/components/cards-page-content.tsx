@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 import { FadeIn } from "@/components/animations/fade-in";
-import { SectionTitle } from "@/components/common/section-title";
+import { CardCtaShapes } from "@/features/pages/components/card-cta-shapes";
+import { CardHeroImages } from "@/features/pages/components/card-hero-images";
 import {
   CARD_CUSTOMIZE_FEATURES,
   CARD_FEATURES,
@@ -13,55 +12,79 @@ import {
   CREDIT_CARDS,
   MARKETPLACE_LOGOS,
 } from "@/features/pages/constants/cards";
+import { cn } from "@/lib/utils";
+
+const TITLE_H2 =
+  "cards-title-h2 mb-5 mt-0 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-[30px] font-semibold leading-[1.2] text-[var(--secondary_color)] md:text-[42px]";
+
+const TITLE_P =
+  "m-0 font-[family-name:var(--font-roboto),'Roboto',sans-serif] text-base font-normal leading-[26px] text-[var(--p_color)]";
+
+function SectionTitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return <div className={cn("section-title", className)}>{children}</div>;
+}
 
 export function CardsPageContent() {
   return (
-    <>
-      <section className="banner-area-4 page-pt-145" aria-label="Cards hero">
-        <div className="container">
-          <div className="grid grid-cols-1 items-center gap-8 pb-[60px] pt-[75px] lg:grid-cols-2">
+    <div className="cards-page">
+      {/* Hero */}
+      <section
+        className="banner-area-4 cards-sec-hero overflow-hidden bg-[#10121c]"
+        aria-label="Cards hero"
+      >
+        <div className="cards-container">
+          <div className="cards-grid cards-grid--2 cards-hero-inner">
             <FadeIn>
               <div className="banner-content">
-                <h1 className="page-mb-0">The credit card as it should be.</h1>
-                <p className="page-mt-20">
-                  Without an annuity, it gives you cashback on all your purchases and access to months
-                  without interest.
+                <h1 className="m-0 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-[42px] font-bold leading-[1.15] text-white max-md:text-[36px]">
+                  The credit card as it should be.
+                </h1>
+                <p className="mt-5 font-[family-name:var(--font-roboto),'Roboto',sans-serif] text-base leading-6 text-white">
+                  Without an annuity, it gives you cashback on all your purchases and
+                  access to months without interest.
                 </p>
-                <Link href="#" className="theme-btn theme-btn-outlined_alt page-mt-40 inline-block">
+                <Link
+                  href="#"
+                  className="theme-btn theme-btn-outlined_alt mt-[50px] inline-block h-[55px] leading-[51px] text-black hover:text-white"
+                >
                   I want my BancaCard
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="right" delay={0.2}>
-              <div className="hero-img mx-auto text-center lg:ml-auto lg:text-end">
-                <Image
-                  className="person-img"
-                  src="/img/card/hero-img.png"
-                  alt="Banca credit card"
-                  width={480}
-                  height={520}
-                  priority
-                />
-                <div className="shape" style={{ top: "18%", left: "30px", zIndex: 1 }}>
-                  <Image src="/img/card/hero-card.png" alt="" width={120} height={80} aria-hidden />
-                </div>
-              </div>
-            </FadeIn>
+            <div className="cards-hero-media mx-auto w-full max-w-[380px] overflow-visible text-center sm:text-right md:ml-auto">
+              <CardHeroImages />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mplace-logo bg_white page-pt-80 page-pb-85">
-        <div className="container">
-          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-12">
-            <div className="lg:col-span-3">
-              <p>ACCEPTABLE TO MILLIONS OF CUSTOMERS WORLDWIDE AND IN TOP MARKETPLACES.</p>
-            </div>
-            <div className="logo-divider lg:col-span-9">
-              <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      {/* Marketplace logos */}
+      <section className="mplace-logo cards-sec-marketplace bg-white">
+        <div className="cards-container">
+          <div className="cards-grid cards-grid--12">
+            <FadeIn direction="left" className="cards-col-3">
+              <p className="m-0 font-[family-name:var(--font-roboto),'Roboto',sans-serif] text-base leading-7 text-[var(--p_color)]">
+                ACCEPTABLE TO MILLIONS OF CUSTOMERS WORLDWIDE AND IN TOP MARKETPLACES.
+              </p>
+            </FadeIn>
+            <div className="cards-col-8 text-center">
+              <div className="cards-grid cards-grid--logos">
                 {MARKETPLACE_LOGOS.map((logo, index) => (
-                  <FadeIn key={logo} delay={0.1 + index * 0.2}>
-                    <Image className="mx-auto h-auto w-full max-w-[140px]" src={logo} alt="Partner logo" width={140} height={48} />
+                  <FadeIn key={logo} direction="right" delay={0.1 + index * 0.2}>
+                    <Link href="#" className="flex justify-center">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        className="h-auto w-auto max-w-[140px] opacity-[0.85] transition-opacity hover:opacity-100"
+                        src={logo}
+                        alt="Partner logo"
+                      />
+                    </Link>
                   </FadeIn>
                 ))}
               </div>
@@ -70,19 +93,35 @@ export function CardsPageContent() {
         </div>
       </section>
 
-      <section className="bcard-feature-area bg_disable page-pt-125 page-pb-140">
-        <div className="container">
-          <SectionTitle
-            title="Great Features Of Banca Card"
-            description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered"
-          />
-          <div className="page-mt-30 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {/* Features */}
+      <section className="bcard-feature-area cards-sec-features bg-[#f5f7fa]">
+        <div className="cards-container">
+          <SectionTitle className="cards-title-block cards-title-block--center">
+            <FadeIn>
+              <h2 className={TITLE_H2}>Great Features Of Banca Card</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <p className={TITLE_P}>
+                There are many variations of passages of Lorem Ipsum available, but the majority
+                have suffered
+              </p>
+            </FadeIn>
+          </SectionTitle>
+          <div className="cards-grid cards-grid--3 cards-mt-30">
             {CARD_FEATURES.map((feature, index) => (
               <FadeIn key={feature.title} delay={0.1 + index * 0.2}>
-                <div className="feature-card-widget-5">
-                  <Image src={feature.icon} alt="" width={48} height={48} aria-hidden />
-                  <h4 className="page-mt-30 page-mb-15">{feature.title}</h4>
-                  <p>{feature.description}</p>
+                <div className="feature-card-widget-5 h-full rounded-lg bg-white px-10 pt-[50px] pb-[43px] text-left shadow-[0_1.6px_3.6px_rgba(51,77,114,0.15)] transition-shadow hover:shadow-[0_20px_45px_rgba(51,77,114,0.15)]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="block h-auto w-auto max-h-16 max-w-16"
+                    src={feature.icon}
+                    alt=""
+                    aria-hidden
+                  />
+                  <h4 className="mb-[15px] mt-[30px] font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-2xl font-semibold text-[var(--secondary_color)]">
+                    {feature.title}
+                  </h4>
+                  <p className={TITLE_P}>{feature.description}</p>
                 </div>
               </FadeIn>
             ))}
@@ -90,105 +129,187 @@ export function CardsPageContent() {
         </div>
       </section>
 
-      <section className="safe-deposit-area overflow-hidden bg_white page-pt-125 page-pb-115">
-        <div className="container">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+      {/* Safe deposit */}
+      <section className="safe-deposit-area cards-sec-safe overflow-hidden bg-white">
+        <div className="cards-container">
+          <div className="cards-grid cards-grid--2">
             <FadeIn>
-              <div className="card-img mx-auto max-w-md">
+              <div className="card-img relative z-[1] mx-auto w-full max-w-xl md:max-w-2xl lg:mx-0 lg:max-w-none">
                 <div className="logo">
-                  <Image src="/img/card/visa.png" alt="Visa" width={80} height={40} />
-                  <Image src="/img/card/mastercard.png" alt="Mastercard" width={80} height={40} />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/img/card/visa.png" alt="Visa" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/img/card/mastercard.png" alt="Mastercard" />
                 </div>
-                <Image className="bg-img" src="/img/card/payment-bg.png" alt="" width={500} height={300} aria-hidden />
-                <Image className="relative z-[1] w-full" src="/img/card/credit-card.png" alt="Credit card" width={400} height={260} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="bg-img" src="/img/card/payment-bg.png" alt="" aria-hidden />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="relative z-[1] block h-auto w-full"
+                  src="/img/card/credit-card.png"
+                  alt="Credit card"
+                />
               </div>
             </FadeIn>
             <div>
-              <div className="section-title text-start">
-                <h2>Best Ways to Send Your Money From Anywhere You Like</h2>
-                <p className="border-left page-pl-10 page-mt-20">
-                  Banca came as a solution to the next generation. Through our portal, you can sit at the
-                  comfort of your home, office or pretty much anywhere, and send money to anywhere! Through our strong network.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 page-mt-80">
-                <div className="payment-system">
-                  <Image src="/img/card/online-payment.svg" alt="" width={40} height={40} aria-hidden />
-                  <h5 className="page-mt-20 page-mb-10">Online Payments</h5>
-                  <p>We acceept many type payments getway that you love.</p>
-                </div>
-                <div className="payment-system">
-                  <Image src="/img/card/safebox.svg" alt="" width={40} height={40} aria-hidden />
-                  <h5 className="page-mt-20 page-mb-10">Safe Deposit</h5>
-                  <p>You can trust us for your deposit. No hidden fee.</p>
-                </div>
+              <SectionTitle className="cards-title-block cards-title-block--left">
+                <FadeIn>
+                  <h2 className={cn(TITLE_H2, "text-left")}>
+                    Best Ways to Send Your Money From Anywhere You Like
+                  </h2>
+                </FadeIn>
+                <FadeIn delay={0.2}>
+                  <p
+                    className={cn(
+                      TITLE_P,
+                      "cards-border-left relative pl-2.5 text-left",
+                    )}
+                  >
+                    Banca came as a solution to the next generation. Through our portal, you can sit
+                    at the comfort of your home, office or pretty much anywhere, and send money to
+                    anywhere! Through our strong network.
+                  </p>
+                </FadeIn>
+              </SectionTitle>
+              <div className="cards-grid cards-grid--2 cards-mt-80">
+                <FadeIn direction="right" delay={0.1}>
+                  <div className="payment-system">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className="block h-12 w-12"
+                      src="/img/card/online-payment.svg"
+                      alt=""
+                      aria-hidden
+                    />
+                    <h5 className="mb-2.5 mt-5 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[var(--secondary_color)]">
+                      Online Payments
+                    </h5>
+                    <p className={TITLE_P}>We acceept many type payments getway that you love.</p>
+                  </div>
+                </FadeIn>
+                <FadeIn direction="right" delay={0.3}>
+                  <div className="payment-system cards-mt-65-md">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className="block h-12 w-12"
+                      src="/img/card/safebox.svg"
+                      alt=""
+                      aria-hidden
+                    />
+                    <h5 className="mb-2.5 mt-5 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[var(--secondary_color)]">
+                      Safe Deposit
+                    </h5>
+                    <p className={TITLE_P}>You can trust us for your deposit. No hidden fee.</p>
+                  </div>
+                </FadeIn>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="customize-card-area bg_disable page-pt-125 page-pb-115">
-        <div className="container">
-          <div className="section-title mb-[35px] text-start">
-            <h2>Customize Your Payments</h2>
-            <p className="page-mt-15">
-              Personalize the newly-improved Payment Options Form to include all your payment methods
-              such as, easy monthly payments, credit cards
-            </p>
-          </div>
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-            <div className="order-2 lg:order-1">
+      {/* Customize payments */}
+      <section className="customize-card-area cards-sec-customize overflow-hidden bg-[#f5f7fa]">
+        <div className="cards-container">
+          <SectionTitle className="cards-title-block cards-title-block--left cards-mb-35">
+            <FadeIn>
+              <h2 className={cn(TITLE_H2, "text-left")}>Customize Your Payments</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <p className={cn(TITLE_P, "text-left")}>
+                Personalize the newly-improved Payment Options Form to include all your payment
+                methods such as, easy monthly payments, credit cards
+              </p>
+            </FadeIn>
+          </SectionTitle>
+          <div className="cards-grid cards-grid--2">
+            <div className="cards-order-2 cards-lg-order-1 cards-widget-gap">
               {CARD_CUSTOMIZE_FEATURES.map((feature, index) => (
                 <FadeIn key={feature.title} delay={0.1 + index * 0.2}>
-                  <div className={`feature-card-widget-6 ${index > 0 ? "page-mt-30" : ""}`}>
-                    <div className="icon">
-                      <Image src={feature.icon} alt="" width={48} height={48} aria-hidden />
+                  <div className="feature-card-widget-6 flex items-start gap-5 rounded-[10px] bg-white p-[38px_40px] text-left shadow-[0_1.6px_3.6px_rgba(51,77,114,0.15)] transition-shadow hover:shadow-[0_20px_45px_rgba(51,77,114,0.15)]">
+                    <div className="icon shrink-0">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        className="block h-12 w-12"
+                        src={feature.icon}
+                        alt=""
+                        aria-hidden
+                      />
                     </div>
-                    <div className="card-content">
-                      <h6>{feature.title}</h6>
-                      <p>{feature.description}</p>
+                    <div className="card-content min-w-0">
+                      <h6 className="mb-2 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-lg font-semibold leading-snug text-[var(--secondary_color)]">
+                        {feature.title}
+                      </h6>
+                      <p className={TITLE_P}>{feature.description}</p>
                     </div>
                   </div>
                 </FadeIn>
               ))}
             </div>
-            <div className="order-1 lg:order-2">
-              <div className="card-img relative">
-                <Image className="w-full" src="/img/card/card-img-bg.png" alt="" width={520} height={400} aria-hidden />
-                <div className="shape-1">
-                  <Image src="/img/card/Card-image-1.png" alt="Card design" width={280} height={180} />
+            <div className="cards-order-1 cards-lg-order-2 cards-lg-pl-50">
+              <FadeIn direction="left" delay={0.2}>
+                <div className="card-img relative mb-8 sm:mb-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="block h-auto w-full"
+                    src="/img/card/card-img-bg.png"
+                    alt=""
+                    aria-hidden
+                  />
+                  <div className="shape-1">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/img/card/Card-image-1.png" alt="Card design" />
+                  </div>
+                  <div className="shape-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/img/card/Card-image-2.png" alt="" aria-hidden />
+                  </div>
+                  <div className="shape-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/img/card/Card-image-3.png" alt="" aria-hidden />
+                  </div>
                 </div>
-                <div className="shape-2">
-                  <Image src="/img/card/Card-image-2.png" alt="" width={260} height={170} aria-hidden />
-                </div>
-                <div className="shape-3">
-                  <Image src="/img/card/Card-image-3.png" alt="" width={240} height={160} aria-hidden />
-                </div>
-              </div>
+              </FadeIn>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="why-choose-area page-pt-125 page-pb-135 overflow-hidden">
-        <div className="container">
-          <SectionTitle
-            title="Why You Choose Us?"
-            description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration."
-          />
-          <div className="page-mt-55 grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {/* Why choose us */}
+      <section className="why-choose-area cards-sec-why overflow-hidden bg-[#10121c]">
+        <div className="cards-container">
+          <SectionTitle className="cards-title-block cards-title-block--center">
+            <FadeIn>
+              <h2 className={cn(TITLE_H2, "text-white")}>Why You Choose Us?</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <p className={cn(TITLE_P, "text-[#c8ccd0]")}>
+                There are many variations of passages of Lorem Ipsum available, but the majority
+                have suffered alteration.
+              </p>
+            </FadeIn>
+          </SectionTitle>
+          <div className="cards-grid cards-grid--3 cards-mt-55">
             {CARD_WHY_CHOOSE.map((item, index) => (
               <FadeIn key={item.title} delay={0.1 + index * 0.2}>
-                <div className="content-box px-4 lg:px-8">
+                <div className="content-box cards-why-item relative text-center">
                   {"showLine" in item && item.showLine && (
                     <div className="line-shape">
-                      <Image src="/img/card/line-shape.png" alt="" width={120} height={40} aria-hidden />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/img/card/line-shape.png" alt="" aria-hidden />
                     </div>
                   )}
-                  <Image src={item.icon} alt="" width={48} height={48} className="mx-auto" aria-hidden />
-                  <h4 className="page-mt-30 page-mb-15">{item.title}</h4>
-                  <p>{item.description}</p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="mx-auto block h-16 w-16"
+                    src={item.icon}
+                    alt=""
+                    aria-hidden
+                  />
+                  <h4 className="mb-[15px] mt-[30px] font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-2xl font-semibold leading-[30px] text-white">
+                    {item.title}
+                  </h4>
+                  <p className={cn(TITLE_P, "text-[#c8ccd0]")}>{item.description}</p>
                 </div>
               </FadeIn>
             ))}
@@ -196,29 +317,59 @@ export function CardsPageContent() {
         </div>
       </section>
 
-      <section className="choose-card-area bg_disable page-pt-125 page-pb-140">
-        <div className="container">
-          <SectionTitle
-            title={
-              <>
+      {/* Choose card */}
+      <section className="choose-card-area cards-sec-choose bg-[#f5f7fa]">
+        <div className="cards-container">
+          <SectionTitle className="cards-title-block cards-title-block--center cards-title-block--wide">
+            <FadeIn>
+              <h2 className={TITLE_H2}>
                 Choose Card <br />
                 Considering Your Personal Needs
-              </>
-            }
-            description="You're considering opening a credit card to build credit. If this is the case, you need to make sure that you act responsibly with your card."
-          />
-          <div className="page-mt-60 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <p className={TITLE_P}>
+                You&apos;re considering opening a credit card to build credit. If this is the case,
+                you need to make sure that you act responsibly with your card.
+              </p>
+            </FadeIn>
+          </SectionTitle>
+          <div className="cards-grid cards-grid--4 cards-mt-60">
             {CREDIT_CARDS.map((card, index) => (
               <FadeIn key={card.title} delay={0.1 + index * 0.2}>
-                <div className="credit-card-box-widget">
-                  <Image src={card.image} alt={card.title} width={300} height={190} />
-                  <div className="card-content">
-                    <h4>{card.title}</h4>
-                    <p><Image src="/img/card/icon-1.png" alt="" width={16} height={16} aria-hidden />Max: 60 days</p>
-                    <p><Image src="/img/card/icon-2.png" alt="" width={16} height={16} aria-hidden />Payment fee: 1%</p>
-                    <p><Image src="/img/card/icon-3.png" alt="" width={16} height={16} aria-hidden />Max credit: $20.000</p>
-                    <Link href="#" className="page-mt-25 inline-flex items-center gap-1">
-                      Learn more <ArrowRight size={16} aria-hidden />
+                <div className="credit-card-box-widget h-full overflow-hidden rounded-[10px] border border-[var(--black_50)] bg-white p-[5px] transition-shadow hover:shadow-[0_20px_45px_rgba(51,77,114,0.15)]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img className="block w-full rounded-lg" src={card.image} alt={card.title} />
+                  <div className="card-content p-[30px_20px]">
+                    <h4 className="mb-4 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-2xl font-semibold text-[var(--secondary_color)]">
+                      {card.title}
+                    </h4>
+                    <p className="mb-0 flex items-center font-[family-name:var(--font-roboto),'Roboto',sans-serif] text-base leading-[35px] text-[var(--secondary_color)]">
+                      <span className="mr-[15px] inline-flex shrink-0 items-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img className="h-5 w-5" src="/img/card/icon-1.png" alt="" aria-hidden />
+                      </span>
+                      Max: 60 days
+                    </p>
+                    <p className="mb-0 flex items-center font-[family-name:var(--font-roboto),'Roboto',sans-serif] text-base leading-[35px] text-[var(--secondary_color)]">
+                      <span className="mr-[15px] inline-flex shrink-0 items-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img className="h-5 w-5" src="/img/card/icon-2.png" alt="" aria-hidden />
+                      </span>
+                      Payment fee: 1%
+                    </p>
+                    <p className="mb-0 flex items-center font-[family-name:var(--font-roboto),'Roboto',sans-serif] text-base leading-[35px] text-[var(--secondary_color)]">
+                      <span className="mr-[15px] inline-flex shrink-0 items-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img className="h-5 w-5" src="/img/card/icon-3.png" alt="" aria-hidden />
+                      </span>
+                      Max credit: $20.000
+                    </p>
+                    <Link
+                      href="#"
+                      className="cards-learn-more relative mt-[25px] inline-block text-base text-[var(--brand_color)]"
+                    >
+                      Learn more <i className="arrow_right align-middle text-lg" aria-hidden />
                     </Link>
                   </div>
                 </div>
@@ -228,22 +379,37 @@ export function CardsPageContent() {
         </div>
       </section>
 
-      <section className="cta-3 page-pt-90 page-pb-75">
-        <div className="container">
-          <FadeIn>
-            <div className="cta-content max-w-xl">
-              <h5>Want to know about our offers first?</h5>
-              <h2>Subscribe our newsletter</h2>
-              <form className="input-group page-mt-40" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" className="form-control" placeholder="Your email address" />
-                <button type="submit" className="input-append theme-btn theme-btn-lg">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </FadeIn>
+      {/* Newsletter CTA */}
+      <section className="cta-3 cards-sec-cta relative overflow-hidden bg-[#d0f2ec]">
+        <CardCtaShapes />
+        <div className="cards-container">
+          <div className="cards-grid cards-grid--12">
+            <FadeIn direction="left" className="cards-col-5">
+              <div className="cta-content relative z-[1] text-black">
+                <h5 className="m-0 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[#535a60]">
+                  Want to know about our offers first?
+                </h5>
+                <h2 className="mb-0 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-4xl font-semibold leading-[42px] text-[var(--secondary_color)]">
+                  Subscribe our newsletter
+                </h2>
+                <div className="cards-mt-30 flex flex-wrap gap-3">
+                  <input
+                    type="email"
+                    className="form-control min-w-[200px] flex-1 border-[#171d24] bg-transparent px-5 text-base lowercase text-[var(--p_color)] placeholder:text-[var(--p_color)]"
+                    placeholder="Your  email address"
+                  />
+                  <Link
+                    href="#"
+                    className="input-append theme-btn theme-btn-lg shrink-0 whitespace-nowrap bg-[var(--secondary_color)] px-10 leading-[57px] h-[60px]"
+                  >
+                    Subscribe
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

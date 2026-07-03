@@ -1,65 +1,34 @@
-/* Shared site footer (footer-2) — used on all pages via layout */
+/* Shared site footer (footer-3) — home, cards, and global pages */
 
-.site-footer.footer.footer-2 {
-  padding-top: 110px;
-  padding-bottom: 100px;
-}
-
-@media (min-width: 992px) {
-  .site-footer.footer.footer-2 {
-    padding-top: 130px;
-    padding-bottom: 125px;
-  }
+.site-footer.footer.footer-3 {
+  background-color: #171d24;
 }
 
 .site-footer .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media (min-width: 1024px) {
   .site-footer .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
-.site-footer .sf-footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media (min-width: 576px) {
-  .site-footer .sf-footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.site-footer .footer-top {
+  padding-top: 105px;
+  padding-bottom: 105px;
 }
 
 @media (min-width: 992px) {
-  .site-footer .sf-footer-grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 0;
-  }
-
-  .site-footer .sf-footer-col-mission {
-    grid-column: span 3;
-  }
-
-  .site-footer .sf-footer-col-company {
-    grid-column: 5 / span 3;
-  }
-
-  .site-footer .sf-footer-col-product {
-    grid-column: span 3;
-  }
-
-  .site-footer .sf-footer-col-help {
-    grid-column: span 2;
+  .site-footer .footer-top {
+    padding-top: 130px;
+    padding-bottom: 115px;
   }
 }
 
@@ -67,43 +36,15 @@
   margin-bottom: 30px;
 }
 
-.site-footer .footer-widget h4 {
+.site-footer .footer-widget.mb-30 {
+  margin-bottom: 30px;
+}
+
+.site-footer .footer-text.mb-20 {
   margin-bottom: 20px;
 }
 
-.site-footer .footer-text {
-  margin-bottom: 20px;
-}
-
-.site-footer .truspilot {
-  margin-top: 40px;
-}
-
-.site-footer .truspilot img {
-  max-width: 120px;
-  height: auto;
-}
-
-.site-footer .copyright {
-  padding-top: 45px;
-}
-
-.site-footer .sf-copyright-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 1200px) {
-  .site-footer .sf-copyright-grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .site-footer .sf-copyright-inner {
-    grid-column: 5 / span 8;
-  }
-}
-
-.site-footer .sf-copyright-bar {
+.site-footer .sf-footer-copyright-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -111,37 +52,36 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .site-footer .sf-copyright-bar {
-    grid-template-columns: 2fr 6fr 4fr;
-    gap: 0;
-    text-align: inherit;
+@media (min-width: 992px) {
+  .site-footer .sf-footer-copyright-row {
+    grid-template-columns: 3fr 5fr 4fr;
+    gap: 16px;
+  }
+
+  .site-footer .sf-footer-copyright-row .text-lg-start {
+    text-align: start;
+  }
+
+  .site-footer .sf-footer-copyright-row .text-end {
+    text-align: end;
   }
 }
 
-.site-footer .sf-copyright-bar img {
-  height: auto;
-  max-width: 100px;
-}
-
-.site-footer .text-sm-start {
-  text-align: center;
+.site-footer .my-sm-0 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 576px) {
-  .site-footer .text-sm-start {
-    text-align: start;
+  .site-footer .my-sm-0 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
-.site-footer .text-md-start {
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .site-footer .text-md-start {
-    text-align: start;
-  }
+.site-footer .sf-footer-copyright-row img {
+  height: auto;
+  max-width: 120px;
 }
 
 .site-footer .d-sm-none {
@@ -158,10 +98,6 @@
   margin-left: 0;
 }
 
-.site-footer .ms-3 {
-  margin-left: 1rem;
-}
-
-.site-footer .me-0 {
-  margin-right: 0;
+.site-footer .ms-2 {
+  margin-left: 0.5rem;
 }
