@@ -12,6 +12,7 @@ import { HeaderTop } from "@/components/layout/header-top";
 import {
   BUY_BANCA_URL,
   getHeaderTopVariant,
+  hasDarkHeroNav,
   MAIN_NAV_ITEMS,
   showsHeaderTop,
   type NavChild,
@@ -141,6 +142,7 @@ export function Navbar() {
 
   const showSolidNav = !isHomePage || isNavbarFixed;
   const useFixedPosition = isNavbarFixed;
+  const overDarkHero = hasDarkHeroNav(pathname) && !useFixedPosition;
 
   const handleScroll = useCallback(() => {
     setNavbarFixed(window.scrollY > 80);
@@ -167,6 +169,7 @@ export function Navbar() {
           "header-menu header-menu-4",
           showSolidNav && "navbar-solid",
           useFixedPosition && "navbar_fixed",
+          overDarkHero && "navbar-over-dark",
         )}
         id="sticky"
       >

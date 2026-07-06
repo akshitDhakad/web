@@ -26,24 +26,56 @@ body.body_dark .header-menu.header-menu-4.navbar_fixed {
   display: block;
 }
 
-.header-menu.navbar-solid.header-menu-4 .navbar .menu>.nav-item>.nav-link,
-.header-menu.navbar_fixed.header-menu-4 .navbar .menu>.nav-item>.nav-link {
+/* Scrolled / fixed navbar — theme link colors */
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu > .nav-item > .nav-link {
   color: var(--secondary_color);
 }
 
-.header-menu.navbar-solid.header-menu-4 .navbar .menu>.nav-item>.nav-link.active,
-.header-menu.navbar_fixed.header-menu-4 .navbar .menu>.nav-item>.nav-link.active {
+/* Inner pages at top over light heroes */
+.header-menu.navbar-solid.header-menu-4:not(.navbar_fixed):not(.navbar-over-dark) .navbar .menu > .nav-item > .nav-link {
+  color: var(--secondary_color);
+}
+
+.header-menu.navbar-solid.header-menu-4:not(.navbar_fixed):not(.navbar-over-dark) .navbar .menu > .nav-item > .nav-link.active,
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu > .nav-item > .nav-link.active {
   color: var(--brand_color) !important;
 }
 
-.header-menu.navbar-solid.header-menu-4 .navbar .menu>.nav-item>.nav-link.active::before,
-.header-menu.navbar_fixed.header-menu-4 .navbar .menu>.nav-item>.nav-link.active::before {
+.header-menu.navbar-solid.header-menu-4:not(.navbar_fixed):not(.navbar-over-dark) .navbar .menu > .nav-item > .nav-link.active::before,
+.header-menu.navbar_fixed.header-menu-4 .navbar .menu > .nav-item > .nav-link.active::before {
   background-color: var(--brand_color) !important;
+}
+
+/* Dark hero at page top — light nav links */
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link:hover {
+  color: #fff;
+}
+
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link.active {
+  color: var(--brand_color) !important;
+}
+
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link.active::before {
+  background-color: var(--brand_color) !important;
+}
+
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .navbar .navbar-toggler .hamburger span,
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .navbar .navbar-toggler .hamburger-cross span {
+  background-color: #fff;
 }
 
 .header-menu.header-menu-4 .theme-btn.theme-btn-alt {
   background-color: #fff;
   color: var(--brand_color);
+}
+
+.header-menu.header-menu-4.navbar-over-dark:not(.navbar_fixed) .theme-btn.theme-btn-alt {
+  background-color: var(--brand_color);
+  color: #fff;
 }
 
 .header-menu.navbar-solid.header-menu-4 .theme-btn.theme-btn-alt,
@@ -110,7 +142,7 @@ body.body_dark .header-menu.header-menu-4.navbar_fixed {
 .js-darkmode-btn .ball {
   position: absolute;
   top: 50%;
-  left: calc(100% - 23px);
+  left: 3px;
   width: 20px;
   height: 20px;
   background-color: #fafafa;
@@ -122,21 +154,70 @@ body.body_dark .header-menu.header-menu-4.navbar_fixed {
 }
 
 .js-darkmode-btn.dark-active .ball {
-  left: 3px;
-}
-
-/* Light mode: sun icon above thumb on the right */
-.js-darkmode-btn:not(.dark-active) .tab-btn:last-of-type {
-  z-index: 3;
-}
-
-/* Dark mode: moon icon above thumb on the left */
-.js-darkmode-btn.dark-active .tab-btns {
-  z-index: 3;
+  left: calc(100% - 23px);
 }
 
 .js-darkmode-btn input.dark_mode_switcher {
   display: none;
+}
+
+/* Dark mode pages — keep toggle visible on dark navbar backgrounds */
+body.body_dark .js-darkmode-btn {
+  background: #1d2746;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Home + inner pages at top: use sticky logo in dark mode */
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .sticky_logo .main {
+  display: none;
+}
+
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .sticky_logo .sticky {
+  display: block;
+}
+
+/* Transparent navbar on dark pages — light nav links (dark mode) */
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link:hover {
+  color: #fff;
+}
+
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link.active {
+  color: var(--brand_color) !important;
+}
+
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .menu > .nav-item > .nav-link.active::before {
+  background-color: var(--brand_color) !important;
+}
+
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .navbar-toggler .hamburger span,
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .navbar .navbar-toggler .hamburger-cross span {
+  background-color: #fff;
+}
+
+/* Fixed navbar in dark mode — muted inactive, brand active */
+body.body_dark .header-menu.header-menu-4.navbar_fixed .navbar .menu > .nav-item > .nav-link {
+  color: #b9b9b9;
+}
+
+body.body_dark .header-menu.header-menu-4.navbar_fixed .navbar .menu > .nav-item > .nav-link:hover {
+  color: #fff;
+}
+
+body.body_dark .header-menu.header-menu-4.navbar_fixed .navbar .menu > .nav-item > .nav-link.active {
+  color: var(--brand_color) !important;
+}
+
+body.body_dark .header-menu.header-menu-4.navbar_fixed .navbar .menu > .nav-item > .nav-link.active::before {
+  background-color: var(--brand_color) !important;
+}
+
+body.body_dark .header-menu.header-menu-4:not(.navbar_fixed) .theme-btn.theme-btn-alt {
+  background-color: var(--brand_color);
+  color: #fff;
 }
 
 @media (min-width: 992px) {

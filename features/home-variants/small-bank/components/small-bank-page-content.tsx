@@ -139,7 +139,7 @@ export function SmallBankPageContent() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.6}>
-                <div className="subscribe-field mt-[25px] flex flex-col sm:flex-row">
+                <div className="subscribe-field mt-[25px] flex flex-col sm:flex-row gap-2">
                   <input
                     type="email"
                     className="form-control sm:mr-1"

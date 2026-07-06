@@ -87,6 +87,13 @@ const HEADER_TOP_LIGHT_PREFIXES = [
   "/contact",
 ] as const;
 
+/** Variant pages with a dark hero — navbar stays transparent at top with light nav links. */
+const DARK_HERO_NAV_PREFIXES = [
+  "/small-bank",
+  "/simple",
+  "/mobile-app",
+] as const;
+
 function matchesPathPrefix(pathname: string, prefix: string): boolean {
   return pathname === prefix || pathname.startsWith(`${prefix}/`);
 }
@@ -104,6 +111,15 @@ export function getHeaderTopVariant(pathname: string): "light" | "dark" {
   return HEADER_TOP_DARK_PREFIXES.some((prefix) => matchesPathPrefix(pathname, prefix))
     ? "dark"
     : "light";
+}
+
+/** Transparent navbar overlays a dark hero — use light nav link colors at page top. */
+export function hasDarkHeroNav(pathname: string): boolean {
+  if (pathname === "/") {
+    return true;
+  }
+
+  return DARK_HERO_NAV_PREFIXES.some((prefix) => matchesPathPrefix(pathname, prefix));
 }
 
 export const SITE_CONFIG = {
