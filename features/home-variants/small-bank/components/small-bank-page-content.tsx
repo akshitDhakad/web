@@ -618,8 +618,8 @@ export function SmallBankPageContent() {
       <section className="cta-action-area-three bg-white" aria-label="Call to action">
         <div className="container">
           <div className="cta-4 cta-five cta-bg-primary">
-            <div className="grid grid-cols-1 items-end gap-y-8 gap-x-0 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
-              <div className="text-left">
+            <div className="sb-cta-grid grid grid-cols-1 items-center gap-y-8 gap-x-0 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
+              <div className="sb-cta-copy">
                 <FadeIn>
                   <div className="cta-content">
                     <h2 className="text-white">Try it for free</h2>

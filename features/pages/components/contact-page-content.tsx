@@ -3,14 +3,9 @@
 import { Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import { FadeIn } from "@/components/animations/fade-in";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import {
   SITE_FOOTER_SOCIAL,
   SITE_FOOTER_SOCIAL_ICON_CLASS,
@@ -20,6 +15,65 @@ import {
   CONTACT_HELP_CARDS,
   CONTACT_INFO,
 } from "@/features/pages/constants/contact";
+import { cn } from "@/lib/utils";
+
+function ContactFaqAccordion() {
+  const [openId, setOpenId] = useState<string>(CONTACT_FAQ_ITEMS[0]?.id ?? "");
+
+  return (
+    <div className="faq-widget">
+      <div className="accordion" id="contactAccordion">
+        {CONTACT_FAQ_ITEMS.map((item, index) => {
+          const isOpen = openId === item.id;
+          const headingId = `contact-faq-heading-${index}`;
+
+          return (
+            <div
+              key={item.id}
+              className={cn("single-widget-one", isOpen && "is-open")}
+            >
+              <div className="widget-icon">
+                <i className="icon_question_alt2" aria-hidden />
+              </div>
+              <div className="w-full">
+                <div className="faq-header" id={headingId}>
+                  <h4
+                    className={cn("mb-0", !isOpen && "collapsed")}
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={isOpen}
+                    aria-controls={item.id}
+                    onClick={() => setOpenId(isOpen ? "" : item.id)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpenId(isOpen ? "" : item.id);
+                      }
+                    }}
+                  >
+                    {item.question}
+                    <i className="icon_plus" aria-hidden />
+                    <i className="icon_minus-06" aria-hidden />
+                  </h4>
+                </div>
+                {isOpen ? (
+                  <div
+                    id={item.id}
+                    className="faq-body contact-faq-body"
+                    role="region"
+                    aria-labelledby={headingId}
+                  >
+                    <div className="faq-answer-text">{item.answer}</div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 function ContactInfoIcon({ type }: { type: string }) {
   if (type === "clock") return <Clock size={18} className="text-[var(--brand_color)]" aria-hidden />;
@@ -170,16 +224,7 @@ export function ContactPageContent() {
             <h2>Frequently asked questions</h2>
           </div>
           <div className="mx-auto max-w-4xl">
-            <Accordion type="single" collapsible defaultValue="contact-faq-1" className="faq-widget">
-              {CONTACT_FAQ_ITEMS.map((item) => (
-                <AccordionItem key={item.id} value={item.id}>
-                  <AccordionTrigger>{item.question}</AccordionTrigger>
-                  <AccordionContent>
-                    <p>{item.answer}</p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <ContactFaqAccordion />
           </div>
         </div>
       </section>

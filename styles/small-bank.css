@@ -373,8 +373,24 @@
 }
 
 /* ── CTA block ── */
+.small-bank-page .cta-five {
+  padding: 40px 80px;
+}
+
+.small-bank-page .sb-cta-grid {
+  align-items: center;
+  min-height: 308px;
+}
+
+.small-bank-page .sb-cta-copy {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .small-bank-page .cta-five .cta-content {
   text-align: left;
+  padding-top: 0;
 }
 
 .small-bank-page .cta-five .cta-content h2,
@@ -384,9 +400,9 @@
 
 .small-bank-page .sb-cta-media {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 0;
+  height: 100%;
 }
 
 .small-bank-page .sb-cta-media img {
@@ -397,6 +413,10 @@
 }
 
 @media (min-width: 1024px) {
+  .small-bank-page .cta-five {
+    padding: 40px 100px 40px 80px;
+  }
+
   .small-bank-page .sb-cta-media {
     justify-content: flex-end;
   }

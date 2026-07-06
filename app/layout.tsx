@@ -8,6 +8,7 @@ import { SITE_CONFIG } from "@/constants/navigation";
 
 import "@/styles/globals.css";
 import "@/styles/finance/fontawesome.css";
+import "@/styles/finance/elegant-icons.css";
 import "@/styles/banca.css";
 import "@/styles/home-variants.css";
 import "@/styles/navbar-overrides.css";

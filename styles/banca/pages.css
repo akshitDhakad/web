@@ -19,6 +19,7 @@
 
 .page-pb-200 { padding-bottom: 200px; }
 .page-pb-160 { padding-bottom: 160px; }
+.page-pb-145 { padding-bottom: 145px; }
 .page-pb-140 { padding-bottom: 140px; }
 .page-pb-115 { padding-bottom: 115px; }
 .page-pb-105 { padding-bottom: 105px; }
@@ -845,6 +846,43 @@
 
 .faq-area-2 .faq-widget {
   margin-top: 20px;
+}
+
+.faq-area-2 .section-title h2 {
+  color: var(--secondary_color);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.faq-area-2 .faq-widget .single-widget-one.is-open .faq-header h4 {
+  color: var(--brand_color);
+}
+
+.faq-area-2 .faq-widget .faq-header h4 i {
+  font-family: "ElegantIcons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.faq-area-2 .faq-widget .faq-body.contact-faq-body {
+  display: block;
+  padding-top: 8px;
+}
+
+.faq-area-2 .faq-widget .faq-body .faq-answer-text {
+  font-size: 16px;
+  color: var(--p_color);
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .faq-area-2 .faq-widget .contact-faq-body {
+    padding-right: 130px;
+  }
 }
 
 /* Error */

@@ -59,7 +59,7 @@ export const CONTACT_FAQ_ITEMS = [
   },
   {
     id: "contact-faq-3",
-    question: "Do you offering refinancing ?",
+    question: "Do you offer refinancing?",
     answer:
       "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
   },
@@ -71,7 +71,7 @@ export const CONTACT_FAQ_ITEMS = [
   },
   {
     id: "contact-faq-5",
-    question: "When should i apply?",
+    question: "When should I apply?",
     answer:
       "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
   },
