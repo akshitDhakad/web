@@ -14,47 +14,43 @@ export function HeaderTop({ variant = "light" }: HeaderTopProps) {
   return (
     <div className={cn("header-top py-2", isDark ? "header-top-dark" : "bg_white")}>
       <div className={containerClassName}>
-        <div className="row align-items-center">
-          <div className="col-md-5">
-            <div className="header-info-left">
-              <div className="language-list">
-                <select
-                  id="select-lang"
-                  defaultValue="English"
-                  aria-label="Select language"
-                >
-                  <option value="English">English</option>
-                  <option value="Bangla">Bangla</option>
-                  <option value="French">French</option>
-                  <option value="Hindi">Hindi</option>
-                </select>
-              </div>
-              <div className="timestamp ms-4">
-                <Clock aria-hidden size={14} />
-                Mon - Fri 10:00-18:00
-              </div>
+        <div className="header-top-inner">
+          <div className="header-info-left">
+            <div className="language-list">
+              <select
+                id="select-lang"
+                defaultValue="English"
+                aria-label="Select language"
+              >
+                <option value="English">English</option>
+                <option value="Bangla">Bangla</option>
+                <option value="French">French</option>
+                <option value="Hindi">Hindi</option>
+              </select>
+            </div>
+            <div className="timestamp">
+              <Clock aria-hidden size={14} />
+              Mon - Fri 10:00-18:00
             </div>
           </div>
-          <div className="col-md-7">
-            <div className="header-info-right">
-              <ul>
-                <li>
-                  <Image
-                    className="img-fluid"
-                    src={isDark ? "/img/phone-outline-white.png" : "/img/phone-outline.png"}
-                    alt=""
-                    width={14}
-                    height={14}
-                    aria-hidden
-                  />
-                  <a href="tel:01234567890">+01234-567890</a>
-                </li>
-                <li>
-                  <Mail aria-hidden size={14} />
-                  <a href="mailto:bancainfo@email.com">bancainfo@email.com</a>
-                </li>
-              </ul>
-            </div>
+          <div className="header-info-right">
+            <ul>
+              <li>
+                <Image
+                  className="img-fluid"
+                  src={isDark ? "/img/phone-outline-white.png" : "/img/phone-outline.png"}
+                  alt=""
+                  width={14}
+                  height={14}
+                  aria-hidden
+                />
+                <a href="tel:01234567890">+01234-567890</a>
+              </li>
+              <li>
+                <Mail aria-hidden size={14} />
+                <a href="mailto:bancainfo@email.com">bancainfo@email.com</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -913,6 +913,14 @@
   color: #82879c;
 }
 
+.error_content_two .theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1;
+}
+
 .error_img {
   padding-bottom: 55px;
   position: relative;

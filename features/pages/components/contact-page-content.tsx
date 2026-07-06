@@ -12,6 +12,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
+  SITE_FOOTER_SOCIAL,
+  SITE_FOOTER_SOCIAL_ICON_CLASS,
+} from "@/features/home/constants/footer";
+import {
   CONTACT_FAQ_ITEMS,
   CONTACT_HELP_CARDS,
   CONTACT_INFO,
@@ -145,10 +149,10 @@ export function ContactPageContent() {
                       {card.cta}
                     </Link>
                   ) : (
-                    <div className="page-mt-35 flex justify-center gap-3">
-                      {["f", "t", "p", "in"].map((label) => (
-                        <a key={label} href="#" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--p_color)] text-sm">
-                          {label}
+                    <div className="social-button page-mt-35">
+                      {SITE_FOOTER_SOCIAL.map((network) => (
+                        <a key={network} href="#" aria-label={network}>
+                          <i className={SITE_FOOTER_SOCIAL_ICON_CLASS[network]} aria-hidden />
                         </a>
                       ))}
                     </div>
@@ -180,7 +184,7 @@ export function ContactPageContent() {
         </div>
       </section>
 
-      <section className="cta-area page-pt-60 bg_white">
+      {/* <section className="cta-area page-pt-60 bg_white">
         <div className="container">
           <div
             className="cta cta-bg-violet rounded-lg px-6 py-10 md:px-10"
@@ -198,7 +202,7 @@ export function ContactPageContent() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

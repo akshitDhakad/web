@@ -518,21 +518,26 @@ export function LoanCompanyPageContent() {
 
       <section className="coverage-area">
         <div className="container">
-          <div className="section-title">
-            <span className="short-title-2">ABout us</span>
-            <FadeIn>
-              <h1>Learn about how Banca works</h1>
-            </FadeIn>
-          </div>
           <div className="lc-coverage-grid">
             {COUNTRIES.map((country) => (
-              <FadeIn key={country.id} delay={country.delay} direction="left">
+              <FadeIn
+                key={country.id}
+                delay={country.delay}
+                direction="left"
+                className="lc-coverage-item"
+              >
                 <Link href="#" className="country-widget">
                   <img src={country.flag} alt={country.name} />
                   <h5>{country.name}</h5>
                 </Link>
               </FadeIn>
             ))}
+          </div>
+          <div className="section-title">
+            <span className="short-title-2">ABout us</span>
+            <FadeIn>
+              <h1>Learn about how Banca works</h1>
+            </FadeIn>
           </div>
         </div>
       </section>

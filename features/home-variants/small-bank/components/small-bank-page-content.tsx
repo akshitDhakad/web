@@ -297,7 +297,7 @@ export function SmallBankPageContent() {
               <span className="short-title-2 text-[#b7b7b7]">Cards</span>
             </FadeIn>
             <FadeIn>
-              <h1 className="text-white">
+              <h1 className="!text-white">
                 We offer variety of <br />
                 <span className="underline-shape">cards</span> with features
               </h1>

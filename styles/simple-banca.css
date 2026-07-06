@@ -34,6 +34,7 @@
 .simple-banca-page .banner-area-3 {
   padding-top: 90px;
   overflow: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -64,7 +65,7 @@
 
 @media (min-width: 992px) {
   .simple-banca-page .banner-area-3 .sb-hero-grid {
-    grid-template-columns: 58.333% 41.666%;
+    grid-template-columns: 48% 52%;
   }
 }
 
@@ -97,18 +98,33 @@
   .simple-banca-page .banner-area-3 .sb-hero-media {
     display: block;
     position: relative;
-    min-height: 420px;
+    min-height: 520px;
+    overflow: visible;
   }
 }
 
 .simple-banca-page .banner-area-3 .person-img {
   position: absolute;
   bottom: 0;
-  left: 50px;
+  left: 0;
   z-index: 1;
-  width: 671px;
-  max-width: 100%;
+  width: 820px;
+  max-width: none;
   height: auto;
+}
+
+@media (min-width: 1200px) {
+  .simple-banca-page .banner-area-3 .person-img {
+    width: 900px;
+    left: -20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .simple-banca-page .banner-area-3 .person-img {
+    width: 720px;
+    left: 0;
+  }
 }
 
 /* ── Feature + calculator ── */
@@ -160,7 +176,7 @@
   height: auto;
 }
 
-.simple-banca-page .feature-calculator .feature-card-widget-3 > img {
+.simple-banca-page .feature-calculator .feature-card-widget-3>img {
   max-width: 100%;
   height: auto;
 }
@@ -323,7 +339,7 @@
   height: auto;
 }
 
-.simple-banca-page .help-ad-area .sb-help-text p + p {
+.simple-banca-page .help-ad-area .sb-help-text p+p {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -407,7 +423,7 @@
 .simple-banca-page .articles-area .sb-articles-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 24px !important;
   margin-top: 60px;
 }
 
@@ -514,6 +530,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -588,12 +605,10 @@
   width: 100%;
   padding: 22px 0 22px 20px;
   text-align: left;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(23, 29, 36, 0.02),
-    rgba(23, 29, 36, 0.5),
-    rgba(23, 29, 36, 0.85)
-  );
+  background-image: linear-gradient(to bottom,
+      rgba(23, 29, 36, 0.02),
+      rgba(23, 29, 36, 0.5),
+      rgba(23, 29, 36, 0.85));
 }
 
 .simple-banca-page .testimonial-widget-2 .client-info p {
@@ -703,6 +718,112 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+/* FAQ accordion — spacing + visible answer text */
+.simple-banca-page .faq-widget-2 {
+  border-radius: 10px;
+  padding: 40px 30px;
+  background-color: #fff;
+  box-shadow: var(--theme-dropshadow, 0 0.5px 1px rgba(51, 77, 114, 0.1), 0 1.6px 3.6px rgba(51, 77, 114, 0.15));
+}
+
+.simple-banca-page .faq-widget-2 .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.simple-banca-page .faq-widget-2 .single-widget-one {
+  padding: 18px 0;
+  border-bottom: 1px solid #ebebeb;
+  transition: all 0.3s ease-out;
+}
+
+.simple-banca-page .faq-widget-2 .single-widget-one:first-child {
+  padding-top: 0;
+}
+
+.simple-banca-page .faq-widget-2 .single-widget-one:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.simple-banca-page .faq-widget-2 .faq-header h6 {
+  position: relative;
+  margin: 0;
+  padding-right: 28px;
+  font-size: 18px;
+  line-height: 1.45;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--brand_color, #0050b2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.simple-banca-page .faq-widget-2 .faq-header h6.collapsed {
+  font-weight: 500;
+  color: var(--secondary_color, #171d24);
+}
+
+.simple-banca-page .faq-widget-2 .faq-header h6 i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  display: none;
+  color: var(--brand_color, #0050b2);
+  font-family: "ElegantIcons";
+  font-style: normal;
+}
+
+.simple-banca-page .faq-widget-2 .faq-header h6 i+i {
+  display: block;
+}
+
+.simple-banca-page .faq-widget-2 .faq-header h6.collapsed i {
+  display: block;
+  color: #52575c;
+}
+
+.simple-banca-page .faq-widget-2 .faq-header h6.collapsed i+i {
+  display: none;
+}
+
+.simple-banca-page .faq-widget-2 .single-widget-one.is-open .faq-body,
+.simple-banca-page .faq-widget-2 .faq-body {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: 14px 0 6px !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.simple-banca-page .faq-widget-2 .faq-body .faq-answer-text {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+  font-family: "Roboto", var(--font-roboto), sans-serif !important;
+  font-weight: 400 !important;
+  color: #4c5267 !important;
+  -webkit-text-fill-color: #4c5267 !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  white-space: normal !important;
+  text-indent: 0 !important;
+  letter-spacing: normal !important;
 }
 
 /* ── Help CTA ── */

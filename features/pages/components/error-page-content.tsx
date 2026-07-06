@@ -38,7 +38,7 @@ export function ErrorPageContent() {
             <form className="error_search" onSubmit={(e) => e.preventDefault()}>
               <input type="search" className="form-control" placeholder="Search" />
             </form>
-            <Link href="/" className="theme-btn inline-flex items-center gap-2">
+            <Link href="/" className="theme-btn">
               <ArrowLeft size={16} aria-hidden />
               Back to Home Page
             </Link>

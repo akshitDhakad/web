@@ -22,33 +22,127 @@
   }
 }
 
-/* ── Banner ── */
+/* ── Banner hero (matches reference layout) ── */
 .mobile-app-page .banner-area {
-  overflow-x: clip;
   position: relative;
-  min-height: 720px;
-  padding-bottom: 140px;
-}
-
-.mobile-app-page .banner-area .logos {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.mobile-app-page .banner-area .logos img {
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  max-width: 72px;
-  max-height: 72px;
-  object-fit: contain;
+  overflow: visible;
+  background-color: var(--theme-color);
+  background-image: url(/img/banner/bg-img.png);
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 0;
 }
 
 .mobile-app-page .banner-area .bubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   z-index: 0;
+  pointer-events: none;
+}
+
+.mobile-app-page .banner-area .bubbles>div {
+  position: absolute;
+}
+
+.mobile-app-page .banner-area .bubbles .bubble {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: ma-zoom-in 1.5s linear infinite alternate both;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(1) {
+  bottom: 20%;
+  left: 5%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(1) .bubble {
+  animation-delay: 0.5s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(2) {
+  bottom: 65%;
+  left: 20%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(2) .bubble {
+  background-color: rgba(246, 166, 9, 0.4);
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(3) {
+  bottom: 15%;
+  left: 30%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(3) .bubble {
+  animation-delay: 1s;
+  background-color: #f6a609;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(4) {
+  bottom: 50%;
+  left: 40%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(4) .bubble {
+  animation-delay: 0.8s;
+  animation-direction: alternate-reverse;
+  background-color: rgba(42, 199, 105, 0.4);
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(5) {
+  bottom: 20%;
+  right: 5%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(5) .bubble {
+  animation-delay: 0.5s;
+  background-color: rgba(246, 166, 9, 0.4);
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(6) {
+  bottom: 65%;
+  right: 20%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(6) .bubble {
+  background-color: #2ac769;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(7) {
+  bottom: 15%;
+  right: 30%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(7) .bubble {
+  animation-delay: 1.1s;
+  background-color: rgba(42, 199, 105, 0.4);
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(8) {
+  bottom: 50%;
+  right: 40%;
+}
+
+.mobile-app-page .banner-area .bubbles>div:nth-child(8) .bubble {
+  animation-delay: 0.2s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes ma-zoom-in {
+  from {
+    opacity: 0.35;
+    transform: scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .mobile-app-page .banner-area .container {
@@ -58,177 +152,379 @@
 
 .mobile-app-page .banner-area .banner-content {
   position: relative;
-  padding-top: 200px;
-  padding-bottom: 30px;
+  z-index: 3;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 160px;
+  padding-bottom: 0;
   text-align: center;
 }
 
 .mobile-app-page .banner-area .banner-content h1 {
   position: relative;
   z-index: 2;
+  margin: 0 auto;
+  font-size: 60px;
+  line-height: 70px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
 }
 
+/* Phone + logos cluster (centered) */
 .mobile-app-page .banner-area .banner-content .img-area {
   position: relative;
   z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 35px;
-  width: 100%;
-  max-width: 326px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mobile-app-page .banner-area .banner-content .img-area img,
-.mobile-app-page .banner-area .ma-hero-person {
-  display: block;
   width: 326px;
-  max-width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: min(326px, 72vw);
+  margin: 35px auto 0;
 }
 
-.mobile-app-page .banner-area .banner-content .symbol-pulse {
+.mobile-app-page .banner-area .banner-content .img-area .ma-hero-phone {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  /* Phone overlaps the stats card */
+  margin-bottom: -90px;
+}
+
+/* Pulse rings behind phone */
+.mobile-app-page .banner-area .banner-content .img-area .symbol-pulse {
   position: absolute;
-  top: 71%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  z-index: 0;
+  width: 520px;
+  height: 520px;
+  max-width: 90vw;
+  max-height: 90vw;
+  overflow: visible;
   pointer-events: none;
 }
 
-.mobile-app-page .banner-area .ma-banner-inner {
-  max-width: 83.333%;
-  margin-left: auto;
-  margin-right: auto;
+.mobile-app-page .banner-area .banner-content .img-area .symbol-pulse div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28rem;
+  height: 28rem;
+  max-width: 90vw;
+  max-height: 90vw;
+  border-radius: 100%;
+  background-image: linear-gradient(-180deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 65%,
+      rgba(255, 255, 255, 0.04) 100%);
+  transform: translate(-50%, -50%);
 }
 
+.mobile-app-page .banner-area .banner-content .img-area .symbol-pulse .pulse-1 {
+  transform: translate(-50%, -50%) scale(0.75);
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .symbol-pulse .pulse-2 {
+  transform: translate(-50%, -50%) scale(1.01);
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .symbol-pulse .pulse-x {
+  will-change: transform;
+  animation: pulsate 3s infinite;
+}
+
+/* Circular brand icons around the phone */
+.mobile-app-page .banner-area .banner-content .img-area .logos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  width: 640px;
+  height: 100%;
+  max-width: 94vw;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  overflow: hidden !important;
+  /* background-color: #ffffff; */
+  box-shadow: 0 8px 24px rgba(23, 29, 36, 0.14);
+  animation: ma-logo-pulse 1.5s ease-out infinite both;
+}
+
+/* Assets are black squares with a centered white circle (~55% of the image).
+   Larger than the badge zooms into the brand mark so icons fill the circle. */
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item img {
+  position: static !important;
+  display: block;
+  width: 100px;
+  height: 100px;
+  max-width: none !important;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center center;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Left: Visa (top), PayPal (mid, closer), Amazon (bottom) */
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(1) {
+  top: 4%;
+  left: 0;
+  animation-delay: 0.5s;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(2) {
+  top: 40%;
+  left: 10%;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(3) {
+  bottom: 12%;
+  left: 2%;
+  animation-delay: 1s;
+}
+
+/* Right: Shopify (top), Google Pay (mid, closer), Mastercard (bottom) */
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(4) {
+  top: 4%;
+  right: 0;
+  animation-delay: 0.5s;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(5) {
+  top: 40%;
+  right: 10%;
+}
+
+.mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(6) {
+  bottom: 12%;
+  right: 2%;
+  animation-delay: 0.8s;
+}
+
+@keyframes ma-logo-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Stats card — half on purple, half below (translateY 50%) */
 .mobile-app-page .banner-area .ma-stats-row {
   position: relative;
-  min-height: 90px;
-  margin-top: 50px;
+  z-index: 2;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform: translateY(50%);
 }
 
 .mobile-app-page .banner-area .floated-widget {
-  position: absolute;
-  top: -70px;
-  left: 15px;
-  right: 15px;
-  z-index: 4;
+  position: relative;
+  z-index: 2;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
   padding: 40px 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 45px 0 rgba(51, 77, 114, 0.15);
 }
 
 .mobile-app-page .banner-area .ma-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 24px 32px;
+  align-items: start;
+  justify-items: center;
   text-align: center;
 }
 
 @media (min-width: 992px) {
   .mobile-app-page .banner-area .ma-stats-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
+    gap: 0 48px;
   }
+}
+
+.mobile-app-page .banner-area .ma-stats-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .mobile-app-page .banner-area .statistics-widget-1 {
-  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
   padding-top: 10px;
+  text-align: center;
 }
 
 .mobile-app-page .banner-area .statistics-widget-1 img {
-  display: inline-block;
-  width: 48px;
+  display: block;
+  width: auto;
   height: 48px;
-  max-width: 48px;
+  max-width: 56px;
+  margin: 0 auto;
   object-fit: contain;
 }
 
+.mobile-app-page .banner-area .statistics-widget-1 p {
+  margin: 20px 0 6px;
+  font-size: 18px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--secondary_color);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.mobile-app-page .banner-area .statistics-widget-1 .counter {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.2;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--theme-color);
+  text-align: center;
+}
+
 @media (max-width: 1199.98px) {
-  .mobile-app-page .banner-area .banner-content .img-area img,
-  .mobile-app-page .banner-area .ma-hero-person {
-    width: 285px;
+  .mobile-app-page .banner-area .banner-content h1 {
+    font-size: 48px;
+    line-height: 58px;
   }
 
-  .mobile-app-page .banner-area .banner-content .img-area {
-    max-width: 285px;
+  .mobile-app-page .banner-area .banner-content .img-area .logos {
+    width: 560px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area .logos .logo-item {
+    width: 78px;
+    height: 78px;
   }
 }
 
 @media (max-width: 991.98px) {
-  .mobile-app-page .banner-area {
-    min-height: 620px;
-    padding-bottom: 100px;
-  }
-
   .mobile-app-page .banner-area .banner-content {
-    padding-top: 100px;
+    max-width: 100%;
+    padding-top: 120px;
   }
 
-  .mobile-app-page .banner-area .ma-banner-inner {
-    max-width: 100%;
+  .mobile-app-page .banner-area .banner-content h1 {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area {
+    width: 280px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area .ma-hero-phone {
+    margin-bottom: -70px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area .logos {
+    width: 480px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area .logos .logo-item {
+    width: 64px;
+    height: 64px;
   }
 
   .mobile-app-page .banner-area .floated-widget {
-    left: 5px;
-    right: 5px;
-    padding: 24px 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 28px 20px;
   }
 
-  .mobile-app-page .banner-area .logos img {
-    width: 56px;
-    height: 56px;
-    max-width: 56px;
-    max-height: 56px;
+  .mobile-app-page .banner-area .statistics-widget-1 .counter {
+    font-size: 28px;
   }
 }
 
 @media (max-width: 575.98px) {
-  .mobile-app-page .banner-area .banner-content .img-area img,
-  .mobile-app-page .banner-area .ma-hero-person {
-    width: 250px;
+  .mobile-app-page .banner-area .banner-content {
+    padding-top: 110px;
+  }
+
+  .mobile-app-page .banner-area .banner-content h1 {
+    font-size: 28px;
+    line-height: 36px;
   }
 
   .mobile-app-page .banner-area .banner-content .img-area {
-    max-width: 250px;
+    width: 220px;
   }
 
-  .mobile-app-page .banner-area .logos img {
+  .mobile-app-page .banner-area .banner-content .img-area .ma-hero-phone {
+    margin-bottom: -50px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area .logos {
+    width: 340px;
+  }
+
+  .mobile-app-page .banner-area .banner-content .img-area .logos .logo-item {
     width: 48px;
     height: 48px;
-    max-width: 48px;
-    max-height: 48px;
   }
 
-  .mobile-app-page .banner-area .logos img:nth-child(1) {
-    left: 0;
+  .mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(2) {
+    left: 6%;
   }
 
-  .mobile-app-page .banner-area .logos img:nth-child(2) {
-    left: 10%;
+  .mobile-app-page .banner-area .banner-content .img-area .logos .logo-item:nth-child(5) {
+    right: 6%;
   }
 
-  .mobile-app-page .banner-area .logos img:nth-child(3) {
-    left: 20%;
+  .mobile-app-page .banner-area .banner-content .img-area .symbol-pulse div {
+    width: 16rem;
+    height: 16rem;
   }
 
-  .mobile-app-page .banner-area .logos img:nth-child(4) {
-    right: 20%;
+  .mobile-app-page .banner-area .floated-widget {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 24px 16px;
   }
 
-  .mobile-app-page .banner-area .logos img:nth-child(5) {
-    right: 10%;
+  .mobile-app-page .banner-area .ma-stats-grid {
+    gap: 16px 12px;
   }
 
-  .mobile-app-page .banner-area .logos img:nth-child(6) {
-    right: 0;
+  .mobile-app-page .banner-area .statistics-widget-1 p {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .mobile-app-page .banner-area .statistics-widget-1 .counter {
+    font-size: 22px;
   }
 }
 
@@ -246,29 +542,93 @@
   margin-right: auto;
   padding-top: 160px;
   padding-bottom: 65px;
+  text-align: center;
 }
 
 .mobile-app-page .feature-area .ma-feature-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  align-items: stretch;
 }
 
 @media (min-width: 768px) {
   .mobile-app-page .feature-area .ma-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 }
 
 @media (min-width: 1200px) {
   .mobile-app-page .feature-area .ma-feature-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
+    gap: 30px;
   }
 }
 
-.mobile-app-page .feature-area .feature-card-widget {
+.mobile-app-page .feature-area .ma-feature-card.feature-card-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   height: 100%;
+  min-width: 0;
+  padding: 40px 25px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: var(--bs-white, #fff);
+  box-shadow: 0 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+  transition: box-shadow 0.3s ease-out, color 0.3s ease-out;
+  cursor: default;
+}
+
+.mobile-app-page .feature-area .ma-feature-card.feature-card-widget:hover {
+  box-shadow: 0 20px 45px rgba(51, 77, 114, 0.15);
+}
+
+.mobile-app-page .feature-area .ma-feature-card.feature-card-widget:hover h4 {
+  color: var(--theme-color);
+}
+
+.mobile-app-page .feature-area .feature-card-widget .card-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  margin: 15px 0 25px;
+}
+
+.mobile-app-page .feature-area .feature-card-widget .card-img img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  min-height: 54px;
+  margin: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.mobile-app-page .feature-area .ma-feature-card.feature-card-widget:hover .card-img img {
+  transform: scale(1.08);
+}
+
+.mobile-app-page .feature-area .feature-card-widget h4 {
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--secondary_color);
+  text-transform: capitalize;
+  transition: color 0.3s ease-out;
+}
+
+.mobile-app-page .feature-area .feature-card-widget p {
+  margin: 11px 0 5px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--p_color);
 }
 
 @media (max-width: 991.98px) {
@@ -282,25 +642,33 @@
   }
 }
 
-/* ── Track progress ── */
+/* ── Track progress (overlapping image stack) ── */
 .mobile-app-page .track-f-progress {
   padding-top: 125px;
   padding-bottom: 160px;
   overflow: hidden;
+  background-color: var(--sec_bg_color, #f7f9fa);
 }
 
 .mobile-app-page .track-f-progress .ma-track-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 40px;
   padding-bottom: 10px;
+  align-items: center;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
+  .mobile-app-page .track-f-progress .ma-track-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
   .mobile-app-page .track-f-progress .ma-track-grid {
     grid-template-columns: 50% 41.666%;
     gap: 0;
-    align-items: center;
   }
 
   .mobile-app-page .track-f-progress .ma-track-text {
@@ -310,32 +678,187 @@
 
 .mobile-app-page .track-f-progress .img-content {
   position: relative;
-  text-align: right;
   z-index: 1;
-  max-width: 100%;
+  text-align: right;
+  width: 100%;
+  max-width: 520px;
   margin-left: auto;
   margin-right: auto;
+  min-height: 577px;
 }
 
-.mobile-app-page .track-f-progress .img-content img {
-  max-width: 100%;
+/* Purple blob behind the stack */
+.mobile-app-page .track-f-progress .img-content .bg-img {
+  position: absolute;
+  z-index: 0;
+  top: -35%;
+  left: -30%;
+  width: auto;
+  max-width: none;
   height: auto;
+  pointer-events: none;
+}
+
+/* Tall vertical image on the right (361×577) */
+.mobile-app-page .track-f-progress .img-content .track-3 {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: auto;
+  max-width: 70%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* Shared absolute images on the left */
+.mobile-app-page .track-f-progress .img-content .track-img {
+  position: absolute;
+  z-index: 3;
+  width: auto;
+  max-width: none;
+  height: auto;
+}
+
+/* Top-left horizontal (381×288) */
+.mobile-app-page .track-f-progress .img-content .track-img.track-1 {
+  top: 50px;
+  left: -30px;
+  width: 381px;
+  max-width: 72%;
+}
+
+/* Bottom-left horizontal (351×242) */
+.mobile-app-page .track-f-progress .img-content .track-img.track-2 {
+  bottom: 40px;
+  left: -15px;
+  width: 351px;
+  max-width: 68%;
+}
+
+.mobile-app-page .track-f-progress .text-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mobile-app-page .track-f-progress .text-content h2 {
+  margin-bottom: 0;
+  font-size: 36px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--secondary_color);
+}
+
+.mobile-app-page .track-f-progress .text-content p {
+  margin-top: 17px;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--p_color);
 }
 
 .mobile-app-page .track-f-progress .text-content .theme-btn-2 {
   margin-top: 55px;
 }
 
+@media (max-width: 1199.98px) {
+  .mobile-app-page .track-f-progress .img-content {
+    min-height: 500px;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .bg-img {
+    width: 750px;
+    top: -20%;
+    left: -50%;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-img.track-1 {
+    left: -80px;
+    width: 250px;
+    max-width: none;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-img.track-2 {
+    bottom: -20px;
+    left: -80px;
+    width: 250px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mobile-app-page .track-f-progress .img-content {
+    min-height: 480px;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .bg-img {
+    top: -22%;
+    left: -10%;
+    width: 640px;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-img.track-1 {
+    top: 40px;
+    left: 24px;
+    width: 260px;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-img.track-2 {
+    bottom: 65px;
+    left: 0;
+    width: 260px;
+  }
+
+  .mobile-app-page .track-f-progress .text-content h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mobile-app-page .track-f-progress .img-content {
+    min-height: 420px;
+    max-width: 400px;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .bg-img {
+    width: 520px;
+    top: -15%;
+    left: -20%;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-3 {
+    max-width: 65%;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-img.track-1 {
+    top: 30px;
+    left: 0;
+    width: 200px;
+  }
+
+  .mobile-app-page .track-f-progress .img-content .track-img.track-2 {
+    bottom: 30px;
+    left: 10px;
+    width: 190px;
+  }
+
+  .mobile-app-page .track-f-progress .text-content .theme-btn-2 {
+    margin-top: 30px;
+  }
+}
+
 /* ── Card payment ── */
 .mobile-app-page .card-payment {
   padding-top: 100px;
   padding-bottom: 130px;
+  overflow: hidden;
 }
 
 .mobile-app-page .card-payment .ma-card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 40px;
+  align-items: center;
 }
 
 .mobile-app-page .card-payment .ma-card-media {
@@ -352,7 +875,6 @@
   .mobile-app-page .card-payment .ma-card-grid {
     grid-template-columns: 41.666% 50%;
     gap: 0;
-    align-items: center;
   }
 
   .mobile-app-page .card-payment .ma-card-media {
@@ -367,37 +889,122 @@
 
 .mobile-app-page .card-payment .img-content {
   position: relative;
-  max-width: 100%;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+  min-height: 623px;
 }
 
-.mobile-app-page .card-payment .img-content img {
-  max-width: 100%;
+.mobile-app-page .card-payment .img-content .bg-img {
+  position: absolute;
+  z-index: 0;
+  top: -20%;
+  left: -45%;
+  width: auto;
+  max-width: none;
   height: auto;
+  pointer-events: none;
+}
+
+.mobile-app-page .card-payment .img-content .card-1 {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: auto;
+  max-width: 85%;
+  height: auto;
+}
+
+.mobile-app-page .card-payment .img-content .card-2 {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  right: 15px;
+  width: 200px;
+  max-width: 40%;
+  height: auto;
+}
+
+.mobile-app-page .card-payment .text-content h2 {
+  margin-bottom: 0;
+  font-size: 36px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--secondary_color);
+}
+
+.mobile-app-page .card-payment .text-content p {
+  margin-top: 17px;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--p_color);
 }
 
 .mobile-app-page .card-payment .text-content .theme-btn-2 {
   margin-top: 55px;
 }
 
+@media (max-width: 1199.98px) {
+  .mobile-app-page .card-payment .img-content .card-1 {
+    width: 340px;
+    max-width: 85%;
+  }
+
+  .mobile-app-page .card-payment .img-content .card-2 {
+    top: 41px;
+    right: -50px;
+    width: 150px;
+    max-width: none;
+  }
+
+  .mobile-app-page .card-payment .img-content .bg-img {
+    top: -20%;
+    left: -73%;
+    width: 750px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mobile-app-page .card-payment .img-content {
+    min-height: 520px;
+  }
+
+  .mobile-app-page .card-payment .img-content .card-2 {
+    right: 0;
+  }
+
+  .mobile-app-page .card-payment .img-content .bg-img {
+    left: -36%;
+    width: 640px;
+  }
+
+  .mobile-app-page .card-payment .text-content h2 {
+    font-size: 30px;
+  }
+}
+
 /* ── Internet banking ── */
 .mobile-app-page .internet-banking {
+  position: relative;
   padding-top: 100px;
   padding-bottom: 150px;
+  overflow: hidden;
+  background-color: var(--sec-bg-color, #f7f9fa);
 }
 
 .mobile-app-page .internet-banking .ma-bank-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 40px;
+  align-items: center;
 }
 
 @media (min-width: 992px) {
   .mobile-app-page .internet-banking .ma-bank-grid {
     grid-template-columns: 50% 33.333%;
     gap: 0;
-    align-items: center;
   }
 
   .mobile-app-page .internet-banking .ma-bank-text {
@@ -409,21 +1016,68 @@
   text-align: center;
 }
 
-@media (min-width: 992px) {
-  .mobile-app-page .internet-banking .ma-bank-media {
-    margin-left: 0;
-    margin-right: auto;
-  }
-}
-
 .mobile-app-page .internet-banking .img-content {
   position: relative;
+  z-index: 1;
   display: inline-block;
-  max-width: 100%;
+  width: 100%;
+  max-width: 466px;
+  min-height: 671px;
+  text-align: center;
 }
 
-.mobile-app-page .internet-banking .img-content img {
+/* Purple glow behind stack */
+.mobile-app-page .internet-banking .img-content .bg-img {
+  position: absolute;
+  z-index: 0;
+  top: -40%;
+  left: -32%;
+  width: auto;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Tall main image (466×671) */
+.mobile-app-page .internet-banking .img-content .bank-main {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: auto;
   max-width: 100%;
+  height: auto;
+}
+
+/* Top-right card (216×219) */
+.mobile-app-page .internet-banking .img-content .bank-1 {
+  position: absolute;
+  z-index: 3;
+  top: 60px;
+  right: -30px;
+  width: 216px;
+  max-width: 42%;
+  height: auto;
+}
+
+/* Bottom-left card (301×251) */
+.mobile-app-page .internet-banking .img-content .bank-2 {
+  position: absolute;
+  z-index: 3;
+  bottom: 80px;
+  left: -40px;
+  width: 301px;
+  max-width: 58%;
+  height: auto;
+}
+
+/* Far-left info card (422×190) */
+.mobile-app-page .internet-banking .img-content .bank-3 {
+  position: absolute;
+  z-index: 1;
+  top: 95px;
+  left: -105px;
+  width: 422px;
+  max-width: 80%;
   height: auto;
 }
 
@@ -432,8 +1086,115 @@
   align-items: center;
 }
 
+.mobile-app-page .internet-banking .text-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mobile-app-page .internet-banking .text-content h2 {
+  margin-bottom: 0;
+  font-size: 36px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--secondary_color);
+}
+
+.mobile-app-page .internet-banking .text-content p {
+  margin-top: 17px;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--p_color);
+}
+
 .mobile-app-page .internet-banking .text-content .theme-btn-2 {
   margin-top: 55px;
+}
+
+@media (max-width: 1199.98px) {
+  .mobile-app-page .internet-banking .img-content {
+    min-height: 560px;
+    max-width: 400px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-main {
+    max-width: 340px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-1 {
+    width: 180px;
+    max-width: none;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-2 {
+    bottom: 45px;
+    width: 240px;
+    max-width: none;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-3 {
+    width: 270px;
+    max-width: none;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bg-img {
+    left: -45%;
+    width: 750px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mobile-app-page .internet-banking .img-content {
+    min-height: 500px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bg-img {
+    left: -20%;
+    width: 640px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-1 {
+    right: 0;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-2 {
+    left: 0;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-3 {
+    left: -40px;
+  }
+
+  .mobile-app-page .internet-banking .text-content h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mobile-app-page .internet-banking .img-content {
+    min-height: 420px;
+    max-width: 320px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-1 {
+    top: 40px;
+    width: 120px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-2 {
+    bottom: 40px;
+    width: 160px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bank-3 {
+    top: 70px;
+    left: -20px;
+    width: 180px;
+  }
+
+  .mobile-app-page .internet-banking .img-content .bg-img {
+    width: 480px;
+    left: -30%;
+  }
 }
 
 /* ── Security ── */

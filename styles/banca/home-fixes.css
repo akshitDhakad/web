@@ -791,8 +791,12 @@
 }
 
 .coverage-area .country-widget {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
+  text-align: center;
 }
 
 /* Calculator result column */

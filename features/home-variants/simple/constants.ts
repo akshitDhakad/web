@@ -132,20 +132,15 @@ export const SIMPLE_FAQ_ITEMS = [
     question: "How much can I borrow?",
     answer:
       "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
-    defaultOpen: false,
+    defaultOpen: true,
   },
   {
     id: "collapseTwo",
     headingId: "headingTwo",
     question: "What are the requirements to get a loan offer?",
-    answer: `- You must be at least 18 years old
-- You must have permanent residence in United States
-- You are not registered in the RKI / Debtor Register (DBR)
-
-The offers you receive are preliminary offers, which are provided that the information you have entered, are correct.
-
-At the same time, you must sign the loan offer with NemID before the bank can pay out your loan.`,
-    defaultOpen: true,
+    answer:
+      "You must be at least 18 years old. You must have permanent residence in United States. You are not registered in the RKI / Debtor Register (DBR). The offers you receive are preliminary offers, which are provided that the information you have entered are correct. At the same time, you must sign the loan offer with NemID before the bank can pay out your loan.",
+    defaultOpen: false,
   },
   {
     id: "collapseThree",

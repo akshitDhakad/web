@@ -36,42 +36,41 @@ function LoanStepsFaqAccordion() {
           const headingId = `loan-steps-heading-${index}`;
 
           return (
-            <FadeIn key={item.id} delay={item.delay}>
-              <div className="single-widget-one">
-                <div className="w-100">
-                  <div className="faq-header" id={headingId}>
-                    <h4
-                      className={cn("mb-0", !isOpen && "collapsed")}
-                      role="button"
-                      tabIndex={0}
-                      aria-expanded={isOpen}
-                      aria-controls={item.id}
-                      onClick={() => setOpenId(isOpen ? "" : item.id)}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault();
-                          setOpenId(isOpen ? "" : item.id);
-                        }
-                      }}
-                    >
-                      {item.question}
-                      <i className="icon_plus" />
-                      <i className="icon_minus-06" />
-                    </h4>
-                  </div>
-                  <div
-                    id={item.id}
-                    className={cn("collapse", isOpen && "show")}
-                    aria-labelledby={headingId}
-                    data-bs-parent="#loanStepsAccordion"
-                  >
-                    <div className="faq-body">
-                      <p>{item.answer}</p>
-                    </div>
-                  </div>
-                </div>
+            <div
+              key={item.id}
+              className={cn("single-widget-one", isOpen && "is-open")}
+            >
+              <div className="faq-header" id={headingId}>
+                <h4
+                  className={cn("mb-0", !isOpen && "collapsed")}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isOpen}
+                  aria-controls={item.id}
+                  onClick={() => setOpenId(isOpen ? "" : item.id)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      setOpenId(isOpen ? "" : item.id);
+                    }
+                  }}
+                >
+                  {item.question}
+                  <i className="icon_plus" aria-hidden />
+                  <i className="icon_minus-06" aria-hidden />
+                </h4>
               </div>
-            </FadeIn>
+              {isOpen ? (
+                <div
+                  id={item.id}
+                  className="faq-body"
+                  role="region"
+                  aria-labelledby={headingId}
+                >
+                  <div className="faq-answer-text">{item.answer}</div>
+                </div>
+              ) : null}
+            </div>
           );
         })}
       </div>

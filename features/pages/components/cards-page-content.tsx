@@ -181,14 +181,14 @@ export function CardsPageContent() {
                       alt=""
                       aria-hidden
                     />
-                    <h5 className="mb-2.5 mt-5 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[var(--secondary_color)]">
+                    <h5 className="mb-2.5 !mt-5 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[var(--secondary_color)]">
                       Online Payments
                     </h5>
                     <p className={TITLE_P}>We acceept many type payments getway that you love.</p>
                   </div>
                 </FadeIn>
                 <FadeIn direction="right" delay={0.3}>
-                  <div className="payment-system cards-mt-65-md">
+                  <div className="payment-system">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       className="block h-12 w-12"
@@ -196,7 +196,7 @@ export function CardsPageContent() {
                       alt=""
                       aria-hidden
                     />
-                    <h5 className="mb-2.5 mt-5 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[var(--secondary_color)]">
+                    <h5 className="mb-2.5 !mt-5 font-[family-name:var(--font-poppins),'Poppins',sans-serif] text-xl font-semibold text-[var(--secondary_color)]">
                       Safe Deposit
                     </h5>
                     <p className={TITLE_P}>You can trust us for your deposit. No hidden fee.</p>

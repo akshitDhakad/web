@@ -71,7 +71,7 @@ export const FAQ_COLUMN_ONE = [
     id: "collapseThree",
     headingId: "headingThree",
     question:
-      "What is your return policy and how do I contact support incase of said event ?",
+      "What is your return policy and how do I contact support in case of said event?",
     answer:
       'To reset your password, go to the login page and click on the "Forgot Password" link. You will be prompted to enter your email address and a reset link will be sent to you.',
     defaultOpen: false,
@@ -82,8 +82,7 @@ export const FAQ_COLUMN_TWO = [
   {
     id: "collapseFour",
     headingId: "headingFour",
-    question:
-      "What is a mutual fund and how does compound interest builds up ?",
+    question: "What is a mutual fund and how does compound interest build up?",
     answer:
       'To reset your password, go to the login page and click on the "Forgot Password" link. You will be prompted to enter your email address and a reset link will be sent to you.',
     defaultOpen: true,
@@ -92,7 +91,7 @@ export const FAQ_COLUMN_TWO = [
     id: "collapseFive",
     headingId: "headingFive",
     question:
-      "What budget is a financial plan that outlines your expected income and expenses ?",
+      "What budget is a financial plan that outlines your expected income and expenses?",
     answer:
       'To reset your password, go to the login page and click on the "Forgot Password" link. You will be prompted to enter your email address and a reset link will be sent to you.',
     defaultOpen: false,
@@ -101,7 +100,7 @@ export const FAQ_COLUMN_TWO = [
     id: "collapseSix",
     headingId: "headingSix",
     question:
-      "What is a strategy of spreading your investment across different asset classes ?",
+      "What is a strategy of spreading your investment across different asset classes?",
     answer:
       'To reset your password, go to the login page and click on the "Forgot Password" link. You will be prompted to enter your email address and a reset link will be sent to you.',
     defaultOpen: false,

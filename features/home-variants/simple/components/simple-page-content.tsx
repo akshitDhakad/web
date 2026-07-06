@@ -38,44 +38,37 @@ function SimpleFaqAccordion() {
 
   return (
     <div className="accordion" id="accordionExample">
-      {SIMPLE_FAQ_ITEMS.map((item, index) => {
+      {SIMPLE_FAQ_ITEMS.map((item) => {
         const isOpen = openId === item.id;
 
         return (
-          <FadeIn key={item.id} delay={0.1 + index * 0.2}>
-            <div className="single-widget-one">
-              <div className="faq-header" id={item.headingId}>
-                <h6
-                  className={cn("mb-0", !isOpen && "collapsed")}
-                  role="button"
-                  tabIndex={0}
-                  aria-expanded={isOpen}
-                  aria-controls={item.id}
-                  onClick={() => setOpenId(isOpen ? "" : item.id)}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      setOpenId(isOpen ? "" : item.id);
-                    }
-                  }}
-                >
-                  {item.question}
-                  <i className="icon_plus" />
-                  <i className="icon_close" />
-                </h6>
-              </div>
-              <div
-                id={item.id}
-                className={cn("collapse", isOpen && "show")}
-                aria-labelledby={item.headingId}
-                data-bs-parent="#accordionExample"
+          <div key={item.id} className={cn("single-widget-one", isOpen && "is-open")}>
+            <div className="faq-header" id={item.headingId}>
+              <h6
+                className={cn("mb-0", !isOpen && "collapsed")}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isOpen}
+                aria-controls={item.id}
+                onClick={() => setOpenId(isOpen ? "" : item.id)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setOpenId(isOpen ? "" : item.id);
+                  }
+                }}
               >
-                <div className="faq-body">
-                  <p style={{ whiteSpace: "pre-line" }}>{item.answer}</p>
-                </div>
-              </div>
+                {item.question}
+                <i className="icon_plus" aria-hidden />
+                <i className="icon_close" aria-hidden />
+              </h6>
             </div>
-          </FadeIn>
+            {isOpen ? (
+              <div id={item.id} className="faq-body" role="region" aria-labelledby={item.headingId}>
+                <div className="faq-answer-text">{item.answer}</div>
+              </div>
+            ) : null}
+          </div>
         );
       })}
     </div>
@@ -274,8 +267,8 @@ export function SimplePageContent() {
                 className="person-img"
                 src="/img/banner/person-2.png"
                 alt=""
-                width={671}
-                height={650}
+                width={900}
+                height={872}
               />
             </div>
           </div>

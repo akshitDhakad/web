@@ -1,17 +1,22 @@
+/**
+ * Hero logo order (matches reference layout):
+ * L-top Visa, L-mid PayPal, L-bottom Amazon,
+ * R-top Shopify, R-mid Google Pay, R-bottom Mastercard
+ */
 export const MOBILE_APP_BANNER_LOGOS = [
-  "/img/banner/Logo-1.png",
   "/img/banner/Logo-2.png",
   "/img/banner/Logo-3.png",
+  "/img/banner/Logo-1.png",
+  "/img/banner/Logo-6.png",
   "/img/banner/Logo-4.png",
   "/img/banner/Logo-5.png",
-  "/img/banner/Logo-6.png",
 ] as const;
 
 export const MOBILE_APP_STATS = [
-  { icon: "/img/banner/icon-1.svg", label: "Active user", value: "15,000" },
-  { icon: "/img/banner/icon-2.svg", label: "download", value: "49.9", suffix: "k" },
-  { icon: "/img/banner/icon-3.svg", label: "reviews", value: "35.7", suffix: "k" },
-  { icon: "/img/banner/icon-4.svg", label: "partners", value: "199", suffix: "+" },
+  { icon: "/img/banner/icon-1.svg", label: "Active User", value: "15,000" },
+  { icon: "/img/banner/icon-2.svg", label: "Download", value: "49.9", suffix: "k" },
+  { icon: "/img/banner/icon-3.svg", label: "Reviews", value: "35.7", suffix: "k" },
+  { icon: "/img/banner/icon-4.svg", label: "Partners", value: "199", suffix: "+" },
 ] as const;
 
 export const MOBILE_APP_FEATURES = [

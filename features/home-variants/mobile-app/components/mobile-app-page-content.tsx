@@ -1,6 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/animations/fade-in";
@@ -22,6 +23,49 @@ const BUBBLE_PARALLAX = [
   { x: 0, y: -250 },
   { x: 100, y: -250 },
 ] as const;
+
+const EASE = [0.25, 0.1, 0.25, 1] as const;
+
+type MotionImageProps = {
+  src: string;
+  alt?: string;
+  className?: string;
+  width?: number;
+  height?: number;
+  delay?: number;
+  direction?: "up" | "down" | "left" | "right";
+};
+
+function MotionImage({
+  src,
+  alt = "",
+  className,
+  width,
+  height,
+  delay = 0,
+  direction = "up",
+}: MotionImageProps) {
+  const offset = {
+    up: { y: 28, x: 0 },
+    down: { y: -28, x: 0 },
+    left: { x: -28, y: 0 },
+    right: { x: 28, y: 0 },
+  }[direction];
+
+  return (
+    <motion.img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      initial={{ opacity: 0, ...offset }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay, ease: EASE }}
+    />
+  );
+}
 
 function ClientTestimonial({
   testimonial,
@@ -112,39 +156,43 @@ export function MobileAppPageContent() {
   return (
     <div className="mobile-app-page">
       <section className="banner-area" id="banner_animation" aria-label="Mobile banking hero">
-        <div className="bubbles">
+        <div className="bubbles" aria-hidden>
           {BUBBLE_PARALLAX.map((offset, index) => (
             <div key={index} data-parallax={JSON.stringify({ x: offset.x, y: offset.y, rotateZ: 0 })}>
               <div className="bubble" />
             </div>
           ))}
         </div>
-        <div className="logos" aria-hidden>
-          {MOBILE_APP_BANNER_LOGOS.map((logo) => (
-            <img key={logo} src={logo} alt="" width={72} height={72} />
-          ))}
-        </div>
+
         <div className="container">
-          <div className="ma-banner-inner">
-            <div className="banner-content">
-              <h1>
-                Simple and Safe Digital <br /> Banking Mobile App
-              </h1>
-              <div className="img-area">
-                <img
-                  className="img-fluid ma-hero-person"
-                  data-depth="0.6"
-                  src="/img/banner/person.png"
-                  alt="person"
-                  width={326}
-                  height={540}
-                />
-              </div>
+          <div className="banner-content text-center">
+            <h1>
+              Simple and Safe Digital <br /> Banking Mobile App
+            </h1>
+
+            <div className="img-area">
               <div className="symbol-pulse" aria-hidden>
                 <div className="pulse-1" />
                 <div className="pulse-2" />
                 <div className="pulse-x" />
               </div>
+
+              <div className="logos" aria-hidden>
+                {MOBILE_APP_BANNER_LOGOS.map((logo) => (
+                  <span key={logo} className="logo-item">
+                    <img src={logo} alt="" />
+                  </span>
+                ))}
+              </div>
+
+              <MotionImage
+                className="img-fluid ma-hero-phone"
+                src="/img/banner/person.png"
+                alt="Mobile banking app"
+                width={326}
+                height={540}
+                delay={0.15}
+              />
             </div>
           </div>
 
@@ -152,9 +200,9 @@ export function MobileAppPageContent() {
             <div className="floated-widget">
               <div className="ma-stats-grid">
                 {MOBILE_APP_STATS.map((stat) => (
-                  <div key={stat.label}>
+                  <div key={stat.label} className="ma-stats-item">
                     <div className="statistics-widget-1">
-                      <img src={stat.icon} alt="icon" />
+                      <img src={stat.icon} alt="" aria-hidden />
                       <p>{stat.label}</p>
                       <h2 className="counter">
                         <span>
@@ -186,15 +234,25 @@ export function MobileAppPageContent() {
           </div>
           <div className="ma-feature-grid">
             {MOBILE_APP_FEATURES.map((feature) => (
-              <FadeIn key={feature.title} delay={feature.delay}>
-                <div className="feature-card-widget">
-                  <div className="card-img">
-                    <img src={feature.icon} alt="feature svg" />
-                  </div>
-                  <h4>{feature.title}</h4>
-                  <p>{feature.description}</p>
+              <motion.div
+                key={feature.title}
+                className="ma-feature-card feature-card-widget"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8, transition: { duration: 0.3, delay: 0 } }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                  duration: 0.55,
+                  delay: feature.delay,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+              >
+                <div className="card-img">
+                  <img src={feature.icon} alt="" aria-hidden />
                 </div>
-              </FadeIn>
+                <h4>{feature.title}</h4>
+                <p>{feature.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -204,10 +262,36 @@ export function MobileAppPageContent() {
         <div className="container">
           <div className="ma-track-grid">
             <div className="img-content">
-              <img className="bg-img" src="/img/track-progress/shape-bg.png" alt="" aria-hidden />
-              <img className="track-3" src="/img/track-progress/track-1.png" alt="" />
-              <img className="track-img track-1" src="/img/track-progress/track-2.png" alt="" />
-              <img className="track-img track-2" src="/img/track-progress/track-3.png" alt="" />
+              <img
+                className="bg-img"
+                src="/img/track-progress/shape-bg.png"
+                alt=""
+                aria-hidden
+                width={983}
+                height={816}
+              />
+              <MotionImage
+                className="track-3"
+                src="/img/track-progress/track-1.png"
+                width={361}
+                height={577}
+              />
+              <MotionImage
+                className="track-img track-1"
+                src="/img/track-progress/track-2.png"
+                width={381}
+                height={288}
+                delay={0.3}
+                direction="right"
+              />
+              <MotionImage
+                className="track-img track-2"
+                src="/img/track-progress/track-3.png"
+                width={351}
+                height={242}
+                delay={0.5}
+                direction="right"
+              />
             </div>
             <div className="ma-track-text">
               <FadeIn direction="left">
@@ -256,9 +340,29 @@ export function MobileAppPageContent() {
             </div>
             <div className="ma-card-media">
               <div className="img-content">
-                <img className="bg-img" src="/img/card-payment/shape-bg.png" alt="" aria-hidden />
-                <img className="card-1 img-fluid" src="/img/card-payment/card-1.png" alt="" />
-                <img className="card-2" src="/img/card-payment/card-2.png" alt="" />
+                <img
+                  className="bg-img"
+                  src="/img/card-payment/shape-bg.png"
+                  alt=""
+                  aria-hidden
+                  width={966}
+                  height={818}
+                />
+                <MotionImage
+                  className="card-1"
+                  src="/img/card-payment/card-1.png"
+                  width={411}
+                  height={623}
+                  direction="left"
+                />
+                <MotionImage
+                  className="card-2"
+                  src="/img/card-payment/card-2.png"
+                  width={200}
+                  height={561}
+                  delay={0.3}
+                  direction="left"
+                />
               </div>
             </div>
           </div>
@@ -270,11 +374,44 @@ export function MobileAppPageContent() {
           <div className="ma-bank-grid">
             <div className="ma-bank-media">
               <div className="img-content">
-                <img className="bg-img" src="/img/internet-banking/shape-bg.png" alt="" aria-hidden />
-                <img className="bank-main img-fluid" src="/img/internet-banking/img-1.png" alt="" />
-                <img className="bank-1 img-fluid" src="/img/internet-banking/img-2.png" alt="" />
-                <img className="bank-2 img-fluid" src="/img/internet-banking/img-3.png" alt="" />
-                <img className="bank-3 img-fluid" src="/img/internet-banking/info.png" alt="" />
+                <img
+                  className="bg-img"
+                  src="/img/internet-banking/shape-bg.png"
+                  alt=""
+                  aria-hidden
+                  width={1029}
+                  height={1004}
+                />
+                <MotionImage
+                  className="bank-main"
+                  src="/img/internet-banking/img-1.png"
+                  width={466}
+                  height={671}
+                />
+                <MotionImage
+                  className="bank-1"
+                  src="/img/internet-banking/img-2.png"
+                  width={216}
+                  height={219}
+                  delay={0.3}
+                  direction="right"
+                />
+                <MotionImage
+                  className="bank-2"
+                  src="/img/internet-banking/img-3.png"
+                  width={301}
+                  height={251}
+                  delay={0.6}
+                  direction="left"
+                />
+                <MotionImage
+                  className="bank-3"
+                  src="/img/internet-banking/info.png"
+                  width={422}
+                  height={190}
+                  delay={0.8}
+                  direction="right"
+                />
               </div>
             </div>
             <div className="ma-bank-text">
@@ -304,7 +441,9 @@ export function MobileAppPageContent() {
       <section className="security-area" aria-label="Security tips">
         <div className="container">
           <div className="section-title">
-            <h2>Security Tips</h2>
+            <FadeIn>
+              <h2>Security Tips</h2>
+            </FadeIn>
           </div>
           <div className="ma-security-grid">
             <FadeIn>
@@ -377,33 +516,7 @@ export function MobileAppPageContent() {
                   <div key={index} className={`bubble-${index + 1}`} />
                 ))}
               </div>
-              <div className="ma-cta-grid">
-                <FadeIn direction="right">
-                  <div className="cta-content text-center">
-                    <h2>Download Our Free Mobile App</h2>
-                  </div>
-                </FadeIn>
-                <div className="ma-cta-actions">
-                  <Link href="#">
-                    <div className="app-btn">
-                      <i className="fab fa-google-play" />
-                      <div className="btn-text">
-                        <span>GET IT ON</span>
-                        <p>Google Play</p>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link href="#">
-                    <div className="app-btn">
-                      <i className="fab fa-apple" />
-                      <div className="btn-text">
-                        <span>Downloan on the</span>
-                        <p>Apple Store</p>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

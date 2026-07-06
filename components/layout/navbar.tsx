@@ -98,21 +98,21 @@ function DarkModeToggle() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <div className="px-2 js-darkmode-btn" aria-hidden style={{ width: 52 }} />;
+    return <div className="js-darkmode-btn" aria-hidden />;
   }
 
   const isDark = resolvedTheme === "dark";
 
   return (
     <div
-      className={cn("px-2 js-darkmode-btn", isDark && "dark-active")}
+      className={cn("js-darkmode-btn", isDark && "dark-active")}
       title="Toggle dark mode"
     >
       <label htmlFor={inputId} className="tab-btn tab-btns" aria-label="Switch to dark mode">
-        <Moon aria-hidden style={{ color: "gold", width: 14, height: 14 }} />
+        <Moon aria-hidden />
       </label>
       <label htmlFor={inputId} className="tab-btn" aria-label="Switch to light mode">
-        <Sun aria-hidden style={{ color: "gold", width: 14, height: 14 }} />
+        <Sun aria-hidden />
       </label>
       <label className="ball" htmlFor={inputId} aria-hidden />
       <input

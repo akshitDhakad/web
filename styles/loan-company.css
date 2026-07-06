@@ -72,23 +72,57 @@
 .loan-company-page .banner-area-6 .subscribe-field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: stretch;
+  gap: 12px;
   margin-top: 25px;
+}
+
+.loan-company-page .banner-area-6 .subscribe-field .form-control {
+  width: 100%;
+  max-width: 315px;
+  min-width: 200px;
+  height: 60px;
+  margin: 0;
+  padding: 0 24px;
+  border: 1px solid #e6edf0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: var(--theme-title-color);
+  font-size: 16px;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 60px;
+  box-shadow: none;
+  outline: none;
+}
+
+.loan-company-page .banner-area-6 .subscribe-field .form-control::placeholder {
+  color: #a8a8b2;
+  font-size: 16px;
+}
+
+.loan-company-page .banner-area-6 .subscribe-field .form-control:focus {
+  border-color: var(--brand_color);
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.loan-company-page .banner-area-6 .subscribe-field .theme-btn {
+  margin: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 @media (min-width: 576px) {
   .loan-company-page .banner-area-6 .subscribe-field {
     flex-direction: row;
-    align-items: stretch;
-    gap: 8px;
+    align-items: center;
+    gap: 12px;
   }
 
   .loan-company-page .banner-area-6 .subscribe-field .form-control {
-    margin-right: 4px;
-  }
-
-  .loan-company-page .banner-area-6 .subscribe-field .theme-btn {
-    margin-left: 8px;
+    flex: 1 1 auto;
+    width: auto;
   }
 }
 
@@ -217,7 +251,7 @@
   min-height: 100%;
 }
 
-.loan-company-page .feature-area-3 .lc-feature-col > * {
+.loan-company-page .feature-area-3 .lc-feature-col>* {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -502,22 +536,26 @@
 .loan-company-page .loan-slider .slick-arrow {
   position: absolute;
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 22px;
   height: 70px;
   width: 70px;
-  border: 1px solid #e7e7e8;
+  border: 2px solid #fff;
   background-color: #f6f6f6;
   border-radius: 50%;
   color: #6a737c;
-  line-height: 67px;
+  line-height: 1;
   top: 55%;
   cursor: pointer;
   padding: 0;
+  box-shadow: 0 4px 16px rgba(63, 93, 101, 0.12);
   transition: all 0.3s ease;
 }
 
 .loan-company-page .loan-slider .slick-arrow:hover {
-  border-color: var(--brand_color);
+  border-color: #fff;
   background-color: var(--brand_color);
   color: #fff;
 }
@@ -583,30 +621,61 @@
 
 /* ── Coverage ── */
 .loan-company-page .coverage-area .lc-coverage-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px 48px;
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.loan-company-page .coverage-area .lc-coverage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 calc(50% - 16px);
+  max-width: 160px;
   text-align: center;
 }
 
 @media (min-width: 576px) {
-  .loan-company-page .coverage-area .lc-coverage-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .loan-company-page .coverage-area .lc-coverage-item {
+    flex: 0 0 calc(33.333% - 16px);
   }
 }
 
 @media (min-width: 992px) {
-  .loan-company-page .coverage-area .lc-coverage-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .loan-company-page .coverage-area .lc-coverage-item {
+    flex: 0 0 calc(16.666% - 16px);
+    max-width: 140px;
   }
 }
 
-@media (min-width: 1200px) {
-  .loan-company-page .coverage-area .lc-coverage-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0;
-  }
+.loan-company-page .coverage-area .country-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  text-align: center;
+}
+
+.loan-company-page .coverage-area .country-widget img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.loan-company-page .coverage-area .country-widget h5 {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 /* ── Get in touch ── */

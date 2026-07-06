@@ -36,45 +36,46 @@ function FinanceFaqColumn({
   );
 
   return (
-    <div className="accordion" id={accordionId}>
-      {items.map((item, index) => {
+    <div className="accordion saas-faq-list" id={accordionId}>
+      {items.map((item) => {
         const isOpen = openId === item.id;
 
         return (
-          <FadeIn key={item.id} delay={0.3 + index * 0.2}>
-            <div className="faq_item">
-              <div className="faq-header" id={item.headingId}>
-                <h6
-                  className={cn("mb-0", !isOpen && "collapsed")}
-                  role="button"
-                  tabIndex={0}
-                  aria-expanded={isOpen}
-                  aria-controls={item.id}
-                  onClick={() => setOpenId(isOpen ? null : item.id)}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      setOpenId(isOpen ? null : item.id);
-                    }
-                  }}
-                >
-                  {item.question}
-                  <i className="icon_plus" />
-                  <i className="icon_minus-06" />
-                </h6>
-              </div>
+          <div
+            key={item.id}
+            className={cn("faq_item", isOpen && "is-open")}
+          >
+            <div className="faq-header" id={item.headingId}>
+              <h6
+                className={cn("mb-0", !isOpen && "collapsed")}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isOpen}
+                aria-controls={item.id}
+                onClick={() => setOpenId(isOpen ? null : item.id)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setOpenId(isOpen ? null : item.id);
+                  }
+                }}
+              >
+                {item.question}
+                <i className="icon_plus" aria-hidden />
+                <i className="icon_minus-06" aria-hidden />
+              </h6>
+            </div>
+            {isOpen ? (
               <div
                 id={item.id}
-                className={cn("collapse", isOpen && "show")}
+                className="faq-body"
+                role="region"
                 aria-labelledby={item.headingId}
-                data-bs-parent={`#${accordionId}`}
               >
-                <div className="faq-body">
-                  <p>{item.answer}</p>
-                </div>
+                <div className="faq-answer-text">{item.answer}</div>
               </div>
-            </div>
-          </FadeIn>
+            ) : null}
+          </div>
         );
       })}
     </div>
@@ -292,8 +293,8 @@ export function FinancePageContent() {
                       className="clients-logo img-fluid"
                       src={logo.src}
                       alt={logo.alt}
-                      width={140}
-                      height={48}
+                      width={120}
+                      height={32}
                     />
                   </FadeIn>
                 </Link>
@@ -318,7 +319,7 @@ export function FinancePageContent() {
           <div className="row">
             {PROCESS_CARDS.map((card) => (
               <div key={card.title} className="col-lg-4">
-                <FadeIn delay={card.delay} className="h-full w-full">
+                <FadeIn delay={card.delay} className="h-full w-full shadow-sm">
                   <div className="saas-feature-card">
                     <div className="card-img">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -326,7 +327,7 @@ export function FinancePageContent() {
                     </div>
                     <h4>{card.title}</h4>
                     <p>{card.description}</p>
-                    <Link href="/about" className="text-btn">
+                    <Link href="/about" className="text-btn max-w-min whitespace-nowrap">
                       Learn More
                     </Link>
                   </div>
@@ -340,8 +341,8 @@ export function FinancePageContent() {
       <section className="saas-features-area bg-white" aria-label="Features">
         <div className={FINANCE_CONTAINER}>
           {/* Row 1 — image left, content right */}
-          <div className="saas-features-item grid grid-cols-1 items-center gap-y-10 gap-x-0 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
-            <FadeIn direction="right" delay={0.3} className="w-full">
+          <div className="saas-features-item">
+            <FadeIn direction="right" delay={0.3} className="saas-features-media">
               <div className="saas-features-img saas-features-img--one">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -352,8 +353,8 @@ export function FinancePageContent() {
                 />
               </div>
             </FadeIn>
-            <div className="saas-features-content w-full lg:pl-2.5">
-              <div className="saas-section-title mb-8 lg:mb-[50px]">
+            <div className="saas-features-content">
+              <div className="saas-section-title">
                 <FadeIn>
                   <h2>
                     Simplify your finance <span>banking</span> and loan
@@ -367,36 +368,40 @@ export function FinancePageContent() {
                   </p>
                 </FadeIn>
               </div>
-              <div className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
-                <div className="features-icon-box flex items-start gap-4">
-                  <div className="round_icon shrink-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/img/saas-app/hand.png" alt="" />
+              <div className="features-icon-row">
+                <FadeIn delay={0.3}>
+                  <div className="features-icon-box">
+                    <div className="round_icon">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/img/saas-app/hand.png" alt="" aria-hidden />
+                    </div>
+                    <div className="text">
+                      <h4>Single term fees</h4>
+                      <p>Easily copy and paste Pricing components</p>
+                    </div>
                   </div>
-                  <div className="text min-w-0">
-                    <h4>Single term fees</h4>
-                    <p>Easily copy and paste Pricing components</p>
+                </FadeIn>
+                <FadeIn delay={0.5}>
+                  <div className="features-icon-box two">
+                    <div className="round_icon">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/img/saas-app/travel_explore.png" alt="" aria-hidden />
+                    </div>
+                    <div className="text">
+                      <h4>150+ Locations</h4>
+                      <p>Easily copy and paste Pricing components</p>
+                    </div>
                   </div>
-                </div>
-                <div className="features-icon-box two flex items-start gap-4">
-                  <div className="round_icon shrink-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/img/saas-app/travel_explore.png" alt="" />
-                  </div>
-                  <div className="text min-w-0">
-                    <h4>150+ Locations</h4>
-                    <p>Easily copy and paste Pricing components</p>
-                  </div>
-                </div>
+                </FadeIn>
               </div>
             </div>
           </div>
 
           {/* Row 2 — content left, image right */}
-          <div className="saas-features-item saas-features-item--reverse mt-20 grid grid-cols-1 items-center gap-y-10 gap-x-0 lg:mt-[140px] lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
-            <div className="saas-features-content w-full lg:order-1">
+          <div className="saas-features-item saas-features-item--reverse">
+            <div className="saas-features-content">
               <FadeIn delay={0.3}>
-                <div className="saas-section-title mb-8 lg:mb-[50px]">
+                <div className="saas-section-title">
                   <h2>
                     We have reputable <span>customer</span> feedbacks
                   </h2>
@@ -407,23 +412,27 @@ export function FinancePageContent() {
                   </p>
                 </div>
               </FadeIn>
-              <div className="grid grid-cols-2 gap-x-0">
-                <div className="features-icon-box feedback flex items-start">
-                  <div className="text">
-                    <h4>500+</h4>
-                    <p>Active customers use our application</p>
+              <div className="features-icon-row features-icon-row--stats">
+                <FadeIn delay={0.4}>
+                  <div className="features-icon-box feedback">
+                    <div className="text">
+                      <h4>500+</h4>
+                      <p>Active customers use our application</p>
+                    </div>
                   </div>
-                </div>
-                <div className="features-icon-box feedback feedback-divided flex items-start">
-                  <div className="text">
-                    <h4>$105k</h4>
-                    <p>Loans given out in the last few months</p>
+                </FadeIn>
+                <FadeIn delay={0.5}>
+                  <div className="features-icon-box feedback feedback-divided">
+                    <div className="text">
+                      <h4>$105k</h4>
+                      <p>Loans given out in the last few months</p>
+                    </div>
                   </div>
-                </div>
+                </FadeIn>
               </div>
             </div>
-            <FadeIn direction="left" delay={0.2} className="w-full lg:order-2">
-              <div className="saas-features-img saas-features-img--two">
+            <FadeIn direction="left" delay={0.2} className="saas-features-media">
+              2              <div className="saas-features-img saas-features-img--two">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/img/saas-app/features_img_two.png"
@@ -583,13 +592,9 @@ export function FinancePageContent() {
               </p>
             </div>
           </FadeIn>
-          <div className="row">
-            <div className="col-lg-6">
-              <FinanceFaqColumn items={FAQ_COLUMN_ONE} accordionId="accordionExample" />
-            </div>
-            <div className="col-lg-6">
-              <FinanceFaqColumn items={FAQ_COLUMN_TWO} accordionId="accordionExample2" />
-            </div>
+          <div className="saas-faq-grid">
+            <FinanceFaqColumn items={FAQ_COLUMN_ONE} accordionId="accordionExample" />
+            <FinanceFaqColumn items={FAQ_COLUMN_TWO} accordionId="accordionExample2" />
           </div>
         </div>
       </section>
@@ -602,11 +607,11 @@ export function FinancePageContent() {
               <p>There are many variations of passages of Lorem Ipsum available.</p>
               <div className="d-flex flex-column flex-sm-row mt-30">
                 <input type="email" className="form-control" placeholder="Enter Email address" />
-                <Link href="/contact" className="input-append theme-btn theme-btn-lg ms-sm-3">
+                <Link href="/contact" className="input-append theme-btn theme-btn-lg ms-sm-1">
                   Subscribe
                 </Link>
               </div>
-              <ul className="list-unstyled feature-list">
+              <ul className="list-unstyled feature-list !mt-2">
                 <li>
                   <i className="fas fa-check-circle" /> Get 30 day free trial
                 </li>

@@ -69,22 +69,70 @@ body.body_dark .header-menu.header-menu-4.navbar_fixed {
   color: #fff;
 }
 
+/* Dark mode toggle — pill track, white thumb, active icon on thumb */
 .js-darkmode-btn {
+  position: relative;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  min-width: 52px;
+  height: 26px;
+  padding: 0 3px;
+  margin-left: 15px;
+  background: #1d2746;
+  border-radius: 50px;
   cursor: pointer;
-}
-
-.js-darkmode-btn .ball {
-  pointer-events: none;
+  box-sizing: border-box;
 }
 
 .js-darkmode-btn .tab-btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 23px;
+  height: 20px;
+  margin: 0;
+  flex-shrink: 0;
   cursor: pointer;
   z-index: 1;
+}
+
+.js-darkmode-btn .tab-btn svg {
+  width: 14px;
+  height: 14px;
+  color: gold;
+  stroke: gold;
+  flex-shrink: 0;
+}
+
+.js-darkmode-btn .ball {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 23px);
+  width: 20px;
+  height: 20px;
+  background-color: #fafafa;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s linear;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.js-darkmode-btn.dark-active .ball {
+  left: 3px;
+}
+
+/* Light mode: sun icon above thumb on the right */
+.js-darkmode-btn:not(.dark-active) .tab-btn:last-of-type {
+  z-index: 3;
+}
+
+/* Dark mode: moon icon above thumb on the left */
+.js-darkmode-btn.dark-active .tab-btns {
+  z-index: 3;
 }
 
 .js-darkmode-btn input.dark_mode_switcher {

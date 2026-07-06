@@ -208,7 +208,7 @@
 @media (min-width: 1200px) {
   .loan-steps-page .fast-e-loan .ls-fast-loan-grid {
     grid-template-columns: 41.666% 8.333% 25% 25%;
-    gap: 0;
+    gap: 10px;
   }
 
   .loan-steps-page .fast-e-loan .ls-fast-loan-intro {
@@ -237,7 +237,7 @@
   text-align: center;
 }
 
-.loan-steps-page .fast-e-loan .learn-more ul li + li {
+.loan-steps-page .fast-e-loan .learn-more ul li+li {
   margin-top: 20px;
 }
 
@@ -360,7 +360,7 @@
   z-index: 1;
 }
 
-.loan-steps-page .security-area .security-priority .ls-security-inner > img {
+.loan-steps-page .security-area .security-priority .ls-security-inner>img {
   max-width: 100%;
   height: auto;
   display: inline-block;
@@ -413,8 +413,106 @@
   display: block;
 }
 
-.loan-steps-page .faq-area .faq-header h4 {
+/* FAQ accordion — visible answers, spacing, icons */
+.loan-steps-page .faq-area .faq-widget .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loan-steps-page .faq-area .faq-widget .single-widget-one {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  padding: 24px 28px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1.6px 3.6px rgba(51, 77, 114, 0.15);
+  transition: box-shadow 0.3s ease-out;
+}
+
+.loan-steps-page .faq-area .faq-widget .single-widget-one:hover {
+  box-shadow: 0 20px 45px rgba(51, 77, 114, 0.15);
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-header h4 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-right: 32px;
+  font-size: 22px;
+  line-height: 1.4;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--secondary_color, #171d24);
   cursor: pointer;
+  user-select: none;
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-header h4.collapsed {
+  color: var(--secondary_color, #171d24);
+}
+
+.loan-steps-page .faq-area .faq-widget .single-widget-one.is-open .faq-header h4 {
+  color: var(--brand_color, #0050b2);
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-header h4 i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  display: none;
+  color: var(--secondary_color, #171d24);
+  font-family: "ElegantIcons";
+  font-style: normal;
+  line-height: 1;
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-header h4 i + i {
+  display: block;
+  color: var(--brand_color, #0050b2);
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-header h4.collapsed i {
+  display: block;
+  color: #52575c;
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-header h4.collapsed i + i {
+  display: none;
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-body {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: 12px 0 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.loan-steps-page .faq-area .faq-widget .faq-body .faq-answer-text {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+  font-family: "Roboto", var(--font-roboto), sans-serif !important;
+  font-weight: 400 !important;
+  color: #4c5267 !important;
+  -webkit-text-fill-color: #4c5267 !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  white-space: normal !important;
 }
 
 /* ── CTA ── */
